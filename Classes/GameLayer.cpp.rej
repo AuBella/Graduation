@@ -1,0 +1,36 @@
+diff a/Classes/GameLayer.cpp b/Classes/GameLayer.cpp	(rejected hunks)
+@@ -66,21 +66,23 @@
+ 	CCTMXObjectGroup*  objectGroup = map->objectGroupNamed( "Role");
+ 	CCDictionary* obj = objectGroup->objectNamed( "shana" );
+ 	Ogre* ogre = Ogre::create();
+-	this->setPosition( CCPoint(
+-		((CCString*) obj->objectForKey("x"))->floatValue() + 200, 
+-		((CCString*) obj->objectForKey("y"))->floatValue() + 200));
++	/*this->setPosition( CCPoint(
++		((CCString*) obj->objectForKey("x"))->floatValue() , 
++		((CCString*) obj->objectForKey("y"))->floatValue() + 200));*/
+ 	this->addChild( ogre );
++	Shana* shana = GlobalCtrl::getInstance()->shana;
++	ogre->setPosition(shana->getPositionX() + 200, shana->getPositionY());
+ 	//GlobalCtrl::getInstance()->ogre = ogre;
+ 	
+ 	CCSize visibleSize = CCEGLView::sharedOpenGLView()->getVisibleSize();
+-	monster1=Monster::create();   
+-	//monster1->InitMonsterSprite("monster.png","xue_back.png","xue_fore.png");  
+-	//monster1->InitMonsterSprite("monster.png");  
+-	monster1->InitMonsterSprite("monster.png","xue_back.png","xue_fore.png");  
+-	monster1->setPosition(ccp(visibleSize.width-50,visibleSize.height/2));
+-	this->addChild(monster1);
+-	//GlobalCtrl::getInstance()->tilemap->addChild(monster1);//½«¹ÖÎïÌí¼Óµ½µØÍ¼ÖÐ£¬ÕâÑù¹ÖÎï²ÅÄÜËæµØÍ¼ÒÆ¶¯  
+-	monster1->StartListen(GlobalCtrl::getInstance()->shana ,GlobalCtrl::getInstance()->tilemap);//·Ç³£ÖØÒª£¬ÕâÊÇÕâÒ»½²ÓÃµ½µÄ  
++	monster1 = ogre;
++	monster2=Monster::create();   
++	monster2->InitMonsterSprite("monster.png","xue_back.png","xue_fore.png");  
++	//monster2->InitMonsterSprite("monster.png");  
++	monster2->setPosition(ccp(visibleSize.width-50,visibleSize.height/2));
++	this->addChild(monster2);
++	GlobalCtrl::getInstance()->tilemap->addChild(monster2);//½«¹ÖÎïÌí¼Óµ½µØÍ¼ÖÐ£¬ÕâÑù¹ÖÎï²ÅÄÜËæµØÍ¼ÒÆ¶¯  
++	monster2->StartListen(GlobalCtrl::getInstance()->shana ,GlobalCtrl::getInstance()->tilemap);//·Ç³£ÖØÒª£¬ÕâÊÇÕâÒ»½²ÓÃµ½µÄ  
+ }
+ 
+ 

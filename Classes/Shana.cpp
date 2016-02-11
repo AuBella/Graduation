@@ -16,10 +16,11 @@ bool Shana::init() {
 		CC_BREAK_IF( !Role::init() );
 
 		//设置精灵
-		this->setSprite( CCSprite::create( "$shana_1.png", CCRect( 0, 0, 55, 62 ) ) );
+		this->setSprite( CCSprite::create( "$legendaryswordsman_1.png", CCRect( 0, 0, 55, 62 ) ) );
 		this->addChild( getSprite() );
+		//getSprite()->setOpacity(125);
 		//初始化各种动画
-		CCAnimation* standAnimn = AnimationUtil::getAnimation( "$shana_1.png", 4, 4 );
+	/*	CCAnimation* standAnimn = AnimationUtil::getAnimation( "$shana_1.png", 4, 4 );
 		setStandAnimation( CCRepeatForever::create( CCAnimate::create( standAnimn ) ) );
 
 		CCAnimation* runAnimn = AnimationUtil::getAnimation( "$shana_forward.png", 8, 8 );
@@ -54,8 +55,43 @@ bool Shana::init() {
 		CCAnimation* skillE = AnimationUtil::getAnimation( "$shana_2extra4.png", 8, 8 );
 		setSkillE( CCSequence::create( CCAnimate::create( skillE ),
 			CCCallFuncN::create(this, callfuncN_selector( Shana::attackCallbackFunc ) ),
+			CCCallFuncN::create( this,callfuncN_selector( Shana::createStandAnimCallback ) ), nullptr ) );*/
+			CCAnimation* standAnimn = AnimationUtil::getAnimation( "$legendaryswordsman_1.png", 3, 3 );
+		setStandAnimation( CCRepeatForever::create( CCAnimate::create( standAnimn ) ) );
+
+		CCAnimation* runAnimn = AnimationUtil::getAnimation( "$legendaryswordsman_forward.png", 8, 8 );
+		setRunAnimation( CCRepeatForever::create( CCAnimate::create( runAnimn ) ) );
+
+		CCAnimation* deadAnimn = AnimationUtil::getAnimation( "$legendaryswordsman_dead.png", 3, 3 );
+		setDeadAnimation( CCRepeatForever::create( CCAnimate::create( deadAnimn ) ) );
+
+		CCAnimation* hurtAnimn = AnimationUtil::getAnimation( "$legendaryswordsman_4.png", 2, 2 );
+		setHurtAnimation( CCRepeatForever::create( CCAnimate::create( hurtAnimn ) ) );
+
+		CCAnimation* skillA = AnimationUtil::getAnimation( "$legendaryswordsman_2.png", 8, 20 );
+		setSkillA( CCSequence::create( CCAnimate::create( skillA ),
+			CCCallFuncN::create(this, callfuncN_selector(Shana::attackCallbackFunc) ),
+			CCCallFuncN::create(this, callfuncN_selector(Shana::createStandAnimCallback)), nullptr ));
+
+		CCAnimation* skillB = AnimationUtil::getAnimation( "$legendaryswordsman_2extra1.png", 7, 24 );
+		setSkillB( CCSequence::create( CCAnimate::create( skillB ),
+			CCCallFuncN::create(this,callfuncN_selector( Shana::attackCallbackFunc ) ),
+			CCCallFuncN::create(this,callfuncN_selector( Shana::createStandAnimCallback ) ), nullptr ) );
+
+		CCAnimation* skillC = AnimationUtil::getAnimation( "$legendaryswordsman_2extra2.png", 8, 22 );
+		setSkillC( CCSequence::create( CCAnimate::create( skillC ),
+			CCCallFuncN::create(this, callfuncN_selector( Shana::attackCallbackFunc ) ),
+			CCCallFuncN::create(this,callfuncN_selector( Shana::createStandAnimCallback ) ), nullptr ) );
+
+		CCAnimation* skillD = AnimationUtil::getAnimation( "$legendaryswordsman_2extra3.png", 9, 15 );
+		setSkillD( CCSequence::create( CCAnimate::create( skillD ),
+			CCCallFuncN::create(this,callfuncN_selector( Shana::attackCallbackFunc ) ),
 			CCCallFuncN::create( this,callfuncN_selector( Shana::createStandAnimCallback ) ), nullptr ) );
 
+		CCAnimation* skillE = AnimationUtil::getAnimation( "$legendaryswordsman_2extra4.png", 9, 8 );
+		setSkillE( CCSequence::create( CCAnimate::create( skillE ),
+			CCCallFuncN::create(this, callfuncN_selector( Shana::attackCallbackFunc ) ),
+			CCCallFuncN::create( this,callfuncN_selector( Shana::createStandAnimCallback ) ), nullptr ) );
 		runStandAnimation();
 		//runHurtAnimation();
 		this->updateBox();

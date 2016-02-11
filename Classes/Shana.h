@@ -34,6 +34,7 @@ private:
 	void updateBox();
 	virtual void update( float delta );
 	void updateSelf();
+	//bool getDirectionFlipX();
 	//void centerViewOfPoint( Vec2 pos );
 	void centerViewOfPoint( CCPoint pos );
 	//void attackCallbackFunc( Node* pSender );

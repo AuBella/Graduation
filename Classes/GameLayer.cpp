@@ -1,6 +1,6 @@
-#include"GameLayer.h"
+ï»¿#include"GameLayer.h"
 #include "Shana.h"
-#include "Ogre.h"
+//#include "Ogre.h"
 #include "GlobalCtrl.h"
 
 GameLayer::GameLayer() :
@@ -16,7 +16,7 @@ bool GameLayer::init(){
 	this->initTileMap();
 	this->addShana();
 	this->addOgre();
-	//Æô¶¯updataÊÂ¼ş
+	//å¯åŠ¨updataäº‹ä»¶
 	this->scheduleUpdate();
 	return true;
 };
@@ -45,7 +45,7 @@ void GameLayer::addShana() {
 	//       dict = (CCDictionary*)pObj;  
 	//       if (!dict)  
 	//           continue;   
-	//       // ¶ÁÈ¡ËùÓĞĞÎ×´µÄÆğÊ¼µã  
+	//       // è¯»å–æ‰€æœ‰å½¢çŠ¶çš„èµ·å§‹ç‚¹  
 	//       float x = ((CCString*)dict->objectForKey("x"))->floatValue();  
 	//       float y = ((CCString*)dict->objectForKey("y"))->floatValue(); 
 	//	printf("%d:  %f %f\n", count, x, y);
@@ -53,7 +53,7 @@ void GameLayer::addShana() {
 	//}
 	Shana* shana = Shana::create();
 	shana->setPosition( CCPoint(
-		((CCString*) obj->objectForKey("x"))->floatValue(), 
+		((CCString*) obj->objectForKey("x"))->floatValue() - 100, 
 		((CCString*) obj->objectForKey("y"))->floatValue()+shana->getSprite()->getContentSize().height/2 ));
 	this->addChild( shana );
 	GlobalCtrl::getInstance()->shana = shana;
@@ -66,68 +66,73 @@ void GameLayer::addOgre() {
 	CCTMXObjectGroup*  objectGroup = map->objectGroupNamed( "Role");
 	CCDictionary* obj = objectGroup->objectNamed( "shana" );
 	Ogre* ogre = Ogre::create();
-	this->setPosition( CCPoint(
-		((CCString*) obj->objectForKey("x"))->floatValue() + 200, 
-		((CCString*) obj->objectForKey("y"))->floatValue() + 200));
+	/*this->setPosition( CCPoint(
+		((CCString*) obj->objectForKey("x"))->floatValue() , 
+		((CCString*) obj->objectForKey("y"))->floatValue() + 200));*/
 	this->addChild( ogre );
+	Shana* shana = GlobalCtrl::getInstance()->shana;
+	ogre->setPosition(shana->getPositionX() + 200, shana->getPositionY());
 	//GlobalCtrl::getInstance()->ogre = ogre;
 	
 	CCSize visibleSize = CCEGLView::sharedOpenGLView()->getVisibleSize();
+	monster2 = ogre;
+	monster2->StartListen();
 	monster1=Monster::create();   
-	//monster1->InitMonsterSprite("monster.png","xue_back.png","xue_fore.png");  
-	//monster1->InitMonsterSprite("monster.png");  
 	monster1->InitMonsterSprite("monster.png","xue_back.png","xue_fore.png");  
+	//monster1->InitMonsterSprite("monster.png");  
+	//monster1->InitMonsterSprite("monster.png","xue_back.png","xue_fore.png");  
 	monster1->setPosition(ccp(visibleSize.width-50,visibleSize.height/2));
 	this->addChild(monster1);
-	//GlobalCtrl::getInstance()->tilemap->addChild(monster1);//½«¹ÖÎïÌí¼Óµ½µØÍ¼ÖĞ£¬ÕâÑù¹ÖÎï²ÅÄÜËæµØÍ¼ÒÆ¶¯  
-	monster1->StartListen(GlobalCtrl::getInstance()->shana ,GlobalCtrl::getInstance()->tilemap);//·Ç³£ÖØÒª£¬ÕâÊÇÕâÒ»½²ÓÃµ½µÄ  
+	//GlobalCtrl::getInstance()->tilemap->addChild(monster1);//å°†æ€ªç‰©æ·»åŠ åˆ°åœ°å›¾ä¸­ï¼Œè¿™æ ·æ€ªç‰©æ‰èƒ½éšåœ°å›¾ç§»åŠ¨  
+	monster1->StartListen(GlobalCtrl::getInstance()->shana ,GlobalCtrl::getInstance()->tilemap);//éå¸¸é‡è¦ï¼Œè¿™æ˜¯è¿™ä¸€è®²ç”¨åˆ°çš„  
 }
 
 
 void GameLayer::update(float delta)
 {
-	if(GlobalCtrl::getInstance()->shana->getCanMutilAttack())//Ó¢ĞÛÕıÔÚ¹¥»÷
+	if(GlobalCtrl::getInstance()->shana->getCanMutilAttack())//è‹±é›„æ­£åœ¨æ”»å‡»
 	{
 	  CCLOG("update enter hurt 3");
-	  if(!monster1->Isdead)//¹ÖÎï»¹Ã»ËÀ
+	  if(!monster1->Isdead)//æ€ªç‰©è¿˜æ²¡æ­»
 	  {
 		CCLOG("update enter hurt 2");
-	    if(abs(GlobalCtrl::getInstance()->shana->getPositionY()-monster1->getPositionY())<30)//¹ÖÎïºÍÓ¢ĞÛÓ¦¸ÃÔÚÒ»¸ö²î²»¶àµÄË®Æ½¸ß¶ÈÉÏ£¬¹¥»÷²ÅÓĞĞ§
+	    if(abs(GlobalCtrl::getInstance()->shana->getPositionY()-monster1->getPositionY())<30)//æ€ªç‰©å’Œè‹±é›„åº”è¯¥åœ¨ä¸€ä¸ªå·®ä¸å¤šçš„æ°´å¹³é«˜åº¦ä¸Šï¼Œæ”»å‡»æ‰æœ‰æ•ˆ
 	    {
 			
 			CCLOG("update enter hurt 1");
-         //¼ì²âÊÇ·ñÅö×²µ½¹ÖÎï
+         //æ£€æµ‹æ˜¯å¦ç¢°æ’åˆ°æ€ªç‰©
 	      if (this->isRectCollision(CCRectMake(GlobalCtrl::getInstance()->shana->getPositionX(), GlobalCtrl::getInstance()->shana->getPositionY(),GlobalCtrl::getInstance()->shana->getContentSize().width-70, GlobalCtrl::getInstance()->shana->getContentSize().height-30),
 			  CCRectMake(monster1->getPositionX(), monster1->getPositionY(), monster1->GetSprite()->getContentSize().width-30,monster1->GetSprite()->getContentSize().height-20))) 
 	         {
 				 CCLOG("update enter hurt ");
-		        monster1->HurtAnimation("monster_hurt",2,monster1->MonsterDirecton);//ÊÜÉË
+		        monster1->HurtAnimation("monster_hurt",2,monster1->MonsterDirecton);//å—ä¼¤
+				monster2->runHurtAnimation();
 	         }
 	     }
 	  }
 	}
 
 }
-///Åö×²¼ì²â
+///ç¢°æ’æ£€æµ‹
 bool GameLayer::isRectCollision (CCRect rect1, CCRect rect2)
 {
-	float x1 = rect1.origin.x;//¾ØĞÎ1ÖĞĞÄµãµÄºá×ø±ê
-	float y1 = rect1.origin.y;//¾ØĞÎ1ÖĞĞÄµãµÄ×İ×ø±ê
-	float w1 = rect1.size.width;//¾ØĞÎ1µÄ¿í¶È
-	float h1 = rect1.size.height;//¾ØĞÎ1µÄ¸ß¶È
+	float x1 = rect1.origin.x;//çŸ©å½¢1ä¸­å¿ƒç‚¹çš„æ¨ªåæ ‡
+	float y1 = rect1.origin.y;//çŸ©å½¢1ä¸­å¿ƒç‚¹çš„çºµåæ ‡
+	float w1 = rect1.size.width;//çŸ©å½¢1çš„å®½åº¦
+	float h1 = rect1.size.height;//çŸ©å½¢1çš„é«˜åº¦
 	float x2 = rect2.origin.x;
 	float y2 = rect2.origin.y;
 	float w2 = rect2.size.width;
 	float h2 = rect2.size.height;
 
 	if (x1+w1*0.5<x2-w2*0.5)  
-		return false;//¾ØĞÎ1ÔÚ¾ØĞÎ2×ó·½£¬Á½ÕßÎŞÅö×²
+		return false;//çŸ©å½¢1åœ¨çŸ©å½¢2å·¦æ–¹ï¼Œä¸¤è€…æ— ç¢°æ’
 	else if (x1-w1*0.5>x2+w2*0.5)
-		return false;//¾ØĞÎ1ÔÚ¾ØĞÎ2ÓÒ·½£¬Á½ÕßÎŞÅö×²
+		return false;//çŸ©å½¢1åœ¨çŸ©å½¢2å³æ–¹ï¼Œä¸¤è€…æ— ç¢°æ’
 	else if (y1+h1*0.5<y2-h2*0.5)
-		return false;//¾ØĞÎ1ÔÚ¾ØĞÎ2ÏÂ·½£¬Á½ÕßÎŞÅö×²
+		return false;//çŸ©å½¢1åœ¨çŸ©å½¢2ä¸‹æ–¹ï¼Œä¸¤è€…æ— ç¢°æ’
 	else if (y1-h1*0.5>y2+h2*0.5)
-		return false;//¾ØĞÎ1ÔÚ¾ØĞÎ2ÉÏ·½£¬Á½ÕßÎŞÅö×²
+		return false;//çŸ©å½¢1åœ¨çŸ©å½¢2ä¸Šæ–¹ï¼Œä¸¤è€…æ— ç¢°æ’
 
 	return true;
 }

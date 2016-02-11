@@ -1,5 +1,6 @@
 #include"cocos2d.h"
 #include "Monster.h"
+#include"Ogre.h"
 
 USING_NS_CC;
 //class GameLayer : public cocos2d::CCLayer{
@@ -20,5 +21,6 @@ public:
 	//¾ØÐÎÅö×²¼ì²â
 	bool isRectCollision (CCRect rect1, CCRect rect2);
 	Monster* monster1;
+	Ogre* monster2;
 	CREATE_FUNC(GameLayer);
 };

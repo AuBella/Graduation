@@ -19,12 +19,7 @@ JoyStick* JoyStick::create( const char* background, const char* mask ) {
 	}
 	CC_SAFE_DELETE( joyStick );
 	return nullptr;
-}/*
-void JoyStick::onEnter()
-{
-	CCNode::onEnter();
-	CCDirector::sharedDirector()->getTouchDispatcher()->addStandardDelegate(this,0);
-}*/
+}
 
 void JoyStick::onEnter()
 {
@@ -83,7 +78,7 @@ void JoyStick::ccTouchMoved( CCTouch* touch, CCEvent* event ) {
 		
 		CCPoint direction = ccpSub(currentPoint,centerPoint) /ccpDistance(currentPoint,centerPoint);
 		this->mask->setPosition( currentPoint);
-
+		CCLOG(" ccTouchMoved position: %f %f", direction.x, direction.y);
 		GlobalCtrl::getInstance()->shana->onMove( direction, distance );
 	}
 }

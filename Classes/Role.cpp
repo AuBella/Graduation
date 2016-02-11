@@ -59,7 +59,7 @@ void Role::runStandAnimation() {
 	if ( changeState( AC_STAND ) ) {
 		getSprite()->stopAllActions();
 		getSprite()->runAction( getStandAnimation() );
-		getSprite()->setOpacity(80);
+		//getSprite()->setOpacity(80);
 		setAllowMove( true );
 	}
 }
