@@ -16,7 +16,6 @@ Monster::Monster(void)
 
 Monster::~ Monster(void)
 {
-
 }
 CCSprite* Monster::GetSprite()
 {

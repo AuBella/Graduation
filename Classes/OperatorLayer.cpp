@@ -14,8 +14,15 @@ bool OperatorLayer::init(){
 	this->addChild( joyStick );
 
 	SkillButton* skillButton = SkillButton::create();
+	skillButton->setShana(GlobalCtrl::getInstance()->shana);
 	CCSize visibleSize = CCEGLView::sharedOpenGLView()->getVisibleSize();
 	skillButton->setPosition( CCPoint( visibleSize.width - 60, 50 ) );
 	addChild( skillButton );
+
+	//SkillButton* skillButton1 = SkillButton::create();
+	//CCSize visibleSize = CCEGLView::sharedOpenGLView()->getVisibleSize();
+	/*skillButton1->setPosition( CCPoint( visibleSize.width - 60, 100 ) );
+	skillButton1->setShana(GlobalCtrl::getInstance()->shana1);
+	addChild( skillButton1 );*/
 	return true;
 };

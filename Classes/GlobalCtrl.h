@@ -12,6 +12,8 @@ public:
 	static void destroyInstance();
 
 	Shana* shana;
+	CCMenu* menu;
+	//Shana* shana1;
 	CCTMXTiledMap* tilemap;
 
 private:

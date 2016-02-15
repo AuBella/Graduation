@@ -83,10 +83,12 @@ void Role::runRunAnimation() {
 }
 
 void Role::runHurtAnimation() {
+	CCLOG("Role runHurtAnimation");
 	if ( changeState( AC_HURT ) ) {
 		getSprite()->stopAllActions();
+		CCLOG("Role runHurtAnimation             1111");
 		getSprite()->runAction( getHurtAnimation() );
-		setAllowMove( true );
+		setAllowMove( false );
 	}
 }
 

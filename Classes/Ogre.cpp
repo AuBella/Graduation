@@ -3,6 +3,8 @@
 Ogre::Ogre(){
 	faceDirecton = true;
 	leftInTheMonster = true;
+	isHurt = false;
+	flag = 0;
 };
 
 Ogre::~Ogre(){};
@@ -18,7 +20,7 @@ bool Ogre::init(){
 
 
 		//设置精灵
-		m_MonsterSprite = CCSprite::create( "$kingslime_1.png", CCRect( 0, 0, 155, 162 ) );
+		m_MonsterSprite = CCSprite::create( "$shana_1.png", CCRect( 0, 0, 155, 162 ) );
 
 
 		Monster_xue = new ProgressView();  
@@ -52,7 +54,7 @@ bool Ogre::init(){
 		setHurtAnimation( CCRepeatForever::create( CCAnimate::create( hurtAnimn ) ) );
 		runStandAnimation();*/
 
-		CCAnimation* standAnimn = AnimationUtil::getAnimation( "$shana_1.png", 4, 4 );
+		CCAnimation* standAnimn = AnimationUtil::getAnimation( "$shana_1.png", 4, 8 );
 		setStandAnimation( CCRepeatForever::create( CCAnimate::create( standAnimn ) ) );
 
 		CCAnimation* runAnimn = AnimationUtil::getAnimation( "$shana_forward.png", 8, 8 );
@@ -61,13 +63,19 @@ bool Ogre::init(){
 		CCAnimation* deadAnimn = AnimationUtil::getAnimation( "$shana_dead.png", 3, 3 );
 		setDeadAnimation( CCRepeatForever::create( CCAnimate::create( deadAnimn ) ) );
 
-		CCAnimation* hurtAnimn = AnimationUtil::getAnimation( "$shana_4.png", 2, 2 );
-		setHurtAnimation( CCRepeatForever::create( CCAnimate::create( hurtAnimn ) ) );
+		CCAnimation* hurtAnimn = AnimationUtil::getAnimation( "$shana_4.png", 2, 8 );
+		//setHurtAnimation( CCRepeatForever::create( CCAnimate::create( hurtAnimn ) ) );
+		setHurtAnimation(CCRepeatForever::create( CCSequence::create(CCAnimate::create( hurtAnimn ),/*CCAnimate::create( standAnimn ),*/
+			//CCCallFuncN::create(this, callfuncN_selector(Ogre::attackCallbackFunc) ),
+			CCCallFuncN::create(this, callfuncN_selector(Ogre::HurtEnd)), nullptr )));
 
 		CCAnimation* skillA = AnimationUtil::getAnimation( "$shana_2.png", 7, 20 );
 		CCAnimation* skillB = AnimationUtil::getAnimation( "$shana_2extra1.png", 9, 24 );
-		setSkillA( CCRepeatForever::create(CCSequence::create( CCAnimate::create( standAnimn ),CCAnimate::create( skillA ),
-			CCAnimate::create( skillB ),  nullptr )));
+		/*setSkillA( CCRepeatForever::create(CCSequence::create( CCAnimate::create( standAnimn ),CCAnimate::create( skillA ),
+			CCAnimate::create( skillB ),  nullptr )));*/
+		setSkillA( CCSequence::create( CCAnimate::create( skillA ),
+			CCCallFuncN::create(this, callfuncN_selector(Ogre::attackCallbackFunc) ),
+			CCCallFuncN::create(this, callfuncN_selector(Ogre::createStandAnimCallback)), nullptr ));
 		runStandAnimation();
 		
 		//this->schedule(schedule_selector(Ogre::updateMonster),2.0f);//每隔3秒计算距离
@@ -75,10 +83,26 @@ bool Ogre::init(){
 	return true;
 };
 
-void Ogre::StartListen()
-{
-		shana = GlobalCtrl::getInstance()->shana;
-		tileMap = GlobalCtrl::getInstance()->tilemap;
+ void Ogre::HurtAnimation(){
+	 CCLOG("enter HURTAnimation");
+	 //isHurt = true;
+	 this->runHurtAnimation(); 
+	 
+ }
+
+ void Ogre::HurtEnd( CCNode* pSender){ 
+	runStandAnimation();
+	Monster_xue->setCurrentProgress(Monster_xue->getCurrentProgress()-10);
+	isHurt = false;
+	//GlobalCtrl::getInstance()->shana ->isAttack = false;
+ }
+void Ogre::attackCallbackFunc( CCNode* pSender ) {
+	/*Shana* shana = GlobalCtrl::getInstance()->shana;
+	shana->runHurtAnimation();*/
+}
+void Ogre::StartListen(){
+	shana = GlobalCtrl::getInstance()->shana;
+	tileMap = GlobalCtrl::getInstance()->tilemap;
 	this->schedule(schedule_selector(Ogre::updateMonster),2.0f);//每隔3秒计算距离
 	this->scheduleUpdate();//英雄一旦进入可视范围，怪物追着英雄打
 }
@@ -116,7 +140,7 @@ void Ogre::enterSafeArea(){
 
 void Ogre::updateMonster(float delta){
 	
-	CCLOG("ENTER updateMonster dis ================>>>>>>>>>>>>>>>>> %f\n", dis);
+	//CCLOG("ENTER updateMonster dis ================>>>>>>>>>>>>>>>>> %f\n", dis);
 	if(dis>=200){
 		enterSafeArea();
 	}
@@ -124,9 +148,10 @@ void Ogre::updateMonster(float delta){
 };
 
 void Ogre::update(float dt){
+	
 	if(faceDirecton != this->getSprite()->isFlipX())
 		this->getSprite()->setFlipX( faceDirecton );
-	CCLOG("ENTER update attack area ================>>>>>>>>>>>>>>>>> %f\n", dis);
+	//CCLOG("ENTER update attack area ================>>>>>>>>>>>>>>>>> %f\n", dis);
 	float x = shana->getPositionX()-(this->getPositionX()+tileMap->getPositionX());
 	//得到两点y的距离，记得怪物的坐标要加上地图的
 	float y = shana->getPositionY()-(this->getPositionY()+tileMap->getPositionY());
@@ -141,8 +166,17 @@ void Ogre::update(float dt){
 		//runStandAnimation();
 		faceDirecton = shana->getPositionX()>this->getPositionX()? false:true;
 		if(abs(x) <= 80){
+			/*if(abs(x) > 79 &&abs(x) <80){
+				runStandAnimation();
+			}*/
 			if(abs(y) < 10){
-				runSkillAAnimation();
+				//runStandAnimation();
+				flag++;	
+				//CCLOG("Can Attack %d", flag);
+				if((flag == 1 || rand() % 100 == 1)/* && !isHurt*/){
+					GlobalCtrl::getInstance()->shana -> runHurtAnimation();
+					runSkillAAnimation();
+				}
 			}
 		}
 		if(abs(x) > 80 || abs(y) >= 10){
@@ -151,9 +185,9 @@ void Ogre::update(float dt){
 			}
 			enterAttackArea(x, y);
 		}
-	}/*
+	}
 	else
-		runStandAnimation();*/
+		flag = 0;
 };
 
 void Ogre::enterAttackArea(float x, float y){

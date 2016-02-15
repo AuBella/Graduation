@@ -1,6 +1,4 @@
 #include "SkillButton.h"
-#include "GlobalCtrl.h"
-#include "Shana.h"
 
 
 SkillButton::SkillButton() {}
@@ -20,14 +18,25 @@ bool SkillButton::init() {
 	CCMenu* menu = CCMenu::create( skillItem, nullptr );
 	menu->setPosition( CCPoint(0,0) );
 	this->addChild( menu );
+	GlobalCtrl::getInstance()->menu = menu;
 	return true;
 }
 
+void SkillButton::setShana(Shana *shana2){
+	shana = shana2;
+}
 
 void SkillButton::skillMenuCallback( CCObject* pSender ) {
-	//log( "skill" );
 	auto shana = GlobalCtrl::getInstance()->shana;
+	if(!shana->isHurt){
+	int num = rand() % 100;
+	CCNotificationCenter::sharedNotificationCenter()->postNotification("Attack",(CCObject *)num);
+	
+	CCLOG( "skill %f",shana->isHurt );
+	shana->isAttack = true;
 	if ( shana->getCanMutilAttack() ) {
+		//this ->setTouchEnabled(false);
+		//shana->setCanMutilAttack(true);
 		switch ( shana->getCurSkillState() ) {
 			case SKILL_A:
 				if ( shana->getCurState() == AC_STAND ) {
@@ -55,5 +64,6 @@ void SkillButton::skillMenuCallback( CCObject* pSender ) {
 		if ( shana->getCurState() == AC_STAND ) {
 			shana->runSkillAAnimation();
 		}
+	}
 	}
 }

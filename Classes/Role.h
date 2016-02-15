@@ -1,6 +1,7 @@
 #pragma once
 
 #include "cocos2d.h"
+#include"GlobalCtrl.h"
 USING_NS_CC;
 
 enum RoleActionState {

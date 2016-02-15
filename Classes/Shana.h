@@ -29,15 +29,21 @@ public:
 	virtual void runSkillCAnimation();
 	virtual void runSkillDAnimation();
 	virtual void runSkillEAnimation( );
-
+	
+	bool isHurt;
+	bool isAttack;
+	void HurtAnimation();
+	void HurtEnd();
 private:
 	void updateBox();
 	virtual void update( float delta );
 	void updateSelf();
+	void HurtEnd( CCNode* pSender);
 	//bool getDirectionFlipX();
 	//void centerViewOfPoint( Vec2 pos );
 	void centerViewOfPoint( CCPoint pos );
 	//void attackCallbackFunc( Node* pSender );
-	void attackCallbackFunc( CCNode* pSender );
+	void attackCallbackFunc1( CCNode* pSender );
+	void createStandAnimCallback(CCNode* pSender);
 };
 

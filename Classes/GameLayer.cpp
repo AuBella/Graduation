@@ -1,14 +1,13 @@
 ﻿#include"GameLayer.h"
-#include "Shana.h"
-//#include "Ogre.h"
-#include "GlobalCtrl.h"
 
 GameLayer::GameLayer() :
 	tilemap( nullptr )
 {
 	GlobalCtrl::getInstance();
 }
-GameLayer::~GameLayer(void){};
+GameLayer::~GameLayer(void){
+	CCNotificationCenter::sharedNotificationCenter()->removeObserver(this,"Attack");
+};
 
 bool GameLayer::init(){
 	if(!CCLayer::init())
@@ -17,7 +16,9 @@ bool GameLayer::init(){
 	this->addShana();
 	this->addOgre();
 	//启动updata事件
-	this->scheduleUpdate();
+	//this->scheduleUpdate();
+	//注册Message，如果接收到了，执行ObserverFunction  
+    CCNotificationCenter::sharedNotificationCenter()->addObserver(this,callfuncO_selector(GameLayer::ObserverFunction),"Attack",NULL);  
 	return true;
 };
 
@@ -32,6 +33,34 @@ void GameLayer::initTileMap(){
 	this->addChild(tilemap, -10);
 };
 
+void GameLayer::ObserverFunction(CCObject * object)  
+{  
+    CCLOG("SecondLayer Receive num=%d",(int)object); 
+	Shana* shana = GlobalCtrl::getInstance()->shana;
+	//if(shana->isAttack){
+	  CCLOG("update enter hurt 3");
+	  //if(!monster1->Isdead)//怪物还没死
+	  //{
+		//CCLOG("update enter hurt 2");
+	    if(abs(GlobalCtrl::getInstance()->shana->getPositionY()-monster2->getPositionY())<30)//怪物和英雄应该在一个差不多的水平高度上，攻击才有效
+	    {
+			
+			CCLOG("update enter hurt 1");
+         //检测是否碰撞到怪物
+	      if (this->isRectCollision(CCRectMake(GlobalCtrl::getInstance()->shana->getPositionX(), GlobalCtrl::getInstance()->shana->getPositionY(),GlobalCtrl::getInstance()->shana->getContentSize().width-70, GlobalCtrl::getInstance()->shana->getContentSize().height-30),
+			  //CCRectMake(monster1->getPositionX(), monster1->getPositionY(), monster1->GetSprite()->getContentSize().width-30,monster1->GetSprite()->getContentSize().height-20))) 
+									CCRectMake(monster2->getPositionX(), monster2->getPositionY(), monster2->GetSprite()->getContentSize().width + 100,monster2->GetSprite()->getContentSize().height+100)))    
+			{
+				 CCLOG("update enter hurt ");
+		        monster1->HurtAnimation("monster_hurt",2,monster1->MonsterDirecton);//受伤
+				monster2->isHurt = true;
+				monster2->HurtAnimation();
+				//GlobalCtrl::getInstance()->shana1->runHurtAnimation();
+	         }
+	     //}
+	  //}
+	}
+}  
 
 void GameLayer::addShana() {
 	CCTMXTiledMap* map = GlobalCtrl::getInstance()->tilemap;
@@ -57,6 +86,14 @@ void GameLayer::addShana() {
 		((CCString*) obj->objectForKey("y"))->floatValue()+shana->getSprite()->getContentSize().height/2 ));
 	this->addChild( shana );
 	GlobalCtrl::getInstance()->shana = shana;
+
+	/*Shana* shana1 = Shana::create();
+	shana1->setPosition( CCPoint(
+		((CCString*) obj->objectForKey("x"))->floatValue() - 100, 
+		((CCString*) obj->objectForKey("y"))->floatValue()+shana1->getSprite()->getContentSize().height/2 ));
+	this->addChild( shana1 );
+
+	GlobalCtrl::getInstance()->shana1 = shana1;*/
 
 	
 }
@@ -87,32 +124,37 @@ void GameLayer::addOgre() {
 	monster1->StartListen(GlobalCtrl::getInstance()->shana ,GlobalCtrl::getInstance()->tilemap);//非常重要，这是这一讲用到的  
 }
 
-
-void GameLayer::update(float delta)
-{
-	if(GlobalCtrl::getInstance()->shana->getCanMutilAttack())//英雄正在攻击
-	{
-	  CCLOG("update enter hurt 3");
-	  if(!monster1->Isdead)//怪物还没死
-	  {
-		CCLOG("update enter hurt 2");
-	    if(abs(GlobalCtrl::getInstance()->shana->getPositionY()-monster1->getPositionY())<30)//怪物和英雄应该在一个差不多的水平高度上，攻击才有效
-	    {
-			
-			CCLOG("update enter hurt 1");
-         //检测是否碰撞到怪物
-	      if (this->isRectCollision(CCRectMake(GlobalCtrl::getInstance()->shana->getPositionX(), GlobalCtrl::getInstance()->shana->getPositionY(),GlobalCtrl::getInstance()->shana->getContentSize().width-70, GlobalCtrl::getInstance()->shana->getContentSize().height-30),
-			  CCRectMake(monster1->getPositionX(), monster1->getPositionY(), monster1->GetSprite()->getContentSize().width-30,monster1->GetSprite()->getContentSize().height-20))) 
-	         {
-				 CCLOG("update enter hurt ");
-		        monster1->HurtAnimation("monster_hurt",2,monster1->MonsterDirecton);//受伤
-				monster2->runHurtAnimation();
-	         }
-	     }
-	  }
-	}
-
-}
+//
+//void GameLayer::update(float delta)
+//{
+//	//if(GlobalCtrl::getInstance()->shana->getCanMutilAttack())//英雄正在攻击
+//	if(GlobalCtrl::getInstance()->shana->isHurt){
+//	  //CCLOG("update enter hurt 3");
+//	  //if(!monster1->Isdead)//怪物还没死
+//	  //{
+//		//CCLOG("update enter hurt 2");
+//	    if(abs(GlobalCtrl::getInstance()->shana->getPositionY()-monster2->getPositionY())<30)//怪物和英雄应该在一个差不多的水平高度上，攻击才有效
+//	    {
+//			
+//			//CCLOG("update enter hurt 1");
+//         //检测是否碰撞到怪物
+//	      if (this->isRectCollision(CCRectMake(GlobalCtrl::getInstance()->shana->getPositionX(), GlobalCtrl::getInstance()->shana->getPositionY(),GlobalCtrl::getInstance()->shana->getContentSize().width-70, GlobalCtrl::getInstance()->shana->getContentSize().height-30),
+//			  //CCRectMake(monster1->getPositionX(), monster1->getPositionY(), monster1->GetSprite()->getContentSize().width-30,monster1->GetSprite()->getContentSize().height-20))) 
+//									CCRectMake(monster2->getPositionX(), monster2->getPositionY(), monster2->GetSprite()->getContentSize().width + 100,monster2->GetSprite()->getContentSize().height+100)))    
+//			{
+//				 CCLOG("update enter hurt ");
+//		        monster1->HurtAnimation("monster_hurt",2,monster1->MonsterDirecton);//受伤
+//				
+//		/*CCMenu* menu = GlobalCtrl::getInstance()->menu;
+//		menu->setTouchEnabled(false);*/
+//				monster2->HurtAnimation();
+//				//GlobalCtrl::getInstance()->shana1->runHurtAnimation();
+//	         }
+//	     }
+//	  //}
+//	}
+//
+//}
 ///碰撞检测
 bool GameLayer::isRectCollision (CCRect rect1, CCRect rect2)
 {

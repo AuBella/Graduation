@@ -32,6 +32,8 @@ public:
 	//返回英雄
 	CCSprite* GetSprite();
 	void StartListen();
+	void HurtAnimation();
+	bool isHurt;
 	CREATE_FUNC(Ogre);
 private:
 	float  dis;//当前怪物和英雄的距离
@@ -39,4 +41,7 @@ private:
 	CCSprite* m_MonsterSprite;//怪物精灵
 	ProgressView*  Monster_xue;//怪物血条
 	CCTMXTiledMap* tileMap;
+	int flag;
+	void attackCallbackFunc( CCNode* pSender );
+	void HurtEnd( CCNode* pSender);
 };
