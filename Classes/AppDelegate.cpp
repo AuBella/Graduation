@@ -15,6 +15,7 @@ AppDelegate::~AppDelegate()
 bool AppDelegate::applicationDidFinishLaunching() {
     // initialize director
     CCDirector* pDirector = CCDirector::sharedDirector();
+	
     CCEGLView* pEGLView = CCEGLView::sharedOpenGLView();
 	//pEGLView->setFrameSize(1280, 768);
     pDirector->setOpenGLView(pEGLView);

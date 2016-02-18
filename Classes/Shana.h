@@ -31,7 +31,8 @@ public:
 	virtual void runSkillEAnimation( );
 	
 	bool isHurt;
-	bool isAttack;
+	bool isRunning;
+	bool shanaisAttack;
 	void HurtAnimation();
 	void HurtEnd();
 private:

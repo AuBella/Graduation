@@ -6,7 +6,9 @@
 #include <stdio.h>  
 #include <stdlib.h>  
 #include <time.h>  
+#include<math.h>
 #include "ProgressView.h"
+#include<iostream>
 
 USING_NS_CC;
 //enum SkillState1 {
@@ -34,14 +36,19 @@ public:
 	void StartListen();
 	void HurtAnimation();
 	bool isHurt;
+	bool isDead;
+	bool isAttack;
 	CREATE_FUNC(Ogre);
+	int flag;	
 private:
 	float  dis;//当前怪物和英雄的距离
 	Shana* shana;
+	void DeadEnd(CCNode* pSender);
 	CCSprite* m_MonsterSprite;//怪物精灵
 	ProgressView*  Monster_xue;//怪物血条
 	CCTMXTiledMap* tileMap;
-	int flag;
+	int effectId;
 	void attackCallbackFunc( CCNode* pSender );
 	void HurtEnd( CCNode* pSender);
+	void initstatus();
 };

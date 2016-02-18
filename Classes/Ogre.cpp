@@ -4,8 +4,16 @@ Ogre::Ogre(){
 	faceDirecton = true;
 	leftInTheMonster = true;
 	isHurt = false;
+	isDead = false;
+	isAttack = false;
 	flag = 0;
 };
+
+void Ogre::initstatus(){
+	isHurt = false;
+	isAttack = false;
+	flag = 0;
+}
 
 Ogre::~Ogre(){};
 CCSprite* Ogre::GetSprite()
@@ -16,11 +24,8 @@ bool Ogre::init(){
 	
 		if( !Role::init())
 			return false;
-		
-
-
 		//设置精灵
-		m_MonsterSprite = CCSprite::create( "$shana_1.png", CCRect( 0, 0, 155, 162 ) );
+		m_MonsterSprite = CCSprite::create( "$tio_1.png", CCRect( 0, 0, 155, 162 ) );
 
 
 		Monster_xue = new ProgressView();  
@@ -54,28 +59,28 @@ bool Ogre::init(){
 		setHurtAnimation( CCRepeatForever::create( CCAnimate::create( hurtAnimn ) ) );
 		runStandAnimation();*/
 
-		CCAnimation* standAnimn = AnimationUtil::getAnimation( "$shana_1.png", 4, 8 );
+		CCAnimation* standAnimn = AnimationUtil::getAnimation( "$tio_1.png", 3, 6 );
 		setStandAnimation( CCRepeatForever::create( CCAnimate::create( standAnimn ) ) );
 
-		CCAnimation* runAnimn = AnimationUtil::getAnimation( "$shana_forward.png", 8, 8 );
+		CCAnimation* runAnimn = AnimationUtil::getAnimation( "$tio_forward.png", 2, 2 );
 		setRunAnimation( CCRepeatForever::create( CCAnimate::create( runAnimn ) ) );
 
-		CCAnimation* deadAnimn = AnimationUtil::getAnimation( "$shana_dead.png", 3, 3 );
-		setDeadAnimation( CCRepeatForever::create( CCAnimate::create( deadAnimn ) ) );
+		CCAnimation* deadAnimn = AnimationUtil::getAnimation( "$tio_dead.png", 2, 2 );
+		setDeadAnimation( CCRepeatForever::create( CCSequence::create(CCAnimate::create( deadAnimn ),CCCallFuncN::create(this, callfuncN_selector(Ogre::DeadEnd) ), NULL) ) );
 
-		CCAnimation* hurtAnimn = AnimationUtil::getAnimation( "$shana_4.png", 2, 8 );
+		CCAnimation* hurtAnimn = AnimationUtil::getAnimation( "$tio_4.png", 2, 8 );
 		//setHurtAnimation( CCRepeatForever::create( CCAnimate::create( hurtAnimn ) ) );
 		setHurtAnimation(CCRepeatForever::create( CCSequence::create(CCAnimate::create( hurtAnimn ),/*CCAnimate::create( standAnimn ),*/
-			//CCCallFuncN::create(this, callfuncN_selector(Ogre::attackCallbackFunc) ),
-			CCCallFuncN::create(this, callfuncN_selector(Ogre::HurtEnd)), nullptr )));
+			
+			CCCallFuncN::create(this, callfuncN_selector(Ogre::HurtEnd)), NULL )));
 
-		CCAnimation* skillA = AnimationUtil::getAnimation( "$shana_2.png", 7, 20 );
-		CCAnimation* skillB = AnimationUtil::getAnimation( "$shana_2extra1.png", 9, 24 );
+		CCAnimation* skillA = AnimationUtil::getAnimation( "$tio_2.png", 3, 6 );
+		//CCAnimation* skillB = AnimationUtil::getAnimation( "$shana_2extra1.png", 9, 24 );
 		/*setSkillA( CCRepeatForever::create(CCSequence::create( CCAnimate::create( standAnimn ),CCAnimate::create( skillA ),
 			CCAnimate::create( skillB ),  nullptr )));*/
 		setSkillA( CCSequence::create( CCAnimate::create( skillA ),
 			CCCallFuncN::create(this, callfuncN_selector(Ogre::attackCallbackFunc) ),
-			CCCallFuncN::create(this, callfuncN_selector(Ogre::createStandAnimCallback)), nullptr ));
+			CCCallFuncN::create(this, callfuncN_selector(Ogre::createStandAnimCallback)), NULL ));
 		runStandAnimation();
 		
 		//this->schedule(schedule_selector(Ogre::updateMonster),2.0f);//每隔3秒计算距离
@@ -84,19 +89,42 @@ bool Ogre::init(){
 };
 
  void Ogre::HurtAnimation(){
-	 CCLOG("enter HURTAnimation");
-	 //isHurt = true;
-	 this->runHurtAnimation(); 
-	 
+	isHurt = true;
+	effectId = CocosDenshion::SimpleAudioEngine::sharedEngine()->playEffect("sound/hurt.wav");
+	effectId = CocosDenshion::SimpleAudioEngine::sharedEngine()->playEffect("sound/0312_00EB.wav");
+	
+	//int effectId1 = CocosDenshion::SimpleAudioEngine::sharedEngine()->playEffect("sound/hurt1.wav");   
+	//CCLOG("enter HURTAnimation   %d ", effectId); 
+	this->runHurtAnimation(); 
  }
 
  void Ogre::HurtEnd( CCNode* pSender){ 
-	runStandAnimation();
+	CCLOG("ogre hurtend ");
 	Monster_xue->setCurrentProgress(Monster_xue->getCurrentProgress()-10);
-	isHurt = false;
+	if(Monster_xue->getCurrentProgress() > 0){
+		CocosDenshion::SimpleAudioEngine::sharedEngine()->stopEffect(effectId);
+		runStandAnimation();
+		isHurt = false;
+	}
+	else{
+		isDead = true;
+		effectId = CocosDenshion::SimpleAudioEngine::sharedEngine()->playEffect("sound/0312_03AF.wav");
+		runDeadAnimation();
+	}
 	//GlobalCtrl::getInstance()->shana ->isAttack = false;
  }
+
+ void Ogre::DeadEnd(CCNode* pSender){
+	if(isDead){
+		this->removeChild(m_MonsterSprite,true);
+		this->removeChild(Monster_xue,true);
+		
+		this->unschedule(schedule_selector(Ogre::update));
+		this->unschedule(schedule_selector(Ogre::updateMonster));
+	}
+ }
 void Ogre::attackCallbackFunc( CCNode* pSender ) {
+	isAttack = false;
 	/*Shana* shana = GlobalCtrl::getInstance()->shana;
 	shana->runHurtAnimation();*/
 }
@@ -115,11 +143,14 @@ void Ogre::enterSafeArea(){
 	float mapWidth = GlobalCtrl::getInstance()->tilemap->getContentSize().width;
 	CCPoint curPos = this->getPosition();
 	if(getSprite()->isFlipX());
-	//faceDirecton = true;
-	double distance = -min(curPos.x - width, 100);
+	////faceDirecton = true;
+	//double distance = -min(curPos.x - width, 100);
+	double distance = -(curPos.x - width < 100?curPos.x-width: 100);
 	if(shana -> getSprite()->isFlipX()){
 		//CCLOG("shana is face left");
-		distance =min(mapWidth - width - curPos.x, 100);
+		//distance =min(mapWidth - width - curPos.x, 100);
+		
+		distance =(mapWidth - width - curPos.x < 100?mapWidth - width - curPos.x: 100);
 		faceDirecton = false;
 		//this->getSprite()->setFlipX( false );
 	}
@@ -148,7 +179,8 @@ void Ogre::updateMonster(float delta){
 };
 
 void Ogre::update(float dt){
-	
+	if(isDead)
+		return;
 	if(faceDirecton != this->getSprite()->isFlipX())
 		this->getSprite()->setFlipX( faceDirecton );
 	//CCLOG("ENTER update attack area ================>>>>>>>>>>>>>>>>> %f\n", dis);
@@ -165,35 +197,64 @@ void Ogre::update(float dt){
 		//进入攻击区域
 		//runStandAnimation();
 		faceDirecton = shana->getPositionX()>this->getPositionX()? false:true;
+		
 		if(abs(x) <= 80){
 			/*if(abs(x) > 79 &&abs(x) <80){
 				runStandAnimation();
 			}*/
-			if(abs(y) < 10){
+			if(abs(y) <= 20){
 				//runStandAnimation();
+				if(flag > 1000){
+					initstatus();
+				}
 				flag++;	
-				//CCLOG("Can Attack %d", flag);
-				if((flag == 1 || rand() % 100 == 1)/* && !isHurt*/){
-					GlobalCtrl::getInstance()->shana -> runHurtAnimation();
+				if(!isAttack)
+				CCLOG("Can Attack %d %f  %f %f", flag, dis, abs(x), abs(y));
+				else
+				CCLOG("Cann't Attack %d %f %f %f", flag, dis, abs(x), abs(y));
+				
+				if((flag == 1 || rand() %200 == 1) && !isHurt){
+					effectId = CocosDenshion::SimpleAudioEngine::sharedEngine()->playEffect("sound/0312_01B4.wav");
+					isAttack = true;
+					GlobalCtrl::getInstance()->shana -> HurtAnimation();
 					runSkillAAnimation();
 				}
+				if(!isAttack&& !isHurt)
+					runStandAnimation();
 			}
 		}
-		if(abs(x) > 80 || abs(y) >= 10){
-			if(abs(x) > 20 || abs(y) > 20){
-				runRunAnimation();
-			}
+		//if(abs(x) > 80 || abs(y) >20){
+			//if(dis >= 20)
+			//if(abs(x) > 20 || abs(y) >= 20){
+			
+				//if(!isAttack)
+			if(!(abs(x)<=80 && abs(y) <= 20)){
+					runRunAnimation();
+
+			//}
 			enterAttackArea(x, y);
 		}
+		/*else if(abs(x) == 80 || abs(y) == 20)
+			runStandAnimation();*/
+		if(isHurt && !(GlobalCtrl::getInstance()->shana ->shanaisAttack)){
+			runStandAnimation();
+			isHurt = false;
+		}
 	}
-	else
-		flag = 0;
+	else{
+		/*isAttack = 0;
+		isHurt = 0;
+		flag = 0;*/
+		initstatus();
+	}
 };
 
 void Ogre::enterAttackArea(float x, float y){
 	//CCLOG("ENTER enterAttackArea ================>>>>>>>>>>>>>>>>> %f\n", dis);
-	CCLOG("attackarea position : %f %f %f %f",this->getPositionX(), dis, x, y);
+	//CCLOG("attackarea position : %f %f %f %f",this->getPositionX(), dis, x, y);
 	float directionx = abs(x) <= 80? directionx = 0:(x > 0? 1: -1);
-	float directiony = abs(y) <= 10? directiony = 0:y > 0? 1: -1;
+	float directiony = abs(y) <= 20? directiony = 0:y > 0? 1: -1;
+	//if(directionx == 0 && directiony == 0)
+	//	runStandAnimation();
 	this->setPosition(this->getPositionX()+directionx*2,this->getPositionY()+directiony);
 };

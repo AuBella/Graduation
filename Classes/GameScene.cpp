@@ -1,13 +1,16 @@
 #include"GameScene.h"
-#include "OperatorLayer.h"
 
 //USING_NS_CC;
 
 GameScene::GameScene(void){
+	CocosDenshion::SimpleAudioEngine::sharedEngine()->preloadBackgroundMusic("sound");
+	CocosDenshion::SimpleAudioEngine::sharedEngine()->playBackgroundMusic("sound/fighting.mp3", -1);  
 	_gameLayer = NULL;
 };
 
-GameScene::~GameScene(void){};
+GameScene::~GameScene(void){
+	CocosDenshion::SimpleAudioEngine::sharedEngine()->stopBackgroundMusic("sound/fighting.mp3");  
+};
 
 bool GameScene::init(){
 	if(!CCScene::init())
@@ -15,7 +18,9 @@ bool GameScene::init(){
 	_gameLayer = GameLayer::create();
 	this->addChild(_gameLayer, 0);
 
-	auto operatorLayer = OperatorLayer::create();
+	OperatorLayer* operatorLayer = OperatorLayer::create();
 		addChild( operatorLayer, 2 );
+		
+	GlobalCtrl::getInstance()->operatorLayer = operatorLayer;
 	return true;
 };

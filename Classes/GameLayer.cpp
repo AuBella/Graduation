@@ -1,7 +1,7 @@
 ﻿#include"GameLayer.h"
 
 GameLayer::GameLayer() :
-	tilemap( nullptr )
+	tilemap( NULL )
 {
 	GlobalCtrl::getInstance();
 }
@@ -35,8 +35,12 @@ void GameLayer::initTileMap(){
 
 void GameLayer::ObserverFunction(CCObject * object)  
 {  
+	
+	//if(GlobalCtrl::getInstance()->operatorLayer)
+	//GlobalCtrl::getInstance()->operatorLayer->setUITouchEnabled(false);
     CCLOG("SecondLayer Receive num=%d",(int)object); 
 	Shana* shana = GlobalCtrl::getInstance()->shana;
+	//shana -> isRunning = false;
 	//if(shana->isAttack){
 	  CCLOG("update enter hurt 3");
 	  //if(!monster1->Isdead)//怪物还没死
@@ -52,9 +56,11 @@ void GameLayer::ObserverFunction(CCObject * object)
 									CCRectMake(monster2->getPositionX(), monster2->getPositionY(), monster2->GetSprite()->getContentSize().width + 100,monster2->GetSprite()->getContentSize().height+100)))    
 			{
 				 CCLOG("update enter hurt ");
-		        monster1->HurtAnimation("monster_hurt",2,monster1->MonsterDirecton);//受伤
+		        //monster1->HurtAnimation("monster_hurt",2,monster1->MonsterDirecton);//受伤
 				monster2->isHurt = true;
+				monster2->isAttack = true;
 				monster2->HurtAnimation();
+				//monster2->flag = 0;
 				//GlobalCtrl::getInstance()->shana1->runHurtAnimation();
 	         }
 	     //}
@@ -114,14 +120,14 @@ void GameLayer::addOgre() {
 	CCSize visibleSize = CCEGLView::sharedOpenGLView()->getVisibleSize();
 	monster2 = ogre;
 	monster2->StartListen();
-	monster1=Monster::create();   
-	monster1->InitMonsterSprite("monster.png","xue_back.png","xue_fore.png");  
-	//monster1->InitMonsterSprite("monster.png");  
+	//monster1=Monster::create();   
 	//monster1->InitMonsterSprite("monster.png","xue_back.png","xue_fore.png");  
-	monster1->setPosition(ccp(visibleSize.width-50,visibleSize.height/2));
-	this->addChild(monster1);
-	//GlobalCtrl::getInstance()->tilemap->addChild(monster1);//将怪物添加到地图中，这样怪物才能随地图移动  
-	monster1->StartListen(GlobalCtrl::getInstance()->shana ,GlobalCtrl::getInstance()->tilemap);//非常重要，这是这一讲用到的  
+	////monster1->InitMonsterSprite("monster.png");  
+	////monster1->InitMonsterSprite("monster.png","xue_back.png","xue_fore.png");  
+	//monster1->setPosition(ccp(visibleSize.width-50,visibleSize.height/2));
+	//this->addChild(monster1);
+	////GlobalCtrl::getInstance()->tilemap->addChild(monster1);//将怪物添加到地图中，这样怪物才能随地图移动  
+	//monster1->StartListen(GlobalCtrl::getInstance()->shana ,GlobalCtrl::getInstance()->tilemap);//非常重要，这是这一讲用到的  
 }
 
 //
@@ -164,8 +170,8 @@ bool GameLayer::isRectCollision (CCRect rect1, CCRect rect2)
 	float h1 = rect1.size.height;//矩形1的高度
 	float x2 = rect2.origin.x;
 	float y2 = rect2.origin.y;
-	float w2 = rect2.size.width;
-	float h2 = rect2.size.height;
+	float w2 = rect2.size.width+100;
+	float h2 = rect2.size.height+100;
 
 	if (x1+w1*0.5<x2-w2*0.5)  
 		return false;//矩形1在矩形2左方，两者无碰撞

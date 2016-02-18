@@ -1,6 +1,9 @@
 #pragma once
 
 #include "cocos2d.h"
+#include "GlobalCtrl.h"
+#include "Shana.h"
+
 USING_NS_CC;
 
 class JoyStick : public CCNode,public CCTouchDelegate{
@@ -13,6 +16,7 @@ public:
   
     //Í£Ö¹Ò¡¸Ë  
     void stopJoyStick();  
+    virtual void setTouchEnabled(bool value);
 private:
 	bool init( const char* background, const char* mask );
 
@@ -26,11 +30,12 @@ private:
 	bool isCanMove;
 	void showJoyStick();
 	void hideJoyStick();
-
+	Shana* shana;
 	CCRect getJoyStickBox();
 	
 	bool ccTouchBegan( CCTouch* touch, CCEvent* event );
 	void ccTouchMoved( CCTouch* touch, CCEvent* event );
 	void ccTouchEnded( CCTouch* touch, CCEvent* event );
+	void ccTouchCancelled(CCTouch *pTouch, CCEvent *pEvent);
 };
 

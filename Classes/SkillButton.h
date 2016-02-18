@@ -16,8 +16,10 @@ public:
 	CREATE_FUNC( SkillButton );
 	
 	void setShana(Shana* name);
+    virtual void setTouchEnabled(bool value);
 private:
 	void skillMenuCallback( CCObject* pSender );
 	Shana* shana;
+	CCMenu* menu;
 };
 

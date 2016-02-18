@@ -5,7 +5,8 @@
 
 Shana::Shana() {
 	isHurt = false;
-	isAttack = false;
+	isRunning = false;
+	shanaisAttack = false;
 }
 
 
@@ -71,34 +72,34 @@ bool Shana::init() {
 		CCAnimation* hurtAnimn = AnimationUtil::getAnimation( "$legendaryswordsman_4.png", 1, 4 );
 		//setHurtAnimation( CCRepeatForever::create( CCAnimate::create( hurtAnimn ) ) );
 		//setHurtAnimation(CCAnimate::create( hurtAnimn ));
-		setHurtAnimation(CCRepeatForever::create( CCSequence::create(CCAnimate::create( hurtAnimn ),/*CCAnimate::create( standAnimn ),*/
+		setHurtAnimation( CCSequence::create(CCAnimate::create( hurtAnimn ),/*CCAnimate::create( standAnimn ),*/
 			//CCCallFuncN::create(this, callfuncN_selector(Ogre::attackCallbackFunc) ),
-			CCCallFuncN::create(this, callfuncN_selector(Shana::HurtEnd)), nullptr )));
+			CCCallFuncN::create(this, callfuncN_selector(Shana::HurtEnd)), NULL ));
 
 		CCAnimation* skillA = AnimationUtil::getAnimation( "$legendaryswordsman_2.png", 8, 16 );
 		setSkillA( CCSequence::create( CCAnimate::create( skillA ),
 			CCCallFuncN::create(this, callfuncN_selector(Shana::attackCallbackFunc1) ),
-			CCCallFuncN::create(this, callfuncN_selector(Shana::createStandAnimCallback)), nullptr ));
+			CCCallFuncN::create(this, callfuncN_selector(Shana::createStandAnimCallback)), NULL ));
 
 		CCAnimation* skillB = AnimationUtil::getAnimation( "$legendaryswordsman_2extra1.png", 7, 18 );
 		setSkillB( CCSequence::create( CCAnimate::create( skillB ),
 			CCCallFuncN::create(this,callfuncN_selector( Shana::attackCallbackFunc1 ) ),
-			CCCallFuncN::create(this,callfuncN_selector( Shana::createStandAnimCallback ) ), nullptr ) );
+			CCCallFuncN::create(this,callfuncN_selector( Shana::createStandAnimCallback ) ), NULL ) );
 
 		CCAnimation* skillC = AnimationUtil::getAnimation( "$legendaryswordsman_2extra2.png", 8, 16 );
 		setSkillC( CCSequence::create( CCAnimate::create( skillC ),
 			CCCallFuncN::create(this, callfuncN_selector( Shana::attackCallbackFunc1 ) ),
-			CCCallFuncN::create(this,callfuncN_selector( Shana::createStandAnimCallback ) ), nullptr ) );
+			CCCallFuncN::create(this,callfuncN_selector( Shana::createStandAnimCallback ) ), NULL ) );
 
 		CCAnimation* skillD = AnimationUtil::getAnimation( "$legendaryswordsman_2extra3.png", 9, 16 );
 		setSkillD( CCSequence::create( CCAnimate::create( skillD ),
 			CCCallFuncN::create(this,callfuncN_selector( Shana::attackCallbackFunc1 ) ),
-			CCCallFuncN::create( this,callfuncN_selector( Shana::createStandAnimCallback ) ), nullptr ) );
+			CCCallFuncN::create( this,callfuncN_selector( Shana::createStandAnimCallback ) ), NULL ) );
 
-		CCAnimation* skillE = AnimationUtil::getAnimation( "$legendaryswordsman_2extra4.png", 9, 8 );
+		CCAnimation* skillE = AnimationUtil::getAnimation( "$legendaryswordsman_2extra4.png", 9, 9 );
 		setSkillE( CCSequence::create( CCAnimate::create( skillE ),
 			CCCallFuncN::create(this, callfuncN_selector( Shana::attackCallbackFunc1 ) ),
-			CCCallFuncN::create( this,callfuncN_selector( Shana::createStandAnimCallback ) ), nullptr ) );
+			CCCallFuncN::create( this,callfuncN_selector( Shana::createStandAnimCallback ) ), NULL ) );
 		runStandAnimation();
 		//runHurtAnimation();
 		//runDeadAnimation();
@@ -116,22 +117,33 @@ bool Shana::init() {
 
 
 void Shana::attackCallbackFunc1( CCNode* pSender ) {
-	//GlobalCtrl::getInstance()->shana1->isHurt = false;
-	/*
-		CCMenu* menu = GlobalCtrl::getInstance()->menu;
-		menu->setTouchEnabled(true);*/
-	isAttack = false;
-	
+	CCLOG("attackCallbackFunc1 ................." );
+	shanaisAttack = false;
+	//isRunning = false;
+	//GlobalCtrl::getInstance()->joystick->setTouchEnabled(true);
+	//GlobalCtrl::getInstance()->menu->setTouchEnabled(true);
 }
  
 void Shana::HurtEnd( CCNode* pSender){
+	
+	CCLOG("HurtEnd ................." );
+	
+
 	isHurt = false;
-	onStop();
+	runStandAnimation();	
+	setCurSkillState( SKILL_NULL );
+	setCanMutilAttack( false );
+	shanaisAttack = false;
+	//isAttack = false;
+	//GlobalCtrl::getInstance()->joystick->setTouchEnabled(true);
+	//GlobalCtrl::getInstance()->menu->setTouchEnabled(true);
+	//onStop();
 }
 
 
 void Shana::createStandAnimCallback(CCNode* pSender){
-	onStop();
+	//onStop();
+	runStandAnimation();
 }
 
 void Shana::updateBox() {
@@ -185,7 +197,7 @@ void Shana::updateSelf() {
 
 void Shana::centerViewOfPoint( CCPoint pos ) {
 	CCSize visibleSize = CCEGLView::sharedOpenGLView()->getVisibleSize();
-	auto map = GlobalCtrl::getInstance()->tilemap;
+	CCTMXTiledMap* map = GlobalCtrl::getInstance()->tilemap;
 
 	float mapWidth = map->getMapSize().width*map->getTileSize().width;
 	float mapHeight = map->getMapSize().height*map->getTileSize().height;
@@ -219,9 +231,15 @@ void Shana::centerViewOfPoint( CCPoint pos ) {
 void Shana::onStop() {
 	runStandAnimation();
 }
+ void Shana::HurtAnimation(){
+	 //isRunning = false;
+	CocosDenshion::SimpleAudioEngine::sharedEngine()->playEffect("sound/0051_0000.mp3");
+	this->runHurtAnimation(); 
+}
 
 
 void Shana::runSkillAAnimation() {
+	 CocosDenshion::SimpleAudioEngine::sharedEngine()->playEffect("sound/0046_0000.mp3");
 	Role::runSkillAAnimation();
 	setCurSkillState( SKILL_A );
 	setCanMutilAttack( true );
@@ -230,6 +248,7 @@ void Shana::runSkillAAnimation() {
 
 
 void Shana::runSkillBAnimation() {
+	CocosDenshion::SimpleAudioEngine::sharedEngine()->playEffect("sound/0047_0000.mp3");
 	Role::runSkillBAnimation();
 	setCurSkillState( SKILL_B );
 	//setCanMutilAttack( false );
@@ -238,6 +257,7 @@ void Shana::runSkillBAnimation() {
 
 
 void Shana::runSkillCAnimation() {
+	 CocosDenshion::SimpleAudioEngine::sharedEngine()->playEffect("sound/0041_0000.mp3");
 	Role::runSkillCAnimation();
 	setCurSkillState( SKILL_C );
 	//setCanMutilAttack( false );
@@ -246,6 +266,7 @@ void Shana::runSkillCAnimation() {
 
 
 void Shana::runSkillDAnimation() {
+	 CocosDenshion::SimpleAudioEngine::sharedEngine()->playEffect("sound/004D_0000.mp3");
 	Role::runSkillDAnimation();
 	setCurSkillState( SKILL_D );
 	//setCanMutilAttack( false );
@@ -253,18 +274,31 @@ void Shana::runSkillDAnimation() {
 }
 
 void Shana::runSkillEAnimation() {
+	 CocosDenshion::SimpleAudioEngine::sharedEngine()->playEffect("sound/0045_0000.mp3");
+	//isAttack = false;
+	CCLOG("================>>>>>>>>>>>>>>>enter Shana runSkillEAnimation");
 	Role::runSkillEAnimation();
+	CCLOG("================>>>>>>>>>>>>>>>enter Shana runSkillEAnimation111111111");
 	float width = getSprite()->getContentSize().width;
 	float mapWidth = GlobalCtrl::getInstance()->tilemap->getContentSize().width;
 	CCPoint curPos = getPosition();
-	CCLOG("updateSelf %f\n ", curPos.x);
-	double distance =min(mapWidth - width - curPos.x, 200);
-	if(getSprite()->isFlipX())
-		distance = -min(curPos.x - width, 200);
+	CCLOG("updateSelf %f\n ", curPos.x);/*
+	double distance =min(mapWidth - width - curPos.x, 200);*/
+	
+	double distance =mapWidth - width - curPos.x< 200?mapWidth - width - curPos.x:200;
+	if(getSprite()->isFlipX())/*
+		distance = -min(curPos.x - width, 200);*/
+		distance = -(curPos.x - width< 200?curPos.x - width:200);
 	CCLOG("%f %f %f\n",distance,width);
 	CCMoveBy* move = CCMoveBy::create( 0.5f, CCPoint( distance, 0 ) );
 	this->runAction( move );
 	setCurSkillState( SKILL_NULL );
+	CCLOG("================>>>>>>>>>>>>>>>enter Shana runSkillEAnimatio22222222222222222n");
 	setCanMutilAttack( false );
+	shanaisAttack = false;
+	if(!(GlobalCtrl::getInstance()->shana->shanaisAttack))
+	CCLOG("================>>>>>>>>>>>>>>>enter Shana runSkillEAnimati3333333333333333on");
+	else
+	CCLOG("================>>>>>>>>>>>>>>>enter Shana runSkillEAnimati444444444444444on");
 	//isHurt = false;
 }

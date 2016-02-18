@@ -4,6 +4,9 @@
 USING_NS_CC;
 
 class Shana;
+class OperatorLayer;
+class JoyStick;
+class SkillButton;
 class GlobalCtrl {
 public:
 	GlobalCtrl();
@@ -12,8 +15,10 @@ public:
 	static void destroyInstance();
 
 	Shana* shana;
+	JoyStick* joyStick;
+	SkillButton* skillButton;
+	OperatorLayer* operatorLayer;
 	CCMenu* menu;
-	//Shana* shana1;
 	CCTMXTiledMap* tilemap;
 
 private:

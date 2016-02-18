@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="40" height="10" tilewidth="32" tileheight="32" nextobjectid="3">
+ <tileset firstgid="1" name="bakcground" tilewidth="32" tileheight="32">
+  <image source="bakcground.png" width="1378" height="320"/>
+ </tileset>
+ <layer name="floor" width="40" height="10">
+  <data encoding="base64" compression="zlib">
+   eJztw9kylgEAANCvoaQiRSWFRKkuUqmQtJAlS3sXiRSFRFpEiFxYKiohhYQi5CU7r9HMf2ZOEISEhPyvwtYFQbjr3WCEG410k5vdYpTRbjXGbW431jh3uNNdxrvbBPe410STTHafKe431TQPeNB0D3nYIx41w2Me94SZnvSUp80y2xzPmOtZ8zzneS940XwLvGShRRZb4mVLLbPcCq941Wte94Y3veVt71jpXaus9p413veBtdb50EfW22Cjj23yic22+NRWn/ncF760zVe22+FrO+2y2zf22Otb++x3wEGHfOd7PzjsiB/95GdH/eKY40741Um/+d0pp53xh7P+dM55F/zlbxdd8o/LrrjqX9f8B+oyNwE=
+  </data>
+ </layer>
+ <layer name="background" width="40" height="10">
+  <data encoding="base64" compression="zlib">
+   eJztw8N7FwAAANBfNpatpUO2zVVLh2zbxiG71qotW4ds28Yh27b1/osue9/3ogUCgejGMKaxjG0c4xrP+CYwoYlMbBKTGmQyk5vClKYytWlMazrTm8GMZjKzWcxqNoPNbg5zmsvc5jGv+cxvAQtayMIWsajFLG4JS1rK0paxrOUsbwUrWsnKVrGq1axuDWsaYi1rW8dQ61rP+jawoY1sbBOb2szmtrClrWxtG9vazvZ2sKOd7GwXu9rN7vawp73sbR/72s/+DnCggxzsEIc6zOGOcKSjHO0YxzrO8U5wopOc7BSnOs3pzjDMmYY7y9nOMcJI5zrP+S5woYtc7BKXuszlrnClq1ztGte6zvVucKOb3OwWt7rN7e5wp7vc7R73us/9HvCghzzsEY96zOOe8KSnPO0Zz3rO817wope87BWves3r3vCmt7ztHe96z/s+8KGPfOwTn/rM577wpa987Rvf+s73fvCjn/zsF7/6ze/+8Ke//O0f/waiRPm//gGgbngB
+  </data>
+ </layer>
+ <objectgroup name="Role" visible="0">
+  <object id="1" name="shana" x="697" y="254"/>
+ </objectgroup>
+</map>

@@ -2,18 +2,18 @@
 
 
 Role::Role():
-	_sprite(nullptr),
-	_runAnimn(nullptr),
-	_standAnimn(nullptr),
-	_hurtAnimn(nullptr),
+	_sprite(NULL),
+	_runAnimn(NULL),
+	_standAnimn(NULL),
+	_hurtAnimn(NULL),
 	_velocity(ccp(0,0)),
-	_deadAnimn(nullptr),
+	_deadAnimn(NULL),
 	_allowMove(true),
-	_skillA(nullptr),
-	_skillB(nullptr),
-	_skillC(nullptr),
-	_skillD(nullptr),
-	_skillE(nullptr)
+	_skillA(NULL),
+	_skillB(NULL),
+	_skillC(NULL),
+	_skillD(NULL),
+	_skillE(NULL)
 {}
 
 
@@ -83,10 +83,9 @@ void Role::runRunAnimation() {
 }
 
 void Role::runHurtAnimation() {
-	CCLOG("Role runHurtAnimation");
+	//CCLOG("Role runHurtAnimation");
 	if ( changeState( AC_HURT ) ) {
 		getSprite()->stopAllActions();
-		CCLOG("Role runHurtAnimation             1111");
 		getSprite()->runAction( getHurtAnimation() );
 		setAllowMove( false );
 	}
@@ -132,13 +131,14 @@ void Role::runSkillEAnimation() {
 		setAllowMove( false );
 		getSprite()->stopAllActions();
 		getSprite()->runAction( getSkillE() );
+		//runStandAnimation();
 	}
 }
 
 
 void Role::onMove( CCPoint direction, float distance ) {
 	
-	CCLOG("Position %f %f\n",distance,getPositionX());
+	//CCLOG("Position %f %f\n",distance,getPositionX());
 	if ( getAllowMove() ) {
 		bool isFlippedX = (direction.x < 0? true : false);
 		//CCLOG("isFlippedX %f\n",isFlippedX);

@@ -1,8 +1,7 @@
-#include"cocos2d.h"
-#include "Monster.h"
+#include"cocos2d.h"/*
+#include "Monster.h"*/
 #include"Ogre.h"
 #include "Shana.h"
-//#include "Ogre.h"
 #include "GlobalCtrl.h"
 
 USING_NS_CC;
@@ -25,7 +24,7 @@ public:
 	bool isRectCollision (CCRect rect1, CCRect rect2);
     //添加目标通知观察者之后调用的事件  
     void ObserverFunction(CCObject * object);  
-	Monster* monster1;
+	//Monster* monster1;
 	Ogre* monster2;
 	CREATE_FUNC(GameLayer);
 };

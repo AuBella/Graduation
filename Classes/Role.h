@@ -2,6 +2,7 @@
 
 #include "cocos2d.h"
 #include"GlobalCtrl.h"
+#include "SimpleAudioEngine.h"
 USING_NS_CC;
 
 enum RoleActionState {

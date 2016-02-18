@@ -1,16 +1,24 @@
 #include "GlobalCtrl.h"
 
 
-GlobalCtrl* GlobalCtrl::_instance = nullptr;
+GlobalCtrl* GlobalCtrl::_instance = NULL;
 
-GlobalCtrl::GlobalCtrl() {}
+GlobalCtrl::GlobalCtrl() {
+	//joyStick = nullptr;
+	shana = NULL;
+	joyStick = NULL;
+	skillButton = NULL;
+	operatorLayer = NULL;
+	menu = NULL;
+	tilemap = NULL;
+}
 
 
 GlobalCtrl::~GlobalCtrl() {}
 
 
 GlobalCtrl* GlobalCtrl::getInstance() {
-	if ( _instance == nullptr ) {
+	if ( _instance == NULL ) {
 		_instance = new GlobalCtrl();
 	}
 	return _instance;
