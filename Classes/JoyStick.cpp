@@ -59,16 +59,6 @@ bool JoyStick::init( const char* background, const char* mask ) {
 
 bool JoyStick::ccTouchBegan( CCTouch* touch, CCEvent* event ) {
 	CCPoint pos = touch->getLocation();
-	CCLOG ("Containt: %f %f %f %f  %f %f\n", getJoyStickBox().getMinX(), getJoyStickBox().getMinY() , getJoyStickBox().getMaxX(), getJoyStickBox().getMaxY(), pos.x, pos.y);
-	
-	if(shana->isHurt)
-		CCLOG("ishurt 333333333333333");
-	else
-		CCLOG("isHurt 444444444444444");	
-	if(shana->shanaisAttack)
-		CCLOG("ishurt 111111111111111111.");
-	else
-		CCLOG("isHurt 222222222222222222_");
 	if ( getJoyStickBox().containsPoint( pos ) ) {
 	    currentPoint = pos;  
 		shana->isRunning = true;
@@ -96,7 +86,6 @@ void JoyStick::ccTouchMoved( CCTouch* touch, CCEvent* event ) {
 		
 		CCPoint direction = ccpSub(currentPoint,centerPoint) /ccpDistance(currentPoint,centerPoint);
 		this->mask->setPosition( currentPoint);
-		CCLOG(" ccTouchMoved position: %f %f", direction.x, direction.y);
 		GlobalCtrl::getInstance()->shana->onMove( direction, distance );
 	}
 }
@@ -104,7 +93,6 @@ void JoyStick::ccTouchMoved( CCTouch* touch, CCEvent* event ) {
 
 void JoyStick::ccTouchEnded( CCTouch* touch, CCEvent* event ) {
 	CCPoint pos = touch->getLocation();
-	CCLOG ("ended: %f %f\n", pos.x, pos.y);
 
 	hideJoyStick();
 	isCanMove = false;
@@ -115,7 +103,6 @@ void JoyStick::ccTouchEnded( CCTouch* touch, CCEvent* event ) {
 
 void JoyStick::ccTouchCancelled(CCTouch *pTouch, CCEvent *pEvent){
 	CCPoint pos = pTouch->getLocation();
-	CCLOG ("ended: %f %f\n", pos.x, pos.y);
 
 	hideJoyStick();
 	isCanMove = false;

@@ -31,7 +31,7 @@ void SkillButton::setTouchEnabled(bool value){
 }
 
 void SkillButton::skillMenuCallback( CCObject* pSender ) {
-	if( (!(shana->isHurt)) && (!(shana->shanaisAttack)) && (!(shana->isRunning))){
+	if( (!(shana->isHurt)) && (!(shana->shanaisAttack)) && (!(shana->isRunning)) && (!shana->isDead)){
 		int num = rand() % 100;
 		CCNotificationCenter::sharedNotificationCenter()->postNotification("Attack",(CCObject *)num);
 	

@@ -13,7 +13,9 @@ Role::Role():
 	_skillB(NULL),
 	_skillC(NULL),
 	_skillD(NULL),
-	_skillE(NULL)
+	_skillE(NULL),
+	redBlood(100),
+	isDead(false)
 {}
 
 
@@ -137,11 +139,8 @@ void Role::runSkillEAnimation() {
 
 
 void Role::onMove( CCPoint direction, float distance ) {
-	
-	//CCLOG("Position %f %f\n",distance,getPositionX());
 	if ( getAllowMove() ) {
 		bool isFlippedX = (direction.x < 0? true : false);
-		//CCLOG("isFlippedX %f\n",isFlippedX);
 		getSprite()->setFlipX( isFlippedX );
 		distance = (distance>15.0 ? 3.0f : 1.0f);
 		setVelocity( direction*distance );

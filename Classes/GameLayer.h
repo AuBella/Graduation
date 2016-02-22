@@ -3,6 +3,7 @@
 #include"Ogre.h"
 #include "Shana.h"
 #include "GlobalCtrl.h"
+//#include "CommonBloodBar.h"
 
 USING_NS_CC;
 //class GameLayer : public cocos2d::CCLayer{
@@ -11,6 +12,7 @@ private:
 	CCTMXTiledMap* tilemap;
 	void addShana();
 	void addOgre();
+	void addBloodBar();
 public:
 	GameLayer(void);
 	~GameLayer(void);

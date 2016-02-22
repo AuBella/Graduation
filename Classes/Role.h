@@ -62,9 +62,11 @@ public:
 
 	
 	virtual void onMove( CCPoint direction, float distance );
+	bool isDead;
+	int redBlood;
 protected:
 	bool changeState( RoleActionState state );
 	void createStandAnimCallback(CCNode* pSender);
-
+	
 };
 

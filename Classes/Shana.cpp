@@ -7,6 +7,8 @@ Shana::Shana() {
 	isHurt = false;
 	isRunning = false;
 	shanaisAttack = false;
+	redBlood = 100;
+	isDead = false;
 }
 
 
@@ -20,7 +22,8 @@ bool Shana::init() {
 		CC_BREAK_IF( !Role::init() );
 
 		//设置精灵
-		this->setSprite( CCSprite::create( "$legendaryswordsman_1.png", CCRect( 0, 0, 55, 62 ) ) );
+		m_MonsterSprite =CCSprite::create( "$legendaryswordsman_1.png", CCRect( 0, 0, 55, 62 ));
+		this->setSprite(m_MonsterSprite );
 		this->addChild( getSprite() );
 		//getSprite()->setOpacity(125);
 		//初始化各种动画
@@ -67,7 +70,9 @@ bool Shana::init() {
 		setRunAnimation( CCRepeatForever::create( CCAnimate::create( runAnimn ) ) );
 
 		CCAnimation* deadAnimn = AnimationUtil::getAnimation( "$legendaryswordsman_dead.png", 3, 3 );
-		setDeadAnimation( CCRepeatForever::create( CCAnimate::create( deadAnimn ) ) );
+		//setDeadAnimation( CCRepeatForever::create( CCAnimate::create( deadAnimn ) ) );
+		setDeadAnimation( CCRepeatForever::create( CCSequence::create(CCAnimate::create( deadAnimn ),CCCallFuncN::create(this, callfuncN_selector(Shana::DeadEnd) ), NULL) ) );
+
 
 		CCAnimation* hurtAnimn = AnimationUtil::getAnimation( "$legendaryswordsman_4.png", 1, 4 );
 		//setHurtAnimation( CCRepeatForever::create( CCAnimate::create( hurtAnimn ) ) );
@@ -101,15 +106,11 @@ bool Shana::init() {
 			CCCallFuncN::create(this, callfuncN_selector( Shana::attackCallbackFunc1 ) ),
 			CCCallFuncN::create( this,callfuncN_selector( Shana::createStandAnimCallback ) ), NULL ) );
 		runStandAnimation();
-		//runHurtAnimation();
-		//runDeadAnimation();
 		this->updateBox();
 		this->setVelocity( CCPoint(0,0) );
 		this->setCurSkillState( SKILL_NULL );
 		this->setCanMutilAttack( false );
-
 		this->scheduleUpdate();
-
 		bRet = true;
 	} while ( false );
 	return bRet;
@@ -117,32 +118,40 @@ bool Shana::init() {
 
 
 void Shana::attackCallbackFunc1( CCNode* pSender ) {
-	CCLOG("attackCallbackFunc1 ................." );
 	shanaisAttack = false;
-	//isRunning = false;
-	//GlobalCtrl::getInstance()->joystick->setTouchEnabled(true);
-	//GlobalCtrl::getInstance()->menu->setTouchEnabled(true);
 }
- 
-void Shana::HurtEnd( CCNode* pSender){
-	
-	CCLOG("HurtEnd ................." );
-	
 
+void Shana::HurtAnimation(){
+	redBlood -= 10;
+	redBlood < 0?0:redBlood;
+	CCNotificationCenter::sharedNotificationCenter()->postNotification("Hurt",(CCObject *)redBlood);
+	if(redBlood <= 0){
+		isDead = true;
+		int effectId = CocosDenshion::SimpleAudioEngine::sharedEngine()->playEffect("sound/0312_03AF.wav");
+		runDeadAnimation();
+	}else{
+		CocosDenshion::SimpleAudioEngine::sharedEngine()->playEffect("sound/0051_0000.mp3");
+		this->runHurtAnimation();
+	}
+}
+
+void Shana::HurtEnd( CCNode* pSender){
 	isHurt = false;
 	runStandAnimation();	
 	setCurSkillState( SKILL_NULL );
 	setCanMutilAttack( false );
 	shanaisAttack = false;
-	//isAttack = false;
-	//GlobalCtrl::getInstance()->joystick->setTouchEnabled(true);
-	//GlobalCtrl::getInstance()->menu->setTouchEnabled(true);
-	//onStop();
 }
 
 
+void Shana::DeadEnd(CCNode* pSender){
+	if(isDead){
+		this->removeChild(m_MonsterSprite,true);
+		this->unschedule(schedule_selector(Shana::update));
+	}
+ }
+
 void Shana::createStandAnimCallback(CCNode* pSender){
-	//onStop();
 	runStandAnimation();
 }
 
@@ -177,7 +186,6 @@ void Shana::updateSelf() {
 		CCPoint curPos = getPosition();
 		CCPoint expectPos = curPos + getVelocity();
 		CCPoint actualPos = expectPos;
-		CCLOG("updateSelf %f %f\n ", expectPos.x, actualPos.x);
 		float width = getSprite()->getContentSize().width;
 		float height = getSprite()->getContentSize().height;
 
@@ -215,26 +223,8 @@ void Shana::centerViewOfPoint( CCPoint pos ) {
 	getParent()->setPosition( disPos );
 }
 
-//void Shana::onMove( CCPoint direction, float distance ) {
-//	
-//	CCLOG("Position %f %f\n",distance,getPositionX());
-//	if ( getAllowMove() ) {
-//		bool isFlippedX = (direction.x < 0? true : false);
-//		//CCLOG("isFlippedX %f\n",isFlippedX);
-//		getSprite()->setFlipX( isFlippedX );
-//		distance = (distance>15.0 ? 3.0f : 1.0f);
-//		setVelocity( direction*distance );
-//		runRunAnimation();
-//	}
-//}
-
 void Shana::onStop() {
 	runStandAnimation();
-}
- void Shana::HurtAnimation(){
-	 //isRunning = false;
-	CocosDenshion::SimpleAudioEngine::sharedEngine()->playEffect("sound/0051_0000.mp3");
-	this->runHurtAnimation(); 
 }
 
 
@@ -243,7 +233,6 @@ void Shana::runSkillAAnimation() {
 	Role::runSkillAAnimation();
 	setCurSkillState( SKILL_A );
 	setCanMutilAttack( true );
-	//isHurt = false;
 }
 
 
@@ -251,8 +240,6 @@ void Shana::runSkillBAnimation() {
 	CocosDenshion::SimpleAudioEngine::sharedEngine()->playEffect("sound/0047_0000.mp3");
 	Role::runSkillBAnimation();
 	setCurSkillState( SKILL_B );
-	//setCanMutilAttack( false );
-	//isHurt = false;
 }
 
 
@@ -260,8 +247,6 @@ void Shana::runSkillCAnimation() {
 	 CocosDenshion::SimpleAudioEngine::sharedEngine()->playEffect("sound/0041_0000.mp3");
 	Role::runSkillCAnimation();
 	setCurSkillState( SKILL_C );
-	//setCanMutilAttack( false );
-	//isHurt = false;
 }
 
 
@@ -269,36 +254,22 @@ void Shana::runSkillDAnimation() {
 	 CocosDenshion::SimpleAudioEngine::sharedEngine()->playEffect("sound/004D_0000.mp3");
 	Role::runSkillDAnimation();
 	setCurSkillState( SKILL_D );
-	//setCanMutilAttack( false );
-	//isHurt = false;
 }
 
 void Shana::runSkillEAnimation() {
 	 CocosDenshion::SimpleAudioEngine::sharedEngine()->playEffect("sound/0045_0000.mp3");
-	//isAttack = false;
-	CCLOG("================>>>>>>>>>>>>>>>enter Shana runSkillEAnimation");
 	Role::runSkillEAnimation();
-	CCLOG("================>>>>>>>>>>>>>>>enter Shana runSkillEAnimation111111111");
 	float width = getSprite()->getContentSize().width;
 	float mapWidth = GlobalCtrl::getInstance()->tilemap->getContentSize().width;
 	CCPoint curPos = getPosition();
-	CCLOG("updateSelf %f\n ", curPos.x);/*
-	double distance =min(mapWidth - width - curPos.x, 200);*/
 	
 	double distance =mapWidth - width - curPos.x< 200?mapWidth - width - curPos.x:200;
-	if(getSprite()->isFlipX())/*
-		distance = -min(curPos.x - width, 200);*/
+	if(getSprite()->isFlipX())
 		distance = -(curPos.x - width< 200?curPos.x - width:200);
 	CCLOG("%f %f %f\n",distance,width);
 	CCMoveBy* move = CCMoveBy::create( 0.5f, CCPoint( distance, 0 ) );
 	this->runAction( move );
 	setCurSkillState( SKILL_NULL );
-	CCLOG("================>>>>>>>>>>>>>>>enter Shana runSkillEAnimatio22222222222222222n");
 	setCanMutilAttack( false );
 	shanaisAttack = false;
-	if(!(GlobalCtrl::getInstance()->shana->shanaisAttack))
-	CCLOG("================>>>>>>>>>>>>>>>enter Shana runSkillEAnimati3333333333333333on");
-	else
-	CCLOG("================>>>>>>>>>>>>>>>enter Shana runSkillEAnimati444444444444444on");
-	//isHurt = false;
 }

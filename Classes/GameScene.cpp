@@ -17,7 +17,6 @@ bool GameScene::init(){
 		return false;
 	_gameLayer = GameLayer::create();
 	this->addChild(_gameLayer, 0);
-
 	OperatorLayer* operatorLayer = OperatorLayer::create();
 		addChild( operatorLayer, 2 );
 		

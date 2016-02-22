@@ -46,5 +46,7 @@ private:
 	//void attackCallbackFunc( Node* pSender );
 	void attackCallbackFunc1( CCNode* pSender );
 	void createStandAnimCallback(CCNode* pSender);
+	void DeadEnd(CCNode* pSender);
+	CCSprite* m_MonsterSprite;
 };
 
