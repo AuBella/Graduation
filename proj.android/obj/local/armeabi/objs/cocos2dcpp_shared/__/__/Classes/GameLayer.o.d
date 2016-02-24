@@ -207,8 +207,7 @@ obj/local/armeabi/objs/cocos2dcpp_shared/__/__/Classes/GameLayer.o: \
  jni/../../Classes/GlobalCtrl.h \
  C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/CocosDenshion/android/../include/SimpleAudioEngine.h \
  C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/CocosDenshion/android/../include/Export.h \
- jni/../../Classes/AnimationUtil.h jni/../../Classes/Shana.h \
- jni/../../Classes/ProgressView.h
+ jni/../../Classes/AnimationUtil.h jni/../../Classes/Shana.h
 
 jni/../../Classes/GameLayer.h:
 
@@ -631,5 +630,3 @@ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/CocosDenshion/android/../include/Expor
 jni/../../Classes/AnimationUtil.h:
 
 jni/../../Classes/Shana.h:
-
-jni/../../Classes/ProgressView.h:

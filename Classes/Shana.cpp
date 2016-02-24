@@ -71,7 +71,7 @@ bool Shana::init() {
 
 		CCAnimation* deadAnimn = AnimationUtil::getAnimation( "$legendaryswordsman_dead.png", 3, 3 );
 		//setDeadAnimation( CCRepeatForever::create( CCAnimate::create( deadAnimn ) ) );
-		setDeadAnimation( CCRepeatForever::create( CCSequence::create(CCAnimate::create( deadAnimn ),CCCallFuncN::create(this, callfuncN_selector(Shana::DeadEnd) ), NULL) ) );
+		setDeadAnimation( ( CCSequence::create(CCAnimate::create( deadAnimn ),CCCallFuncN::create(this, callfuncN_selector(Shana::DeadEnd) ), NULL) ) );
 
 
 		CCAnimation* hurtAnimn = AnimationUtil::getAnimation( "$legendaryswordsman_4.png", 1, 4 );
@@ -105,12 +105,13 @@ bool Shana::init() {
 		setSkillE( CCSequence::create( CCAnimate::create( skillE ),
 			CCCallFuncN::create(this, callfuncN_selector( Shana::attackCallbackFunc1 ) ),
 			CCCallFuncN::create( this,callfuncN_selector( Shana::createStandAnimCallback ) ), NULL ) );
+		
+		this->scheduleUpdate();
 		runStandAnimation();
 		this->updateBox();
 		this->setVelocity( CCPoint(0,0) );
 		this->setCurSkillState( SKILL_NULL );
 		this->setCanMutilAttack( false );
-		this->scheduleUpdate();
 		bRet = true;
 	} while ( false );
 	return bRet;
@@ -124,7 +125,14 @@ void Shana::attackCallbackFunc1( CCNode* pSender ) {
 void Shana::HurtAnimation(){
 	redBlood -= 10;
 	redBlood < 0?0:redBlood;
-	CCNotificationCenter::sharedNotificationCenter()->postNotification("Hurt",(CCObject *)redBlood);
+	/*CCArray* pArray;
+	pArray=createWithCapacity(100);
+	pArray= CCArray::create(); */
+	/*CCArray* temparray; temparray->retain();
+	temparray = CCArray::create();
+	temparray->addObject(redBlood);*/
+	int blood = 1000+redBlood;
+	CCNotificationCenter::sharedNotificationCenter()->postNotification("Hurt",(CCObject *)( blood));
 	if(redBlood <= 0){
 		isDead = true;
 		int effectId = CocosDenshion::SimpleAudioEngine::sharedEngine()->playEffect("sound/0312_03AF.wav");
@@ -146,7 +154,7 @@ void Shana::HurtEnd( CCNode* pSender){
 
 void Shana::DeadEnd(CCNode* pSender){
 	if(isDead){
-		this->removeChild(m_MonsterSprite,true);
+		//this->removeChild(m_MonsterSprite,true);
 		this->unschedule(schedule_selector(Shana::update));
 	}
  }

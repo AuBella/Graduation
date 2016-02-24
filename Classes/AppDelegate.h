@@ -2,6 +2,9 @@
 #define  _APP_DELEGATE_H_
 
 #include "cocos2d.h"
+#include "HelloWorldScene.h"
+#include "GameScene.h"
+#include "SimpleAudioEngine.h"
 
 /**
 @brief    The cocos2d Application.
@@ -32,6 +35,8 @@ public:
     @param  the pointer of the application
     */
     virtual void applicationWillEnterForeground();
+private:
+	GameScene *pScene;
 };
 
 #endif // _APP_DELEGATE_H_

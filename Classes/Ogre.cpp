@@ -6,6 +6,7 @@ Ogre::Ogre(){
 	isHurt = false;
 	isDead = false;
 	isAttack = false;
+	redBlood = 100;
 	flag = 0;
 };
 
@@ -25,41 +26,26 @@ bool Ogre::init(){
 		if( !Role::init())
 			return false;
 		//设置精灵
-		m_MonsterSprite = CCSprite::create( "$tio_1.png", CCRect( 0, 0, 155, 162 ) );
-
-
-		Monster_xue = new ProgressView();  
-		if(faceDirecton)//因为怪物中心不在图片中心，所以只能根据怪物的脸朝向，设置血条的横坐标
-			Monster_xue->setPosition(ccp(m_MonsterSprite->getPositionX()+20, m_MonsterSprite->getPositionY()+50));//设置在怪物上头  
-		else
-			Monster_xue->setPosition(ccp(m_MonsterSprite->getPositionX()-20, m_MonsterSprite->getPositionY()+50));  
-		Monster_xue->setBackgroundTexture("xue_back.png");  
-		Monster_xue->setForegroundTexture("xue_fore.png");  
-		Monster_xue->setTotalProgress(300.0f);//设置总血量
-		Monster_xue->setCurrentProgress(300.0f); //设置初始血量
-
-		this->addChild(Monster_xue);
-
-
-
+		m_MonsterSprite = CCSprite::create( "monster_2_stand.png", CCRect( 0, 0, 86, 97 ) );
+		m_MonsterSprite->setScale(0.6);
 		this->setSprite( m_MonsterSprite );
 		this->addChild( getSprite() );
 		this->setPosition(240, 200);
 		//初始化各种动画
-		CCAnimation* standAnimn = AnimationUtil::getAnimation( "$tio_1.png", 3, 6 );
+		CCAnimation* standAnimn = AnimationUtil::getAnimation( "monster_2_stand.png", 3, 3 );
 		setStandAnimation( CCRepeatForever::create( CCAnimate::create( standAnimn ) ) );
 
-		CCAnimation* runAnimn = AnimationUtil::getAnimation( "$tio_forward.png", 2, 2 );
+		CCAnimation* runAnimn = AnimationUtil::getAnimation( "monster_2_run.png", 4, 4 );
 		setRunAnimation( CCRepeatForever::create( CCAnimate::create( runAnimn ) ) );
 
-		CCAnimation* deadAnimn = AnimationUtil::getAnimation( "$tio_dead.png", 2, 2 );
+		CCAnimation* deadAnimn = AnimationUtil::getAnimation( "monster_2_attack_1.png", 1, 1 );
 		setDeadAnimation( CCRepeatForever::create( CCSequence::create(CCAnimate::create( deadAnimn ),CCCallFuncN::create(this, callfuncN_selector(Ogre::DeadEnd) ), NULL) ) );
 
-		CCAnimation* hurtAnimn = AnimationUtil::getAnimation( "$tio_4.png", 2, 8 );
+		CCAnimation* hurtAnimn = AnimationUtil::getAnimation( "monster_2_hurt.png", 1, 4 );
 		setHurtAnimation(CCRepeatForever::create( CCSequence::create(CCAnimate::create( hurtAnimn ),/*CCAnimate::create( standAnimn ),*/
 			CCCallFuncN::create(this, callfuncN_selector(Ogre::HurtEnd)), NULL )));
 
-		CCAnimation* skillA = AnimationUtil::getAnimation( "$tio_2.png", 3, 6 );
+		CCAnimation* skillA = AnimationUtil::getAnimation( "monster_2_attack.png", 3, 6 );
 		setSkillA( CCSequence::create( CCAnimate::create( skillA ),
 			CCCallFuncN::create(this, callfuncN_selector(Ogre::attackCallbackFunc) ),
 			CCCallFuncN::create(this, callfuncN_selector(Ogre::createStandAnimCallback)), NULL ));
@@ -73,7 +59,6 @@ bool Ogre::init(){
 	isHurt = true;
 	//effectId = CocosDenshion::SimpleAudioEngine::sharedEngine()->playEffect("sound/hurt.wav");
 	effectId = CocosDenshion::SimpleAudioEngine::sharedEngine()->playEffect("sound/0312_00EB.wav");
-	
 	//int effectId1 = CocosDenshion::SimpleAudioEngine::sharedEngine()->playEffect("sound/hurt1.wav");   
 	//CCLOG("enter HURTAnimation   %d ", effectId); 
 	this->runHurtAnimation(); 
@@ -81,8 +66,10 @@ bool Ogre::init(){
 
  void Ogre::HurtEnd( CCNode* pSender){ 
 	CCLOG("ogre hurtend ");
-	Monster_xue->setCurrentProgress(Monster_xue->getCurrentProgress()-10);
-	if(Monster_xue->getCurrentProgress() > 0){
+	redBlood-=10;
+	redBlood <= 0?0:redBlood;
+	CCNotificationCenter::sharedNotificationCenter()->postNotification("Hurt",(CCObject *)( 100+ redBlood));
+	if(redBlood > 0){
 		CocosDenshion::SimpleAudioEngine::sharedEngine()->stopEffect(effectId);
 		runStandAnimation();
 		isHurt = false;
@@ -99,7 +86,6 @@ bool Ogre::init(){
  void Ogre::DeadEnd(CCNode* pSender){
 	if(isDead){
 		this->removeChild(m_MonsterSprite,true);
-		this->removeChild(Monster_xue,true);
 		
 		this->unschedule(schedule_selector(Ogre::update));
 		this->unschedule(schedule_selector(Ogre::updateMonster));
@@ -160,14 +146,15 @@ void Ogre::updateMonster(float delta){
 void Ogre::update(float dt){
 	//if(shana->isDead)
 	//	this->unschedule(schedule_selector(Ogre::update));
-	if(faceDirecton != this->getSprite()->isFlipX())
-		this->getSprite()->setFlipX( faceDirecton );
+	
 	//CCLOG("ENTER update attack area ================>>>>>>>>>>>>>>>>> %f\n", dis);
 	float x = shana->getPositionX()-(this->getPositionX()+tileMap->getPositionX());
 	//得到两点y的距离，记得怪物的坐标要加上地图的
 	float y = shana->getPositionY()-(this->getPositionY()+tileMap->getPositionY());
 	//先计算怪物和英雄的距离
 	dis = sqrt(pow(x,2) + pow(y,2));
+	if(faceDirecton != this->getSprite()->isFlipX() && abs(x) > 80)
+		this->getSprite()->setFlipX( faceDirecton );
 	//进入追踪区域
 	if(dis > 200 &&dis <201){
 		runStandAnimation();

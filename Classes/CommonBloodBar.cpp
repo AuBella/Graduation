@@ -4,41 +4,58 @@ CommonBloodBar::CommonBloodBar(){
 }
 CommonBloodBar::~CommonBloodBar(){}
 
-//在init中直接调用 传参数即可使用
-//
-//this->getBloodbar(guan1,20.0f);
 bool CommonBloodBar::init(){
 	if(!CCNode::init()){
 		return false;
 	}
-	//CCSprite *pBloodKongSp = CCSprite::create("b.png");//空血条
-	//pBloodKongSp->setPosition(Vec2(guaisprite->getContentSize().width / 2, guaisprite->getContentSize().height / 1.1));
-	//guaisprite->addChild(pBloodKongSp);
-	//CCSprite *pBloodManSp = CCSprite::create("z.png");//满血条
-	//CCProgressTimer *pBloodProGress = CCProgressTimer::create(pBloodManSp);
-	//pBloodProGress->setType(kCCProgressTimerTypeBar);
-	//pBloodProGress->setBarChangeRate(Vec2(1, 0));
-	//pBloodProGress->setMidpoint(Vec2(0, 0));
-	//pBloodProGress->setPosition(Vec2(guaisprite->getContentSize().width / 2, guaisprite->getContentSize().height / 1.1));
-	//pBloodProGress->setPercentage(a);
-	//guaisprite->addChild(pBloodProGress, 1, 1);
-	CCSprite* commonbackBlood = CCSprite::create("HeroState4.png");
-	CCSprite* heroIcon = CCSprite::create("HeroState1.png");
-	CCSprite* redProgress = CCSprite::create("HeroState2.png");
-	CCSprite* blueProgress = CCSprite::create("HeroState3.png");
-	heroIcon->setAnchorPoint(ccp(0, 0));
-	commonbackBlood->addChild(heroIcon);
-	//CCProgressTimer *pBloodProGress = CCProgressTimer::create(pBloodManSp);
-	redBloodProgress = CCProgressTimer::create(blueProgress);
+	CCSprite* commonbackBlood = CCSprite::create("Common/Boss_bg_middle.png");
+	CCSprite* commonbackBlood_1 = CCSprite::create("Common/boss_bg_head.png");
+	CCSprite* commonbackBlood_2 = CCSprite::create("Common/Boss_bg_back.png");
+	heroIcon = CCSprite::create("Common/commonIconBg.png");
+	monsterIcon = CCSprite::create("Common/commonIconBg.png");
+	heroIcon->setScale(0.7);
+	monsterIcon->setScale(0.7);
+	
+	CCSprite* redProgress = CCSprite::create("Common/hp_monster_r.png"); 
+	//CCTexture2D* texture = CCTextureCache::sharedTextureCache()->addImage("Common/hp_monster_y.png");
+ //   redProgress->setTexture(texture);
+	CCSprite* redProgress_1 = CCSprite::create("Common/hp_monster_y.png");
+	CCSprite* redProgress_2 = CCSprite::create("Common/hp_monster_b.png");
+	CCSprite* redProgress_3 = CCSprite::create("Common/hp_monster_g.png");
+	commonbackBlood->setPosition(ccp(100, 0));
+	commonbackBlood_1->setPosition(ccp(-70, 0));
+	commonbackBlood_2->setPosition(ccp(commonbackBlood->getContentSize().width - 60, 0));
+
+	redBloodProgress = CCProgressTimer::create(redProgress);
 	redBloodProgress->setType(kCCProgressTimerTypeBar);
+	redBloodProgress->setMidpoint(ccp(0,1));
 	redBloodProgress->setBarChangeRate(CCPoint(1, 0));
 	redBloodProgress->setPercentage(100);
 	redBloodProgress->setAnchorPoint(ccp(0,0));
+	redBloodProgress->setPosition(ccp(-5,5));
+
+	heroIcon->setPosition(ccp(-50,0));
+	monsterIcon->setPosition(ccp(50,0));
+	monsterIcon->setVisible(false);
 	commonbackBlood->addChild(redBloodProgress);
+	commonbackBlood->addChild(heroIcon);
+	this->addChild(commonbackBlood_1);
+	this->addChild(commonbackBlood_2);
+	commonbackBlood_2->addChild(monsterIcon);
 	this->addChild(commonbackBlood);
 	return true;
 }
 
 void CommonBloodBar::setRedBloodBar(int num){
 	redBloodProgress->setPercentage(1.0*num);
+}
+
+void CommonBloodBar::setRedBloodBarType(bool flag){
+	if(flag)
+		redBloodProgress->setMidpoint(ccp(0,1));
+	else{
+		redBloodProgress->setMidpoint(ccp(1,0));
+	}
+	heroIcon->setVisible(flag);
+	monsterIcon->setVisible(!flag);
 }

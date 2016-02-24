@@ -11,5 +11,6 @@ public:
 	~GameScene(void);
 	virtual bool init();
 	CC_SYNTHESIZE(GameLayer*, _gameLayer, GameLayer);
+	CC_SYNTHESIZE(OperatorLayer*, operatorLayer, OperatorLayer);
 	CREATE_FUNC(GameScene);
 };

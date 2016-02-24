@@ -1,6 +1,4 @@
 #include "AppDelegate.h"
-#include "HelloWorldScene.h"
-#include "GameScene.h"
 
 USING_NS_CC;
 
@@ -35,7 +33,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
 	pEGLView -> setDesignResolutionSize(winSize.width*widthRate/heightRate, winSize.height,  kResolutionShowAll);
 	//pEGLView->setDesignResolutionSize(winSize.width*widthRate/heightRate, winSize.height,kResolutionNoBorder);
     // create a scene. it's an autorelease object
-	CCScene *pScene = GameScene::create();
+	pScene = GameScene::create();
 
     // run
     pDirector->runWithScene(pScene);
@@ -44,16 +42,52 @@ bool AppDelegate::applicationDidFinishLaunching() {
 
 // This function will be called when the app is inactive. When comes a phone call,it's be invoked too
 void AppDelegate::applicationDidEnterBackground() {
-    CCDirector::sharedDirector()->stopAnimation();
+    //CCDirector::sharedDirector()->stopAnimation();
 
     // if you use SimpleAudioEngine, it must be pause
     // SimpleAudioEngine::sharedEngine()->pauseBackgroundMusic();
+	CCDirector::sharedDirector()->stopAnimation();  
+  
+    CocosDenshion::SimpleAudioEngine::sharedEngine()->pauseBackgroundMusic();  
+   /* Global* sh = Global::toIns();  
+    CCRenderTexture* renderTexture;  
+    switch(sh->targetScene){  
+    case TargetSceneFirstScene:  
+        break;  
+    case TargetSceneSecondScene:  
+        renderTexture = CCRenderTexture::create(800,600);  
+        renderTexture->begin();  
+        sh->battleLayer->visit();  
+        renderTexture->end();  
+  
+        CCDirector::sharedDirector()->pushScene(PauseLayer::scene(renderTexture,false));  
+        break;  
+    case TargetSceneInvalid:  
+        break;  
+    default:  
+        break;  
+    }  */
+	//CCSize visibleSize = CCDirector::sharedDirector()->getVisibleSize();
+	//CCRenderTexture *renderTexture = CCRenderTexture::create(visibleSize.width,visibleSize.height);
+
+	////遍历当前类的所有子节点信息，画入renderTexture中。
+	////这里类似截图。
+	//renderTexture->begin(); 
+	////this->getParent()->visit();
+	////this->visit();
+	//renderTexture->end();
+
+	////将游戏界面暂停，压入场景堆栈。并切换到GamePause界面
+	//CCDirector::sharedDirector()->pushScene(Gamepause::scene(renderTexture));
+	pScene->getOperatorLayer()->MenuChoose();
 }
 
 // this function will be called when the app is active again
 void AppDelegate::applicationWillEnterForeground() {
-    CCDirector::sharedDirector()->startAnimation();
-
+   /* CCDirector::sharedDirector()->startAnimation();*/
+	 CCDirector::sharedDirector()->startAnimation();  
+  
+    CocosDenshion::SimpleAudioEngine::sharedEngine()->resumeBackgroundMusic();  
     // if you use SimpleAudioEngine, it must resume here
     // SimpleAudioEngine::sharedEngine()->resumeBackgroundMusic();
 }

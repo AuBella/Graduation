@@ -7,7 +7,6 @@
 #include <stdlib.h>  
 #include <time.h>  
 #include<math.h>
-#include "ProgressView.h"
 #include<iostream>
 
 USING_NS_CC;
@@ -45,7 +44,6 @@ private:
 	Shana* shana;
 	void DeadEnd(CCNode* pSender);
 	CCSprite* m_MonsterSprite;//怪物精灵
-	ProgressView*  Monster_xue;//怪物血条
 	CCTMXTiledMap* tileMap;
 	int effectId;
 	void attackCallbackFunc( CCNode* pSender );
