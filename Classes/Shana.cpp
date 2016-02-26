@@ -63,7 +63,7 @@ bool Shana::init() {
 		setSkillE( CCSequence::create( CCAnimate::create( skillE ),
 			CCCallFuncN::create(this, callfuncN_selector( Shana::attackCallbackFunc ) ),
 			CCCallFuncN::create( this,callfuncN_selector( Shana::createStandAnimCallback ) ), nullptr ) );*/
-			CCAnimation* standAnimn = AnimationUtil::getAnimation( "$legendaryswordsman_1.png", 3, 3 );
+			CCAnimation* standAnimn = AnimationUtil::getAnimation( "$legendaryswordsman_1.png", 3, 6 );
 		setStandAnimation( CCRepeatForever::create( CCAnimate::create( standAnimn ) ) );
 
 		CCAnimation* runAnimn = AnimationUtil::getAnimation( "$legendaryswordsman_forward.png", 8, 8 );
@@ -106,17 +106,20 @@ bool Shana::init() {
 			CCCallFuncN::create(this, callfuncN_selector( Shana::attackCallbackFunc1 ) ),
 			CCCallFuncN::create( this,callfuncN_selector( Shana::createStandAnimCallback ) ), NULL ) );
 		
-		this->scheduleUpdate();
-		runStandAnimation();
-		this->updateBox();
-		this->setVelocity( CCPoint(0,0) );
-		this->setCurSkillState( SKILL_NULL );
-		this->setCanMutilAttack( false );
+		
 		bRet = true;
 	} while ( false );
 	return bRet;
 }
 
+void Shana::StartListen(){
+	runStandAnimation();
+	this->scheduleUpdate();
+	this->updateBox();
+	this->setVelocity( CCPoint(0,0) );
+	this->setCurSkillState( SKILL_NULL );
+	this->setCanMutilAttack( false );
+}
 
 void Shana::attackCallbackFunc1( CCNode* pSender ) {
 	shanaisAttack = false;
@@ -135,7 +138,7 @@ void Shana::HurtAnimation(){
 	CCNotificationCenter::sharedNotificationCenter()->postNotification("Hurt",(CCObject *)( blood));
 	if(redBlood <= 0){
 		isDead = true;
-		int effectId = CocosDenshion::SimpleAudioEngine::sharedEngine()->playEffect("sound/0312_03AF.wav");
+		int effectId = CocosDenshion::SimpleAudioEngine::sharedEngine()->playEffect("sound/0052_0000.wav");
 		runDeadAnimation();
 	}else{
 		CocosDenshion::SimpleAudioEngine::sharedEngine()->playEffect("sound/0051_0000.mp3");
@@ -145,6 +148,8 @@ void Shana::HurtAnimation(){
 
 void Shana::HurtEnd( CCNode* pSender){
 	isHurt = false;
+	shanaisAttack = false;
+	isRunning = false;
 	runStandAnimation();	
 	setCurSkillState( SKILL_NULL );
 	setCanMutilAttack( false );

@@ -142,7 +142,8 @@ void Role::onMove( CCPoint direction, float distance ) {
 	if ( getAllowMove() ) {
 		bool isFlippedX = (direction.x < 0? true : false);
 		getSprite()->setFlipX( isFlippedX );
-		distance = (distance>15.0 ? 3.0f : 1.0f);
+		
+		distance = distance > 3.0f?((distance>15.0 ? 3.0f : 1.0f)):distance;
 		setVelocity( direction*distance );
 		runRunAnimation();
 	}

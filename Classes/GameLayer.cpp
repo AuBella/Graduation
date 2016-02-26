@@ -87,6 +87,7 @@ void GameLayer::addShana() {
 		((CCString*) obj->objectForKey("y"))->floatValue()+shana->getSprite()->getContentSize().height/2 ));
 	this->addChild( shana );
 	GlobalCtrl::getInstance()->shana = shana;
+	shana->StartListen();
 }
 
 void GameLayer::addOgre() {

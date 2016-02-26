@@ -35,6 +35,7 @@ public:
 	bool shanaisAttack;
 	void HurtAnimation();
 	void HurtEnd();
+	void StartListen();
 private:
 	void updateBox();
 	virtual void update( float delta );

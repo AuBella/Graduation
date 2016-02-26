@@ -84,8 +84,8 @@ void OperatorLayer::keyMenuClicked() {
 }
 
 void OperatorLayer::setUITouchEnabled(bool flag){
-	joyStick->setTouchEnabled(flag);
-	skillButton->setTouchEnabled(flag);
+	/*joyStick->setTouchEnabled(flag);
+	skillButton->setTouchEnabled(flag);*/
 }
 
 //添加目标通知观察者之后调用的事件  

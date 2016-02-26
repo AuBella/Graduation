@@ -4,13 +4,13 @@
 JoyStick::JoyStick(){
 	isCanMove = false;
 	shana = GlobalCtrl::getInstance()->shana;
-	this->setTouchEnabled(true);
+	//this->setTouchEnabled(true);
     //CCDirector::sharedDirector()->getTouchDispatcher()->addTargetedDelegate(this, 0, true);
 }
 
 
 JoyStick::~JoyStick() {
-	this->setTouchEnabled(false);
+	//this->setTouchEnabled(false);
 }
 
 
@@ -25,21 +25,22 @@ JoyStick* JoyStick::create( const char* background, const char* mask ) {
 	return NULL;
 }
 void JoyStick::setTouchEnabled(bool value){
-	CCDirector::sharedDirector()->getTouchDispatcher()->removeDelegate(this);
+	/*CCDirector::sharedDirector()->getTouchDispatcher()->removeDelegate(this);
 	if(value){
 		CCDirector::sharedDirector()->getTouchDispatcher()->addTargetedDelegate(this, 0, true);
-	}
+	}*/
 }
 
 void JoyStick::onEnter(){
     //注册监听   1.dele类，2.优先级，3.YES为阻碍其他类的move 和 end
 	//this->setTouchEnabled(true);
+    CCDirector::sharedDirector()->getTouchDispatcher()->addTargetedDelegate(this, 0, true);
     CCNode::onEnter();
 }
  
 void JoyStick::onExit(){
     //移除监听	
-    //CCDirector::sharedDirector()->getTouchDispatcher()->removeDelegate(this);
+    CCDirector::sharedDirector()->getTouchDispatcher()->removeDelegate(this);
     CCNode::onExit();
 }
 
@@ -59,9 +60,10 @@ bool JoyStick::init( const char* background, const char* mask ) {
 
 bool JoyStick::ccTouchBegan( CCTouch* touch, CCEvent* event ) {
 	CCPoint pos = touch->getLocation();
-	if ( getJoyStickBox().containsPoint( pos ) ) {
-	    currentPoint = pos;  
-		shana->isRunning = true;
+	if ( getJoyStickBox().containsPoint( pos ) && !(shana->isDead)) {
+	    currentPoint = pos;
+		if(!shana->shanaisAttack && !shana->isHurt)
+			shana->isRunning = true;
 		//CCLOG ("Containt: %f %f %f %f  %f %f\n", getJoyStickBox().getMinX(), getJoyStickBox().getMinY() , getJoyStickBox().getMaxX(), getJoyStickBox().getMaxY(), pos.x, pos.y);
 		isCanMove = true;
 		showJoyStick();
@@ -73,7 +75,8 @@ bool JoyStick::ccTouchBegan( CCTouch* touch, CCEvent* event ) {
 
 void JoyStick::ccTouchMoved( CCTouch* touch, CCEvent* event ) {
 	if ( isCanMove ) {
-		shana->isRunning = true;
+		if(!shana->shanaisAttack && !shana->isHurt)
+			shana->isRunning = true;
 		CCPoint currentPoint = touch->getLocation();
 		currentPoint = convertToNodeSpace(currentPoint );
 		if (ccpDistance(currentPoint, centerPoint) > radius)  
@@ -86,7 +89,8 @@ void JoyStick::ccTouchMoved( CCTouch* touch, CCEvent* event ) {
 		
 		CCPoint direction = ccpSub(currentPoint,centerPoint) /ccpDistance(currentPoint,centerPoint);
 		this->mask->setPosition( currentPoint);
-		GlobalCtrl::getInstance()->shana->onMove( direction, distance );
+		if(shana->isRunning)
+			GlobalCtrl::getInstance()->shana->onMove( direction, distance );
 	}
 }
 
