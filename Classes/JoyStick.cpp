@@ -102,17 +102,18 @@ void JoyStick::ccTouchEnded( CCTouch* touch, CCEvent* event ) {
 	isCanMove = false;
 	shana ->isRunning = false;
 	mask->setPosition( CCPoint(0,0) );
-	GlobalCtrl::getInstance()->shana->onStop();
+	if(!shana->isDead)
+		shana->onStop();
 }
 
 void JoyStick::ccTouchCancelled(CCTouch *pTouch, CCEvent *pEvent){
-	CCPoint pos = pTouch->getLocation();
+	/*CCPoint pos = pTouch->getLocation();
 
 	hideJoyStick();
 	isCanMove = false;
 	shana ->isRunning = false;
 	mask->setPosition( CCPoint(0,0) );
-	GlobalCtrl::getInstance()->shana->onStop();
+	GlobalCtrl::getInstance()->shana->onStop();*/
 }
 
 void JoyStick::showJoyStick() {
