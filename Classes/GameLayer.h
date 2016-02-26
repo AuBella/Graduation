@@ -1,24 +1,21 @@
-#include"cocos2d.h"/*
-#include "Monster.h"*/
+#include"cocos2d.h"
 #include"Ogre.h"
 #include "Shana.h"
 #include "GlobalCtrl.h"
-//#include "CommonBloodBar.h"
 
 USING_NS_CC;
-//class GameLayer : public cocos2d::CCLayer{
 class GameLayer:public CCLayer{
 private:
 	CCTMXTiledMap* tilemap;
 	void addShana();
 	void addOgre();
-	void addBloodBar();
 public:
 	GameLayer(void);
 	~GameLayer(void);
 	void initTileMap();
 	virtual bool init();
-
+	
+    void addLabel();
 	
 	//每帧更新时调用的事件
 	//virtual void update(float delta);
@@ -27,6 +24,8 @@ public:
     //添加目标通知观察者之后调用的事件  
     void ObserverFunction(CCObject * object);  
 	//Monster* monster1;
-	Ogre* monster2;
+	Ogre* ogre;
+	Shana* shana;
+	CCLabelTTF* label;
 	CREATE_FUNC(GameLayer);
 };
