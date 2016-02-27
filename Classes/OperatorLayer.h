@@ -16,13 +16,12 @@ public:
 	CREATE_FUNC(OperatorLayer);
 private:
 	JoyStick* joyStick;
-	SkillButton* skillButton;   
-	//添加目标通知观察者之后调用的事件  
+	SkillButton* skillButton;
     void ObserverFunction(CCObject * object);
 	CommonBloodBar* heroBloodBar;
 	CommonBloodBar* monsterBloodBar;
 	void MenuChooseCallback(CCObject* pSender);
-	void keyBackClicked();	//响应返回键
-	void keyMenuClicked();	//响应Menu键
+	void keyBackClicked();
+	void keyMenuClicked();
 	CCMenu* menu;
 };

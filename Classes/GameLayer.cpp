@@ -15,20 +15,10 @@ bool GameLayer::init(){
 	this->initTileMap();
 	this->addShana();
 	this->addOgre();
-	this->addLabel();
-	//启动updata事件
-	//this->scheduleUpdate();
-	//注册Message，如果接收到了，执行ObserverFunction  
     CCNotificationCenter::sharedNotificationCenter()->addObserver(this,callfuncO_selector(GameLayer::ObserverFunction),"Attack",NULL);  
 	return true;
 };
-void GameLayer::addLabel(){
-	//标签上显示是否发生了碰撞
-	CCSize visibleSize = CCDirector::sharedDirector()->getVisibleSize();
-	label=CCLabelTTF::create("NOT COLLUSION", "American Typewriter.ttf", 30);
-    label->setPosition(ccp(visibleSize.width/2,visibleSize.height*0.7));
-    this->addChild(label);
-}
+
 
 void GameLayer::initTileMap(){
 	tilemap = CCTMXTiledMap::create("tilemap.tmx");
@@ -43,31 +33,19 @@ void GameLayer::initTileMap(){
 
 void GameLayer::ObserverFunction(CCObject * object){
 	bool flag = false;
-    CCLOG("SecondLayer Receive num=%d",(int)object); 
-	  CCLOG("update enter hurt 3");
-	    if(abs(shana->getPositionY()-ogre->getPositionY())<30){
-			CCLOG("update enter hurt 1");
-			if(shana->getHitBox().intersectsRect(CCRectMake(ogre->getPositionX(), ogre->getPositionY(),
-				ogre->GetSprite()->getContentSize().width, ogre->GetSprite()->getContentSize().height)))
-			{
-				 CCLOG("update enter hurt ");
-				ogre->isHurt = true;
-				ogre->isAttack = true;
-				ogre->HurtAnimation();
-				flag = true;
-	         }
-	     //}
-	  //}
+	if(abs(shana->getPositionY()-ogre->getPositionY())<30){
+		if(shana->getHitBox().intersectsRect(CCRectMake(ogre->getPositionX() - ogre->GetSprite()->getContentSize().width / 2, 
+														ogre->getPositionY() - ogre->GetSprite()->getContentSize().height /2,
+														ogre->GetSprite()->getContentSize().width, 
+														ogre->GetSprite()->getContentSize().height)
+														)
+											){
+			ogre->isHurt = true;
+			ogre->isAttack = true;
+			ogre->HurtAnimation();
+			flag = true;
+	    }
 	}
-	/*
-	CCLOG("==============>>>>>>>>>>>>>>>>>>>>> shanabox %f %f %f %f", shana->getHitBox().getMinX(), shana->getHitBox().getMaxX(), shana->getHitBox().getMinY(), shana->getHitBox().getMaxY());	
-	CCLOG("==============>>>>>>>>>>>>>>>>>>>>> shanabox %f %f %f %f", ogre->getPositionX() - ogre->GetSprite()->getContentSize().width / 2, ogre->getPositionX() + ogre->GetSprite()->getContentSize().width /2,
-		ogre->getPositionY()-ogre->GetSprite()->getContentSize().height / 2, ogre->getPositionY()+ogre->GetSprite()->getContentSize().height / 2);*/
-	if (flag) {
-        label->setString("IS COLLUSION11111111111111111");
-    }else{
-        label->setString("NOT COLLUSION11111111111111111");
-    }
 }  
 
 void GameLayer::addShana() {

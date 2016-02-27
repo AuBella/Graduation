@@ -4,7 +4,6 @@
 GlobalCtrl* GlobalCtrl::_instance = NULL;
 
 GlobalCtrl::GlobalCtrl() {
-	//joyStick = nullptr;
 	shana = NULL;
 	joyStick = NULL;
 	skillButton = NULL;

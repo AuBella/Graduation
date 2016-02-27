@@ -18,7 +18,6 @@ Shana::~Shana() {}
 bool Shana::init() {
 	if( !Role::init() )
 		return false;
-	//ÉèÖÃ¾«Áé
 	m_MonsterSprite =CCSprite::create( "$legendaryswordsman_1.png", CCRect( 0, 0, 69, 62 ));
 	this->setSprite(m_MonsterSprite );
 	this->addChild( getSprite() );
@@ -80,12 +79,6 @@ void Shana::attackCallbackFunc1( CCNode* pSender ) {
 void Shana::HurtAnimation(){
 	redBlood -= 10;
 	redBlood < 0?0:redBlood;
-	/*CCArray* pArray;
-	pArray=createWithCapacity(100);
-	pArray= CCArray::create(); */
-	/*CCArray* temparray; temparray->retain();
-	temparray = CCArray::create();
-	temparray->addObject(redBlood);*/
 	int blood = 1000+redBlood;
 	CCNotificationCenter::sharedNotificationCenter()->postNotification("Hurt",(CCObject *)( blood));
 	if(redBlood <= 0){
@@ -111,7 +104,6 @@ void Shana::HurtEnd( CCNode* pSender){
 
 void Shana::DeadEnd(CCNode* pSender){
 	if(isDead){
-		//this->removeChild(m_MonsterSprite,true);
 		this->unschedule(schedule_selector(Shana::update));
 	}
  }
@@ -127,7 +119,6 @@ void Shana::updateBox() {
 	float width = 55.0f;
 	float actualWidth = getSprite()->getContentSize().width;
 	float height = getSprite()->getContentSize().height;
-
 	if ( isFlipX ) {
 		setHitBox( CCRect( (x - width / 2) - (actualWidth - width), y - height / 2, (actualWidth - width), height ) );
 		setBodyBox( CCRect( x - width / 2, y - height / 2, width, height ) );
@@ -135,7 +126,6 @@ void Shana::updateBox() {
 		setHitBox( CCRect( x + width / 2, y - height / 2, actualWidth - width, height ) );
 		setBodyBox( CCRect( x - width / 2, y - height / 2, width, height ) );
 	}
-	//CCLOG("==============>>>>>>>>>>>>>>>>>>>>> shanabox %f %f %f %f", getBodyBox().getMinX(), getBodyBox().getMaxX(), getBodyBox().getMinY(), getBodyBox().getMaxY());
 }
 
 
@@ -232,7 +222,6 @@ void Shana::runSkillEAnimation() {
 	double distance =mapWidth - width - curPos.x< 200?mapWidth - width - curPos.x:200;
 	if(getSprite()->isFlipX())
 		distance = -(curPos.x - width< 200?curPos.x - width:200);
-	CCLOG("%f %f %f\n",distance,width);
 	CCMoveBy* move = CCMoveBy::create( 0.5f, CCPoint( distance, 0 ) );
 	this->runAction( move );
 	setCurSkillState( SKILL_NULL );

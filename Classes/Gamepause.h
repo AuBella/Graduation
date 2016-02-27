@@ -19,3 +19,5 @@ private:
 };
 
 #endif // __Gamepause_H__
+
+//转至《赵云要格斗》,方便测试用

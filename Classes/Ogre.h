@@ -10,11 +10,6 @@
 #include<iostream>
 
 USING_NS_CC;
-//enum SkillState1 {
-//	SKILL_NULL1 = 0,
-//	SKILL_A1,
-//	SKILL_B1,
-//};
 
 class Ogre: public Role{
 public:
@@ -24,13 +19,10 @@ public:
 
 	void updateMonster(float delta);
 	void update(float delta);
-	//怪物运动的方向
 	bool faceDirecton;
 	bool leftInTheMonster;
-	//在可视范围内，怪物跟随英雄运动
 	void enterSafeArea();
 	void enterAttackArea(float x, float y);
-	//返回英雄
 	CCSprite* GetSprite();
 	void StartListen();
 	void HurtAnimation();
@@ -40,10 +32,10 @@ public:
 	CREATE_FUNC(Ogre);
 	int flag;	
 private:
-	float  dis;//当前怪物和英雄的距离
+	float  dis;
 	Shana* shana;
 	void DeadEnd(CCNode* pSender);
-	CCSprite* m_MonsterSprite;//怪物精灵
+	CCSprite* m_MonsterSprite;
 	CCTMXTiledMap* tileMap;
 	int effectId;
 	void attackCallbackFunc( CCNode* pSender );

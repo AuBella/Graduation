@@ -11,10 +11,7 @@ public:
 	JoyStick();
 	~JoyStick();
 	static JoyStick* create( const char* background, const char* mask );
-	 //Æô¶¯Ò¡¸Ë  
     void startJoyStick(bool _isStopOther);  
-  
-    //Í£Ö¹Ò¡¸Ë  
     void stopJoyStick();  
     virtual void setTouchEnabled(bool value);
 private:
@@ -23,8 +20,8 @@ private:
 	CCSprite* back;
 	CCSprite* mask;
 	CCPoint centerPoint;
-    float radius;//Ò¡¸Ë°ë¾¶  
-    CCPoint currentPoint;//Ò¡¸Ëµ±Ç°Î»ÖÃ  
+    float radius;
+    CCPoint currentPoint;
 	virtual void onEnter();
     virtual void onExit();
 	bool isCanMove;

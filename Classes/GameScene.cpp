@@ -1,7 +1,5 @@
 #include"GameScene.h"
 
-//USING_NS_CC;
-
 GameScene::GameScene(void){
 	CocosDenshion::SimpleAudioEngine::sharedEngine()->preloadBackgroundMusic("sound");
 	CocosDenshion::SimpleAudioEngine::sharedEngine()->playBackgroundMusic("sound/fighting.mp3", -1);  

@@ -75,12 +75,6 @@ bool Gamepause::init()
 	CCMenu* pMenu = CCMenu::create(pContinueItem,pRestartItem,pLoginItem,NULL);
 	pMenu->setPosition(CCPointZero);
 	this->addChild(pMenu, 2);
-
-
-
-	
-
-
     return true;
 }
 void Gamepause::menuContinueCallback(CCObject* pSender)

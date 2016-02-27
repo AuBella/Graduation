@@ -59,38 +59,18 @@ bool OperatorLayer::init(){
 
 
 void OperatorLayer::keyBackClicked() {
-	//int iManSceneTag = CCDirector::sharedDirector()->getRunningScene()->getTag();//如果是主场景，则退出
-	//if (MAIN_SCENE_TAG == iManSceneTag) {
-	/*	CCDirector::sharedDirector()->end();
-		#if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
-			exit(0);
-		#endif*/
 	CCSize visibleSize = CCDirector::sharedDirector()->getVisibleSize();
 	CCRenderTexture *renderTexture = CCRenderTexture::create(visibleSize.width,visibleSize.height);
-
-	//遍历当前类的所有子节点信息，画入renderTexture中。
-	//这里类似截图。
 	renderTexture->begin(); 
 	this->getParent()->visit();
 	renderTexture->end();
-
-	//将游戏界面暂停，压入场景堆栈。并切换到GamePause界面
 	CCDirector::sharedDirector()->pushScene(Gamepause::scene(renderTexture));
-	CCLOG("==================>>>>>>>>>>>>>>>>>>>>>>>>>>> keyBackclicked" );
-	//}
 }
-void OperatorLayer::keyMenuClicked() {
+void OperatorLayer::keyMenuClicked() {}
 
-}
+void OperatorLayer::setUITouchEnabled(bool flag){}
 
-void OperatorLayer::setUITouchEnabled(bool flag){
-	/*joyStick->setTouchEnabled(flag);
-	skillButton->setTouchEnabled(flag);*/
-}
-
-//添加目标通知观察者之后调用的事件  
 void OperatorLayer::ObserverFunction(CCObject * object){
-	CCLog("Hurt--------------->>>>>>>>>>>>>>>>>>>>> %d ", (int)object);
 	int num = (int)object;
 	if(num / 100 >= 10){
 		if(num % 100 == 0)
@@ -109,33 +89,13 @@ void OperatorLayer::ObserverFunction(CCObject * object){
 }
 
 void OperatorLayer::MenuChooseCallback(CCObject* psender){
-	CCLOG("=======================enter menu +++++++++++++++++++ ");
-	////得到窗口的大小
-	//CCSize visibleSize = CCDirector::sharedDirector()->getVisibleSize();
-	//CCRenderTexture *renderTexture = CCRenderTexture::create(visibleSize.width,visibleSize.height);
-
-	////遍历当前类的所有子节点信息，画入renderTexture中。
-	////这里类似截图。
-	//renderTexture->begin(); 
-	//this->getParent()->visit();
-	//renderTexture->end();
-
-	////将游戏界面暂停，压入场景堆栈。并切换到GamePause界面
-	//CCDirector::sharedDirector()->pushScene(Gamepause::scene(renderTexture));
 	MenuChoose();
 }
 void OperatorLayer::MenuChoose(){
-	CCLOG("=======================enter menu +++++++++++++++++++ ");
-	//得到窗口的大小
 	CCSize visibleSize = CCDirector::sharedDirector()->getVisibleSize();
 	CCRenderTexture *renderTexture = CCRenderTexture::create(visibleSize.width,visibleSize.height);
-
-	//遍历当前类的所有子节点信息，画入renderTexture中。
-	//这里类似截图。
 	renderTexture->begin(); 
 	this->getParent()->visit();
 	renderTexture->end();
-
-	//将游戏界面暂停，压入场景堆栈。并切换到GamePause界面
 	CCDirector::sharedDirector()->pushScene(Gamepause::scene(renderTexture));
 }

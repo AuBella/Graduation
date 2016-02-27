@@ -61,7 +61,6 @@ void Role::runStandAnimation() {
 	if ( changeState( AC_STAND ) ) {
 		getSprite()->stopAllActions();
 		getSprite()->runAction( getStandAnimation() );
-		//getSprite()->setOpacity(80);
 		setAllowMove( true );
 	}
 }
@@ -85,7 +84,6 @@ void Role::runRunAnimation() {
 }
 
 void Role::runHurtAnimation() {
-	//CCLOG("Role runHurtAnimation");
 	if ( changeState( AC_HURT ) ) {
 		getSprite()->stopAllActions();
 		getSprite()->runAction( getHurtAnimation() );
@@ -133,7 +131,6 @@ void Role::runSkillEAnimation() {
 		setAllowMove( false );
 		getSprite()->stopAllActions();
 		getSprite()->runAction( getSkillE() );
-		//runStandAnimation();
 	}
 }
 

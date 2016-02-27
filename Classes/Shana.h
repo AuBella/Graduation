@@ -16,9 +16,6 @@ public:
 	~Shana();
 	virtual bool init();
 	CREATE_FUNC( Shana );
-
-	//void onMove( Vec2 direction, float distance );
-	//void onMove( CCPoint direction, float distance );
 	void onStop();
 
 	CC_SYNTHESIZE( SkillState, _curSkillState, CurSkillState );
@@ -41,10 +38,7 @@ private:
 	virtual void update( float delta );
 	void updateSelf();
 	void HurtEnd( CCNode* pSender);
-	//bool getDirectionFlipX();
-	//void centerViewOfPoint( Vec2 pos );
 	void centerViewOfPoint( CCPoint pos );
-	//void attackCallbackFunc( Node* pSender );
 	void attackCallbackFunc1( CCNode* pSender );
 	void createStandAnimCallback(CCNode* pSender);
 	void DeadEnd(CCNode* pSender);

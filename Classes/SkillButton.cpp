@@ -13,7 +13,6 @@ bool SkillButton::init() {
 	CCMenuItemImage* skillItem = CCMenuItemImage::create( "Encourage.png",
 											"skillDown.png",this,
 											menu_selector( SkillButton::skillMenuCallback ) );
-	//skillItem->setPosition( Vec2::ZERO );
 	skillItem->setPosition( CCPoint(0,0) );
 	menu = CCMenu::create( skillItem, NULL );
 	menu->setPosition( CCPoint(0,0) );
