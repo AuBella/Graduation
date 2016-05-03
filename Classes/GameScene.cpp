@@ -3,7 +3,8 @@
 GameScene::GameScene(void){
 	CocosDenshion::SimpleAudioEngine::sharedEngine()->preloadBackgroundMusic("sound");
 	CocosDenshion::SimpleAudioEngine::sharedEngine()->playBackgroundMusic("sound/fighting.mp3", -1);  
-	_gameLayer = NULL;
+	gameLayer = NULL;
+	TimeNum = 120;
 	operatorLayer= NULL;
 };
 
@@ -32,11 +33,44 @@ bool GameScene::init(){
     pDirector->setAnimationInterval(1.0 / 60);
 	CCLOG("------------->>>>>>>>>>>>> %f %f",winSize.width*widthRate/heightRate, winSize.height);
 	pEGLView -> setDesignResolutionSize(winSize.width*widthRate/heightRate, winSize.height,  kResolutionShowAll);
-	_gameLayer = GameLayer::create();
-	this->addChild(_gameLayer, 0);
+	//主角游戏层
+	gameLayer = GameLayer::create();
+	this->addChild(gameLayer, 0);
+	//玩家操作层
 	operatorLayer = OperatorLayer::create();
 		addChild( operatorLayer, 2 );
-		
 	GlobalCtrl::getInstance()->operatorLayer = operatorLayer;
+	//倒计时
+	setupInitTime(TimeNum);
+	setupHeroIcon("aa");
 	return true;
 };
+void GameScene::setupInitTime(int num){
+	CCSize winSize = CCDirector::sharedDirector() -> getWinSize();
+	pLabel = CCLabelTTF::create("Time", "fonts/Helvetica", 15);//要显示的内容，字体，字号 
+	pLabel->setColor(ccc3(255,255,0));
+	pLabel ->setPosition(ccp(winSize.width / 2, winSize.height - 10));
+	operatorLayer->addChild(pLabel,1);
+	pLabel = CCLabelTTF::create("99:99", "fonts/Helvetica", 20);//要显示的内容，字体，字号 
+	pLabel->setColor(ccc3(255,255,0)); 
+	operatorLayer->addChild(pLabel,1);
+	pLabel ->setPosition(ccp(winSize.width / 2, winSize.height - 25));
+	schedule(schedule_selector(GameScene::update),1);
+}
+
+void GameScene::update(float delta){
+	
+ TimeNum -= delta;  
+ char* mtime = new char[10];  
+ //此处只是显示分钟数和秒数  自己可以定义输出时间格式  
+	sprintf(mtime,"%d : %d",(int)TimeNum/60,(int)TimeNum%60);  
+	pLabel->setString(mtime);  
+}
+	
+void GameScene::setupHeroIcon(char* name){
+	CCSize winSize = CCDirector::sharedDirector() -> getWinSize();
+	CCSprite* heroIcon = CCSprite::create("Common/310_hoodle.png");
+	heroIcon->setScale(0.5);
+	heroIcon->setPosition(ccp(heroIcon->getContentSize().width / 4 + 5, winSize.height - heroIcon->getContentSize().height / 4 - 3));
+	operatorLayer->addChild(heroIcon);
+}

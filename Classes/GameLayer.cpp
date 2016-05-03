@@ -85,5 +85,4 @@ void GameLayer::addOgre() {
 		CCSize visibleSize = CCEGLView::sharedOpenGLView()->getVisibleSize();
 		ogre -> StartListen();
 	}
-	
 }

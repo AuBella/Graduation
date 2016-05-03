@@ -2,7 +2,7 @@
 
 MainScene::MainScene(void){
 	CocosDenshion::SimpleAudioEngine::sharedEngine()->preloadBackgroundMusic("sound");
-	CocosDenshion::SimpleAudioEngine::sharedEngine()->playBackgroundMusic("sound/mainscene_1.mp3", -1);  
+	CocosDenshion::SimpleAudioEngine::sharedEngine()->playBackgroundMusic("sound/mainscene_1.mp3", -1); 
 };
 
 MainScene::~MainScene(void){
@@ -53,7 +53,7 @@ void MainScene::MenuSettingCallback1(CCObject* psender){
     pDirector->pushScene(pScene);
 }
 void MainScene::MenuSettingCallback(CCObject* psender){
-	CCLabelTTF* pLabel = CCLabelTTF::create("BaiBai", "fonts/Marker Felt", 40);//要显示的内容，字体，字号  
+	CCLabelBMFont* pLabel = CCLabelBMFont::create("BaiBai", "fonts/Helvetica", 40);//要显示的内容，字体，字号  
 	pLabel->setString("TestTest");  
 	pLabel->setColor(ccc3(0,0,0)); 
 	pLabel->setPosition(ccp(520, 520));  
