@@ -21,7 +21,6 @@ FILE_LIST += $(filter %.cpp, $(ALLFILES))
 LOCAL_SRC_FILES := $(FILE_LIST:$(LOCAL_PATH)/%=%)
 LOCAL_C_INCLUDES := $(LOCAL_PATH)/../../Classes
 
-
 LOCAL_WHOLE_STATIC_LIBRARIES += cocos2dx_static
 LOCAL_WHOLE_STATIC_LIBRARIES += cocosdenshion_static
 LOCAL_WHOLE_STATIC_LIBRARIES += box2d_static

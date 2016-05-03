@@ -212,7 +212,7 @@ obj/local/armeabi/objs/cocos2dcpp_shared/hellocpp/main.o: \
  jni/../../Classes/AnimationUtil.h jni/../../Classes/Shana.h \
  jni/../../Classes/OperatorLayer.h jni/../../Classes/JoyStick.h \
  jni/../../Classes/SkillButton.h jni/../../Classes/CommonBloodBar.h \
- jni/../../Classes/Gamepause.h jni/../../Classes/IconvString.h \
+ jni/../../Classes/Gamepause.h \
  C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/cocos2dx/include/CCEventType.h \
  C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/cocos2dx/platform/android/jni/JniHelper.h \
  E:/Android/android-ndk-r10b/platforms/android-19/arch-arm/usr/include/jni.h
@@ -656,8 +656,6 @@ jni/../../Classes/SkillButton.h:
 jni/../../Classes/CommonBloodBar.h:
 
 jni/../../Classes/Gamepause.h:
-
-jni/../../Classes/IconvString.h:
 
 C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/cocos2dx/include/CCEventType.h:
 

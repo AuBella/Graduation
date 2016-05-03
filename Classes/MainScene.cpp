@@ -22,13 +22,17 @@ bool MainScene::init(){
 
 	
 	CCMenuItemImage* menuChooseItem = CCMenuItemImage::create("Common/btn_pre_2.png", "Common/btn_nor_2.png", "Common/btn_dis_2.png", this, menu_selector(MainScene::MenuSettingCallback));
-	CCLabelTTF* pLabel = CCLabelTTF::create("start Game", "fonts/Marker Felt", 40);
+	char* name = getStringForUtf("存档");
+	CCLabelTTF* pLabel = CCLabelTTF::create(name, "fonts/Marker Felt", 40);
+	
+	//CCLabelTTF* pLabel = CCLabelTTF::create("save file", "fonts/Marker Felt", 40);
 	pLabel->setColor(ccc3(0,0,0));
 	menuChooseItem->addChild(pLabel);
 	pLabel->setPosition(ccp(menuChooseItem->getContentSize().width / 2, menuChooseItem->getContentSize().height / 2));
 	CCMenuItemImage* menuChooseItem1 = CCMenuItemImage::create("Common/btn_pre_2.png", "Common/btn_nor_2.png", "Common/btn_dis_2.png", this, menu_selector(MainScene::MenuSettingCallback1));
-	char* name = getStringForUtf("开始游戏");
+	name = getStringForUtf("开始游戏");
 	pLabel = CCLabelTTF::create(name, "fonts/Marker Felt", 40);
+	//pLabel = CCLabelTTF::create("start game", "fonts/Marker Felt", 40);
 	 
 	pLabel->setPosition(ccp(menuChooseItem1->getContentSize().width / 2, menuChooseItem1->getContentSize().height / 2));
 	pLabel->setColor(ccc3(0,0,0));
@@ -53,7 +57,7 @@ void MainScene::MenuSettingCallback1(CCObject* psender){
     pDirector->pushScene(pScene);
 }
 void MainScene::MenuSettingCallback(CCObject* psender){
-	CCLabelBMFont* pLabel = CCLabelBMFont::create("BaiBai", "fonts/Helvetica", 40);//要显示的内容，字体，字号  
+	CCLabelTTF* pLabel = CCLabelTTF::create("BaiBai", "fonts/Helvetica", 40);//要显示的内容，字体，字号  
 	pLabel->setString("TestTest");  
 	pLabel->setColor(ccc3(0,0,0)); 
 	pLabel->setPosition(ccp(520, 520));  

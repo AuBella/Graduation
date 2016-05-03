@@ -60,9 +60,22 @@ void GameScene::setupInitTime(int num){
 
 void GameScene::update(float delta){
 	
- TimeNum -= delta;  
- char* mtime = new char[10];  
- //此处只是显示分钟数和秒数  自己可以定义输出时间格式  
+	CCArray* ogreArray = GlobalCtrl::getInstance() ->pArray;
+	CCLOG("------------------------------%d", ogreArray->count());
+	bool flag = true;
+	for (unsigned int i = 0; i <ogreArray->count(); ++i) {
+		Ogre* pObj=(Ogre*)ogreArray->objectAtIndex(i);
+		if(pObj -> redBlood > 0){
+			flag = false;
+		}
+	}
+	if(flag){
+		this->unschedule(schedule_selector(GameScene::update)); 
+		//unscheduleUpdate();
+	}
+	TimeNum -= delta;  
+	char* mtime = new char[10];  
+	//此处只是显示分钟数和秒数  自己可以定义输出时间格式  
 	sprintf(mtime,"%d : %d",(int)TimeNum/60,(int)TimeNum%60);  
 	pLabel->setString(mtime);  
 }

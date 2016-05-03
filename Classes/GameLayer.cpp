@@ -77,7 +77,7 @@ void GameLayer::addOgre() {
 	CCTMXTiledMap* map = GlobalCtrl::getInstance()->tilemap;
 	CCTMXObjectGroup*  objectGroup = map->objectGroupNamed( "Role");
 	CCDictionary* obj = objectGroup->objectNamed( "shana" );
-	for(int i = 0; i < 5; ++i){
+	for(int i = 0; i < 2; ++i){
 		ogre = Ogre::create();
 		ogreArray->addObject(ogre);
 		this->addChild( ogre );
