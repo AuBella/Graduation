@@ -13,14 +13,14 @@ public:
 	~GlobalCtrl();
 	static GlobalCtrl* getInstance();
 	static void destroyInstance();
-
+	//static GlobalCtrl* 
 	Shana* shana;
 	JoyStick* joyStick;
 	SkillButton* skillButton;
 	OperatorLayer* operatorLayer;
 	CCMenu* menu;
 	CCTMXTiledMap* tilemap;
-
+	CCArray* pArray;
 private:
 	static GlobalCtrl* _instance;
 };

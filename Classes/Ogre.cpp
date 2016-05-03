@@ -7,6 +7,7 @@ Ogre::Ogre(){
 	isDead = false;
 	isAttack = false;
 	redBlood = 100;
+	ogreAttacknum = rand() % 5;
 	flag = 0;
 };
 
@@ -53,17 +54,17 @@ bool Ogre::init(){
 	return true;
 };
 
- void Ogre::HurtAnimation(){
+ void Ogre::HurtAnimation(int num){
 	if(isDead)
 		return;
 	isHurt = true;
+	redBlood-=10;
 	effectId = CocosDenshion::SimpleAudioEngine::sharedEngine()->playEffect("sound/0312_00EB.wav");
 	this->runHurtAnimation(); 
  }
 
  void Ogre::HurtEnd( CCNode* pSender){ 
 	CCLOG("ogre hurtend ");
-	redBlood-=10;
 	redBlood <= 0?0:redBlood;
 	CCNotificationCenter::sharedNotificationCenter()->postNotification("Hurt",(CCObject *)( 100+ redBlood));
 	if(redBlood > 0){
@@ -105,7 +106,9 @@ void Ogre::enterSafeArea(){
 	CCPoint curPos = this->getPosition();
 	if(getSprite()->isFlipX());
 	double distance = -(curPos.x - width < 100?curPos.x-width: 100);
-	if(shana -> getSprite()->isFlipX()){
+	int flag = rand() % 2;
+	//if(shana -> getSprite()->isFlipX()){
+	if(flag == 1){
 		distance =(mapWidth - width - curPos.x < 100?mapWidth - width - curPos.x: 100);
 		faceDirecton = false;
 	}
@@ -113,7 +116,9 @@ void Ogre::enterSafeArea(){
 		faceDirecton = true;
 	}
 	CCCallFunc* callFuncRunAction = CCCallFunc::create(this, callfunc_selector(Role::runRunAnimation));
-	CCMoveBy* move = CCMoveBy::create( 1.0f, CCPoint( distance, 0 ) );
+	//float moveTime = rand() % 1000 / 1000;
+	//CCMoveBy* move = CCMoveBy::create( moveTime, CCPoint( distance, 0 ) );
+	CCMoveBy* move = CCMoveBy::create( 2.0f, CCPoint( distance, 0 ) );
 
 	CCSpawn* moveAndRunAction = CCSpawn::create(callFuncRunAction, move, NULL);
 	CCCallFunc* callFuncStanAction = CCCallFunc::create(this, callfunc_selector(Role::runStandAnimation));
@@ -151,10 +156,10 @@ void Ogre::update(float dt){
 				}
 				flag++;	
 				
-				if((flag == 1 || rand() %200 == 1) && !isHurt && !isDead && !shana->isDead){
+				if((flag == 1 || rand() %200 == 1) && !isHurt && !isDead && !shana->isDead && !shana->isHurt){
 					effectId = CocosDenshion::SimpleAudioEngine::sharedEngine()->playEffect("sound/0312_01B4.wav");
 					isAttack = true;
-					shana -> HurtAnimation();
+					shana -> HurtAnimation(ogreAttacknum);
 					runSkillAAnimation();
 				}
 				if(!isAttack&& !isHurt)
@@ -165,8 +170,8 @@ void Ogre::update(float dt){
 			if(!isHurt && !isAttack){
 				runRunAnimation();
 			}
-			
-			enterAttackArea(x, y);
+			//if(rand() % 2 !=0)
+				enterAttackArea(x, y);
 		}
 	}
 	

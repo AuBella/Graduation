@@ -15,6 +15,8 @@ Role::Role():
 	_skillD(NULL),
 	_skillE(NULL),
 	redBlood(100),
+	b(1),
+	a(b),
 	isDead(false)
 {}
 
@@ -40,6 +42,7 @@ bool Role::init() {
 		CC_BREAK_IF( !CCNode::init() );
 		bRet = true;
 	} while ( false );
+	CCLOG("%d", a);
 	return bRet;
 }
 

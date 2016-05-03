@@ -3,7 +3,8 @@
 
 #include "cocos2d.h"
 #include "HelloWorldScene.h"
-#include "GameScene.h"
+//#include "GameScene.h"
+#include "MainScene.h"
 #include "SimpleAudioEngine.h"
 
 /**
@@ -36,7 +37,7 @@ public:
     */
     virtual void applicationWillEnterForeground();
 private:
-	GameScene *pScene;
+	MainScene *pScene;
 };
 
 #endif // _APP_DELEGATE_H_

@@ -10,6 +10,9 @@ GlobalCtrl::GlobalCtrl() {
 	operatorLayer = NULL;
 	menu = NULL;
 	tilemap = NULL;
+	//pArray = NULL;
+	pArray = CCArray::createWithCapacity(100);
+	pArray->retain();
 }
 
 

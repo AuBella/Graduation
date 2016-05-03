@@ -17,5 +17,7 @@ public:
     void ObserverFunction(CCObject * object);
 	Ogre* ogre;
 	Shana* shana;
+	CCArray* ogreArray;
+	void output();
 	CREATE_FUNC(GameLayer);
 };

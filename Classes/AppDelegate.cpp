@@ -28,8 +28,10 @@ bool AppDelegate::applicationDidFinishLaunching() {
 
     // set FPS. the default value is 1.0/60 if you don't call this
     pDirector->setAnimationInterval(1.0 / 60);
-	pEGLView -> setDesignResolutionSize(winSize.width*widthRate/heightRate, winSize.height,  kResolutionShowAll);
-	pScene = GameScene::create();
+	CCLOG("------------->>>>>>>>>>>>> %f %f",winSize.width*widthRate/heightRate, winSize.height);
+	//pEGLView -> setDesignResolutionSize(winSize.width*widthRate/heightRate, winSize.height,  kResolutionShowAll);
+	//pScene = GameScene::create();
+	pScene = MainScene::create();
     pDirector->runWithScene(pScene);
     return true;
 }
@@ -43,7 +45,7 @@ void AppDelegate::applicationDidEnterBackground() {
 	CCDirector::sharedDirector()->stopAnimation();  
   
     CocosDenshion::SimpleAudioEngine::sharedEngine()->pauseBackgroundMusic();  
-	pScene->getOperatorLayer()->MenuChoose();
+	//pScene->getOperatorLayer()->MenuChoose();
 }
 
 // this function will be called when the app is active again

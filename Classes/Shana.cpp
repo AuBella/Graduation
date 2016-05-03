@@ -76,8 +76,9 @@ void Shana::attackCallbackFunc1( CCNode* pSender ) {
 	shanaisAttack = false;
 }
 
-void Shana::HurtAnimation(){
-	redBlood -= 10;
+void Shana::HurtAnimation(int num){
+	CCLOG("shana redhut %d", num);
+	redBlood -= num;
 	redBlood < 0?0:redBlood;
 	int blood = 1000+redBlood;
 	CCNotificationCenter::sharedNotificationCenter()->postNotification("Hurt",(CCObject *)( blood));

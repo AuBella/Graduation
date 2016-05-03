@@ -4,6 +4,8 @@ GameLayer::GameLayer() :
 	tilemap( NULL )
 {
 	GlobalCtrl::getInstance();
+	ogreArray = GlobalCtrl::getInstance() ->pArray;
+	//ogreArray = CCArray::createWithCapacity(100);
 }
 GameLayer::~GameLayer(void){
 	CCNotificationCenter::sharedNotificationCenter()->removeObserver(this,"Attack");
@@ -19,7 +21,7 @@ bool GameLayer::init(){
 	return true;
 };
 
-
+//地图
 void GameLayer::initTileMap(){
 	tilemap = CCTMXTiledMap::create("tilemap.tmx");
 	CCObject *pObject = NULL;
@@ -30,24 +32,33 @@ void GameLayer::initTileMap(){
 	GlobalCtrl::getInstance()->tilemap = tilemap;
 	this->addChild(tilemap, -10);
 };
-
+//观察者模式
 void GameLayer::ObserverFunction(CCObject * object){
+	int num = (int)object;
 	bool flag = false;
-	if(abs(shana->getPositionY()-ogre->getPositionY())<30){
-		if(shana->getHitBox().intersectsRect(CCRectMake(ogre->getPositionX() - ogre->GetSprite()->getContentSize().width / 2, 
-														ogre->getPositionY() - ogre->GetSprite()->getContentSize().height /2,
-														ogre->GetSprite()->getContentSize().width, 
-														ogre->GetSprite()->getContentSize().height)
+	for (unsigned int i = 0; i <ogreArray->count(); ++i) {
+    Ogre* pObj=(Ogre*)ogreArray->objectAtIndex(i);
+
+	if(abs(shana->getPositionY()-pObj->getPositionY())<30){
+		if(shana->getHitBox().intersectsRect(CCRectMake(pObj->getPositionX() - pObj->GetSprite()->getContentSize().width / 2, 
+														pObj->getPositionY() - pObj->GetSprite()->getContentSize().height /2,
+														pObj->GetSprite()->getContentSize().width, 
+														pObj->GetSprite()->getContentSize().height)
 														)
 											){
-			ogre->isHurt = true;
-			ogre->isAttack = true;
-			ogre->HurtAnimation();
+			pObj->isHurt = true;
+			pObj->isAttack = true;
+			pObj->HurtAnimation(num);
 			flag = true;
 	    }
 	}
-}  
+	}
+}
 
+void GameLayer::output(){
+	CCLOG("--------------->>>>>>>>>>>>>> %d", ogreArray->count());
+}
+//英雄
 void GameLayer::addShana() {
 	CCTMXTiledMap* map = GlobalCtrl::getInstance()->tilemap;
 	CCTMXObjectGroup*  objectGroup = map->objectGroupNamed( "Role");
@@ -61,14 +72,18 @@ void GameLayer::addShana() {
 	GlobalCtrl::getInstance()->shana = shana;
 	shana->StartListen();
 }
-
+//怪物
 void GameLayer::addOgre() {
 	CCTMXTiledMap* map = GlobalCtrl::getInstance()->tilemap;
 	CCTMXObjectGroup*  objectGroup = map->objectGroupNamed( "Role");
 	CCDictionary* obj = objectGroup->objectNamed( "shana" );
-	ogre = Ogre::create();
-	this->addChild( ogre );
-	ogre->setPosition(shana->getPositionX() + 200, shana->getPositionY());
-	CCSize visibleSize = CCEGLView::sharedOpenGLView()->getVisibleSize();
-	ogre -> StartListen();
+	for(int i = 0; i < 5; ++i){
+		ogre = Ogre::create();
+		ogreArray->addObject(ogre);
+		this->addChild( ogre );
+		ogre->setPosition(shana->getPositionX() + 200 * i, i * 10 + shana->getPositionY());
+		CCSize visibleSize = CCEGLView::sharedOpenGLView()->getVisibleSize();
+		ogre -> StartListen();
+	}
+	
 }

@@ -25,12 +25,12 @@ public:
 	virtual void runSkillBAnimation();
 	virtual void runSkillCAnimation();
 	virtual void runSkillDAnimation();
-	virtual void runSkillEAnimation( );
+	/*virtual*/ void runSkillEAnimation();
 	
 	bool isHurt;
 	bool isRunning;
 	bool shanaisAttack;
-	void HurtAnimation();
+	void HurtAnimation(int num);
 	void HurtEnd();
 	void StartListen();
 private:

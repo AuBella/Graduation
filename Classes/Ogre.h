@@ -25,7 +25,8 @@ public:
 	void enterAttackArea(float x, float y);
 	CCSprite* GetSprite();
 	void StartListen();
-	void HurtAnimation();
+	void HurtAnimation(int num);
+	int ogreAttacknum;
 	bool isHurt;
 	bool isDead;
 	bool isAttack;
