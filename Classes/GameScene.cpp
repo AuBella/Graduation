@@ -1,11 +1,13 @@
 #include"GameScene.h"
 
+#include"RewardLayer.h"
 GameScene::GameScene(void){
 	CocosDenshion::SimpleAudioEngine::sharedEngine()->preloadBackgroundMusic("sound");
 	CocosDenshion::SimpleAudioEngine::sharedEngine()->playBackgroundMusic("sound/fighting.mp3", -1);  
 	gameLayer = NULL;
 	TimeNum = 120;
 	operatorLayer= NULL;
+	heroIcon = NULL;
 };
 
 GameScene::~GameScene(void){
@@ -45,16 +47,20 @@ bool GameScene::init(){
 	setupHeroIcon("aa");
 	return true;
 };
-void GameScene::setupInitTime(int num){
+void GameScene::setupInitTime(int num){/*
 	CCSize winSize = CCDirector::sharedDirector() -> getWinSize();
+	CCLOG("....................%f %f", winSize.width, winSize.height);*/
 	pLabel = CCLabelTTF::create("Time", "fonts/Helvetica", 15);//要显示的内容，字体，字号 
 	pLabel->setColor(ccc3(255,255,0));
-	pLabel ->setPosition(ccp(winSize.width / 2, winSize.height - 10));
+	//pLabel ->setPosition(ccp(winSize.width / 2, winSize.height - 10));
+	
+	pLabel ->setPosition(ccp(512/ 2,320 - 10));
 	operatorLayer->addChild(pLabel,1);
 	pLabel = CCLabelTTF::create("99:99", "fonts/Helvetica", 20);//要显示的内容，字体，字号 
 	pLabel->setColor(ccc3(255,255,0)); 
 	operatorLayer->addChild(pLabel,1);
-	pLabel ->setPosition(ccp(winSize.width / 2, winSize.height - 25));
+	//pLabel ->setPosition(ccp(winSize.width / 2, winSize.height - 25));
+	pLabel ->setPosition(ccp(512 / 2, 320 - 25));
 	schedule(schedule_selector(GameScene::update),1);
 }
 
@@ -70,6 +76,7 @@ void GameScene::update(float delta){
 		}
 	}
 	if(flag){
+		showRewardResult();
 		this->unschedule(schedule_selector(GameScene::update)); 
 		//unscheduleUpdate();
 	}
@@ -79,11 +86,20 @@ void GameScene::update(float delta){
 	sprintf(mtime,"%d : %d",(int)TimeNum/60,(int)TimeNum%60);  
 	pLabel->setString(mtime);  
 }
-	
+void GameScene::showRewardResult(){
+	CCSize visibleSize = CCDirector::sharedDirector()->getVisibleSize();
+	CCRenderTexture *renderTexture = CCRenderTexture::create(visibleSize.width,visibleSize.height);
+	renderTexture->begin(); 
+	//this->getParent()->visit();
+	renderTexture->end();
+	CCDirector::sharedDirector()->replaceScene(RewardLayer::scene(renderTexture, TimeNum, 89));	
+}
 void GameScene::setupHeroIcon(char* name){
-	CCSize winSize = CCDirector::sharedDirector() -> getWinSize();
-	CCSprite* heroIcon = CCSprite::create("Common/310_hoodle.png");
-	heroIcon->setScale(0.5);
-	heroIcon->setPosition(ccp(heroIcon->getContentSize().width / 4 + 5, winSize.height - heroIcon->getContentSize().height / 4 - 3));
-	operatorLayer->addChild(heroIcon);
+	//CCSize winSize = CCDirector::sharedDirector() -> getWinSize();
+	heroIcon = CCSprite::create("Common/310_hoodle.png");
+	//heroIcon->setScale(0.5);/*
+	//heroIcon->setPosition(ccp(heroIcon->getContentSize().width / 4 + 5, winSize.height - heroIcon->getContentSize().height / 4 - 3));*/
+	//
+	//heroIcon->setPosition(ccp(heroIcon->getContentSize().width / 4 + 5, 320 - heroIcon->getContentSize().height / 4 - 3));
+	//this->addChild(heroIcon,2);
 }

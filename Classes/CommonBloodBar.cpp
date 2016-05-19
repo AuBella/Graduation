@@ -64,9 +64,9 @@ void CommonBloodBar::setRedBloodBarType(bool flag){
 
 	
 void CommonBloodBar::setupHeroIcon(char* name){
-	CCSize winSize = CCDirector::sharedDirector() -> getWinSize();
+	/*CCSize winSize = CCDirector::sharedDirector() -> getWinSize();
 	CCSprite* monsterIcon = CCSprite::create("Common/817_hoodle.png");
 	monsterIcon->setScale(2 * 0.7);
 	monsterIcon->setPosition(ccp(monsterIcon->getContentSize().width / 2 + 15, heroIcon->getContentSize().height / 2));
-	monsterIconBg->addChild(monsterIcon);
+	monsterIconBg->addChild(monsterIcon);*/
 }

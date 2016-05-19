@@ -16,9 +16,11 @@ public:
 	void setupInitTime(int num);
 	void setupHeroIcon(char* name);
 	CC_SYNTHESIZE(GameLayer*, gameLayer, GameLayer);
+	void showRewardResult();
 	CC_SYNTHESIZE(OperatorLayer*, operatorLayer, OperatorLayer);
 	CREATE_FUNC(GameScene);
 private:
 	CCLabelTTF* pLabel;
 	int TimeNum;
+	CCSprite* heroIcon;
 };

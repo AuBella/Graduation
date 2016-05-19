@@ -1,6 +1,6 @@
 #include"cocos2d.h"
 #include"GameScene.h"
-#include"IconvString.h"
+//#include"IconvString.h"
 #include "SimpleAudioEngine.h"
 
 USING_NS_CC;

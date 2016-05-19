@@ -37,6 +37,8 @@ public:
     */
     virtual void applicationWillEnterForeground();
 private:
+	//GameScene *pScene;
+
 	MainScene *pScene;
 };
 
