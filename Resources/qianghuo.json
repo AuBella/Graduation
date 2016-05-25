@@ -1,0 +1,1911 @@
+{
+  "armature_data": [
+    {
+      "name": "qianghuohua",
+      "bone_data": [
+        {
+          "name": "qhuohua130",
+          "parent": "",
+          "x": 0.0,
+          "y": 0.0,
+          "z": 20,
+          "cX": 1.0,
+          "cY": 1.0,
+          "kX": 0.0,
+          "kY": 0.0,
+          "arrow_x": 0.0,
+          "arrow_y": 0.0,
+          "effectbyskeleton": false,
+          "display_data": [
+            {
+              "displayType": 0,
+              "name": "qhuohua130"
+            }
+          ]
+        },
+        {
+          "name": "qhuohua",
+          "parent": "",
+          "x": 0.0,
+          "y": 0.0,
+          "z": 19,
+          "cX": 1.0,
+          "cY": 1.0,
+          "kX": 0.0,
+          "kY": 0.0,
+          "arrow_x": 0.0,
+          "arrow_y": 0.0,
+          "effectbyskeleton": false,
+          "display_data": [
+            {
+              "displayType": 0,
+              "name": "qhuohua130"
+            }
+          ]
+        },
+        {
+          "name": "qhuohua110",
+          "parent": "",
+          "x": 0.0,
+          "y": 0.0,
+          "z": 18,
+          "cX": 1.0,
+          "cY": 1.0,
+          "kX": 0.0,
+          "kY": 0.0,
+          "arrow_x": 0.0,
+          "arrow_y": 0.0,
+          "effectbyskeleton": false,
+          "display_data": [
+            {
+              "displayType": 0,
+              "name": "qhuohua110"
+            }
+          ]
+        },
+        {
+          "name": "qhuohua131",
+          "parent": "",
+          "x": 0.0,
+          "y": 0.0,
+          "z": 17,
+          "cX": 1.0,
+          "cY": 1.0,
+          "kX": 0.0,
+          "kY": 0.0,
+          "arrow_x": 0.0,
+          "arrow_y": 0.0,
+          "effectbyskeleton": false,
+          "display_data": [
+            {
+              "displayType": 0,
+              "name": "qhuohua130"
+            },
+            {
+              "displayType": 0,
+              "name": "qhuohua131"
+            }
+          ]
+        },
+        {
+          "name": "qhuohua14",
+          "parent": "",
+          "x": 0.0,
+          "y": 0.0,
+          "z": 16,
+          "cX": 1.0,
+          "cY": 1.0,
+          "kX": 0.0,
+          "kY": 0.0,
+          "arrow_x": 0.0,
+          "arrow_y": 0.0,
+          "effectbyskeleton": false,
+          "display_data": [
+            {
+              "displayType": 0,
+              "name": "qhuohua148"
+            }
+          ]
+        },
+        {
+          "name": "qhuohua8",
+          "parent": "",
+          "x": 0.0,
+          "y": 0.0,
+          "z": 15,
+          "cX": 1.0,
+          "cY": 1.0,
+          "kX": 0.0,
+          "kY": 0.0,
+          "arrow_x": 0.0,
+          "arrow_y": 0.0,
+          "effectbyskeleton": false,
+          "display_data": [
+            {
+              "displayType": 0,
+              "name": "qhuohua148"
+            }
+          ]
+        },
+        {
+          "name": "qhuohua148",
+          "parent": "",
+          "x": 0.0,
+          "y": 0.0,
+          "z": 14,
+          "cX": 1.0,
+          "cY": 1.0,
+          "kX": 0.0,
+          "kY": 0.0,
+          "arrow_x": 0.0,
+          "arrow_y": 0.0,
+          "effectbyskeleton": false,
+          "display_data": [
+            {
+              "displayType": 0,
+              "name": "qhuohua148"
+            }
+          ]
+        },
+        {
+          "name": "qhuoguang15",
+          "parent": "",
+          "x": 0.0,
+          "y": 0.0,
+          "z": 13,
+          "cX": 1.0,
+          "cY": 1.0,
+          "kX": 0.0,
+          "kY": 0.0,
+          "arrow_x": 0.0,
+          "arrow_y": 0.0,
+          "effectbyskeleton": false,
+          "display_data": [
+            {
+              "displayType": 0,
+              "name": "qhuohua130"
+            },
+            {
+              "displayType": 0,
+              "name": "qhuohua131"
+            }
+          ]
+        },
+        {
+          "name": "qhuohua11",
+          "parent": "",
+          "x": 0.0,
+          "y": 0.0,
+          "z": 12,
+          "cX": 1.0,
+          "cY": 1.0,
+          "kX": 0.0,
+          "kY": 0.0,
+          "arrow_x": 0.0,
+          "arrow_y": 0.0,
+          "effectbyskeleton": false,
+          "display_data": [
+            {
+              "displayType": 0,
+              "name": "qhuohua11"
+            }
+          ]
+        },
+        {
+          "name": "qhuohua13",
+          "parent": "",
+          "x": 0.0,
+          "y": 0.0,
+          "z": 11,
+          "cX": 1.0,
+          "cY": 1.0,
+          "kX": 0.0,
+          "kY": 0.0,
+          "arrow_x": 0.0,
+          "arrow_y": 0.0,
+          "effectbyskeleton": false,
+          "display_data": [
+            {
+              "displayType": 0,
+              "name": "qhuohua130"
+            },
+            {
+              "displayType": 0,
+              "name": "qhuohua13"
+            }
+          ]
+        },
+        {
+          "name": "sdhuo 1",
+          "parent": "",
+          "x": 0.0,
+          "y": 0.0,
+          "z": 10,
+          "cX": 1.0,
+          "cY": 1.0,
+          "kX": 0.0,
+          "kY": 0.0,
+          "arrow_x": 0.0,
+          "arrow_y": 0.0,
+          "effectbyskeleton": false,
+          "display_data": [
+            {
+              "displayType": 0,
+              "name": "sdhuo1"
+            },
+            {
+              "displayType": 0,
+              "name": "sdhuo2"
+            },
+            {
+              "displayType": 0,
+              "name": "sdhuo3"
+            },
+            {
+              "displayType": 0,
+              "name": "sdhuo4"
+            },
+            {
+              "displayType": 0,
+              "name": "sdhuo5"
+            }
+          ]
+        },
+        {
+          "name": "qhuohua1402",
+          "parent": "",
+          "x": 0.0,
+          "y": 0.0,
+          "z": 9,
+          "cX": 1.0,
+          "cY": 1.0,
+          "kX": 0.0,
+          "kY": 0.0,
+          "arrow_x": 0.0,
+          "arrow_y": 0.0,
+          "effectbyskeleton": false,
+          "display_data": [
+            {
+              "displayType": 0,
+              "name": "qhuohua148"
+            },
+            {
+              "displayType": 0,
+              "name": "qhuohua1408"
+            }
+          ]
+        },
+        {
+          "name": "qhuohua9",
+          "parent": "",
+          "x": 0.0,
+          "y": 0.0,
+          "z": 8,
+          "cX": 1.0,
+          "cY": 1.0,
+          "kX": 0.0,
+          "kY": 0.0,
+          "arrow_x": 0.0,
+          "arrow_y": 0.0,
+          "effectbyskeleton": false,
+          "display_data": [
+            {
+              "displayType": 0,
+              "name": "qhuohua9"
+            }
+          ]
+        },
+        {
+          "name": "qhuohua82",
+          "parent": "",
+          "x": 0.0,
+          "y": 0.0,
+          "z": 7,
+          "cX": 1.0,
+          "cY": 1.0,
+          "kX": 0.0,
+          "kY": 0.0,
+          "arrow_x": 0.0,
+          "arrow_y": 0.0,
+          "effectbyskeleton": false,
+          "display_data": [
+            {
+              "displayType": 0,
+              "name": "qhuohua148"
+            },
+            {
+              "displayType": 0,
+              "name": "qhuohua1408"
+            }
+          ]
+        },
+        {
+          "name": "qhuohua1408",
+          "parent": "",
+          "x": 0.0,
+          "y": 0.0,
+          "z": 6,
+          "cX": 1.0,
+          "cY": 1.0,
+          "kX": 0.0,
+          "kY": 0.0,
+          "arrow_x": 0.0,
+          "arrow_y": 0.0,
+          "effectbyskeleton": false,
+          "display_data": [
+            {
+              "displayType": 0,
+              "name": "qhuohua1408"
+            }
+          ]
+        },
+        {
+          "name": "qhuoguang150",
+          "parent": "",
+          "x": 0.0,
+          "y": 0.0,
+          "z": 5,
+          "cX": 1.0,
+          "cY": 1.0,
+          "kX": 0.0,
+          "kY": 0.0,
+          "arrow_x": 0.0,
+          "arrow_y": 0.0,
+          "effectbyskeleton": false,
+          "display_data": [
+            {
+              "displayType": 0,
+              "name": "qhuohua130"
+            },
+            {
+              "displayType": 0,
+              "name": "qhuohua13"
+            }
+          ]
+        },
+        {
+          "name": "nu 1",
+          "parent": "",
+          "x": 0.0,
+          "y": 0.0,
+          "z": 4,
+          "cX": 1.0,
+          "cY": 1.0,
+          "kX": 0.0,
+          "kY": 0.0,
+          "arrow_x": 0.0,
+          "arrow_y": 0.0,
+          "effectbyskeleton": false,
+          "display_data": [
+            {
+              "displayType": 0,
+              "name": "nu1"
+            }
+          ]
+        },
+        {
+          "name": "nu 2",
+          "parent": "",
+          "x": 0.0,
+          "y": 0.0,
+          "z": 3,
+          "cX": 1.0,
+          "cY": 1.0,
+          "kX": 0.0,
+          "kY": 0.0,
+          "arrow_x": 0.0,
+          "arrow_y": 0.0,
+          "effectbyskeleton": false,
+          "display_data": [
+            {
+              "displayType": 0,
+              "name": "nu2"
+            }
+          ]
+        },
+        {
+          "name": "nu 3",
+          "parent": "",
+          "x": 0.0,
+          "y": 0.0,
+          "z": 2,
+          "cX": 1.0,
+          "cY": 1.0,
+          "kX": 0.0,
+          "kY": 0.0,
+          "arrow_x": 0.0,
+          "arrow_y": 0.0,
+          "effectbyskeleton": false,
+          "display_data": [
+            {
+              "displayType": 0,
+              "name": "nu3"
+            }
+          ]
+        },
+        {
+          "name": "nu 4",
+          "parent": "",
+          "x": 0.0,
+          "y": 0.0,
+          "z": 1,
+          "cX": 1.0,
+          "cY": 1.0,
+          "kX": 0.0,
+          "kY": 0.0,
+          "arrow_x": 0.0,
+          "arrow_y": 0.0,
+          "effectbyskeleton": false,
+          "display_data": [
+            {
+              "displayType": 0,
+              "name": "nu4"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "animation_data": [
+    {
+      "name": "qianghuohua",
+      "mov_data": [
+        {
+          "name": "qiang11huoguang",
+          "dr": 5,
+          "lp": false,
+          "to": 0,
+          "drTW": 5,
+          "twE": 0,
+          "mov_bone_data": [
+            {
+              "name": "qhuohua11",
+              "dl": 0.0,
+              "sc": 1.0,
+              "frame_data": [
+                {
+                  "twE": 0,
+                  "dr": 1,
+                  "dI": 0,
+                  "x": -0.15,
+                  "y": 0.1,
+                  "z": 12,
+                  "cX": 0.0,
+                  "cY": 0.0,
+                  "kX": 0.0,
+                  "kY": 0.0
+                },
+                {
+                  "twE": 0,
+                  "dr": 1,
+                  "dI": 0,
+                  "x": -0.2,
+                  "y": -0.05,
+                  "z": 12,
+                  "cX": 0.71,
+                  "cY": 0.71,
+                  "kX": 0.0,
+                  "kY": 0.0
+                },
+                {
+                  "twE": 0,
+                  "dr": 1,
+                  "dI": 0,
+                  "x": -0.1,
+                  "y": 0.1,
+                  "z": 12,
+                  "cX": 0.77,
+                  "cY": 0.77,
+                  "kX": 0.0,
+                  "kY": 0.0
+                },
+                {
+                  "twE": 0,
+                  "dr": 1,
+                  "dI": 0,
+                  "x": 0.15,
+                  "y": 0.25,
+                  "z": 12,
+                  "cX": 0.83,
+                  "cY": 0.83,
+                  "kX": 0.0,
+                  "kY": 0.0
+                },
+                {
+                  "twE": 0,
+                  "dr": 1,
+                  "dI": 0,
+                  "x": -0.15,
+                  "y": 0.1,
+                  "z": 12,
+                  "cX": 0.0,
+                  "cY": 0.0,
+                  "kX": 0.0,
+                  "kY": 0.0
+                }
+              ]
+            },
+            {
+              "name": "qhuohua110",
+              "dl": 0.0,
+              "sc": 1.0,
+              "frame_data": [
+                {
+                  "twE": 0,
+                  "dr": 1,
+                  "dI": 0,
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 18,
+                  "cX": 0.0,
+                  "cY": 0.0,
+                  "kX": 0.0,
+                  "kY": 0.0
+                },
+                {
+                  "twE": 0,
+                  "dr": 1,
+                  "dI": 0,
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 18,
+                  "cX": 0.0,
+                  "cY": 0.0,
+                  "kX": 0.0,
+                  "kY": 0.0
+                },
+                {
+                  "twE": 0,
+                  "dr": 1,
+                  "dI": 0,
+                  "x": 0.4,
+                  "y": 0.0,
+                  "z": 18,
+                  "cX": 0.79,
+                  "cY": 0.79,
+                  "kX": 0.0,
+                  "kY": 0.0
+                },
+                {
+                  "twE": 0,
+                  "dr": 1,
+                  "dI": 0,
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 18,
+                  "cX": 0.0,
+                  "cY": 0.0,
+                  "kX": 0.0,
+                  "kY": 0.0
+                },
+                {
+                  "twE": 0,
+                  "dr": 1,
+                  "dI": 0,
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 18,
+                  "cX": 0.0,
+                  "cY": 0.0,
+                  "kX": 0.0,
+                  "kY": 0.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "qiang13huoguang",
+          "dr": 5,
+          "lp": false,
+          "to": 0,
+          "drTW": 5,
+          "twE": 0,
+          "mov_bone_data": [
+            {
+              "name": "qhuohua13",
+              "dl": 0.0,
+              "sc": 1.0,
+              "frame_data": [
+                {
+                  "twE": 0,
+                  "dr": 1,
+                  "dI": 0,
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 11,
+                  "cX": 0.0,
+                  "cY": 0.0,
+                  "kX": 0.0,
+                  "kY": 0.0
+                },
+                {
+                  "twE": 0,
+                  "dr": 1,
+                  "dI": 0,
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 11,
+                  "cX": 0.0,
+                  "cY": 0.0,
+                  "kX": 0.0,
+                  "kY": 0.0
+                },
+                {
+                  "twE": 0,
+                  "dr": 1,
+                  "dI": 1,
+                  "x": 0.75,
+                  "y": 0.05,
+                  "z": 11,
+                  "cX": 1.15,
+                  "cY": 1.15,
+                  "kX": 0.0,
+                  "kY": 0.0
+                },
+                {
+                  "twE": 0,
+                  "dr": 1,
+                  "dI": 0,
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 11,
+                  "cX": 0.0,
+                  "cY": 0.0,
+                  "kX": 0.0,
+                  "kY": 0.0
+                },
+                {
+                  "twE": 0,
+                  "dr": 1,
+                  "dI": 0,
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 11,
+                  "cX": 0.0,
+                  "cY": 0.0,
+                  "kX": 0.0,
+                  "kY": 0.0
+                }
+              ]
+            },
+            {
+              "name": "qhuohua131",
+              "dl": 0.0,
+              "sc": 1.0,
+              "frame_data": [
+                {
+                  "twE": 0,
+                  "dr": 1,
+                  "dI": 0,
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 17,
+                  "cX": 0.0,
+                  "cY": 0.0,
+                  "kX": 0.0,
+                  "kY": 0.0
+                },
+                {
+                  "twE": 0,
+                  "dr": 1,
+                  "dI": 1,
+                  "x": 0.75,
+                  "y": 0.6,
+                  "z": 17,
+                  "cX": 1.15,
+                  "cY": 1.15,
+                  "kX": 0.0,
+                  "kY": 0.0
+                },
+                {
+                  "twE": 0,
+                  "dr": 1,
+                  "dI": 0,
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 17,
+                  "cX": 0.0,
+                  "cY": 0.0,
+                  "kX": 0.0,
+                  "kY": 0.0
+                },
+                {
+                  "twE": 0,
+                  "dr": 1,
+                  "dI": 0,
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 17,
+                  "cX": 0.0,
+                  "cY": 0.0,
+                  "kX": 0.0,
+                  "kY": 0.0
+                },
+                {
+                  "twE": 0,
+                  "dr": 1,
+                  "dI": 0,
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 17,
+                  "cX": 0.0,
+                  "cY": 0.0,
+                  "kX": 0.0,
+                  "kY": 0.0
+                }
+              ]
+            },
+            {
+              "name": "qhuohua130",
+              "dl": 0.0,
+              "sc": 1.0,
+              "frame_data": [
+                {
+                  "twE": 0,
+                  "dr": 1,
+                  "dI": 0,
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 20,
+                  "cX": 0.0,
+                  "cY": 0.0,
+                  "kX": 0.0,
+                  "kY": 0.0
+                },
+                {
+                  "twE": 0,
+                  "dr": 1,
+                  "dI": 0,
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 20,
+                  "cX": 0.0,
+                  "cY": 0.0,
+                  "kX": 0.0,
+                  "kY": 0.0
+                },
+                {
+                  "twE": 0,
+                  "dr": 1,
+                  "dI": 0,
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 20,
+                  "cX": 0.0,
+                  "cY": 0.0,
+                  "kX": 0.0,
+                  "kY": 0.0
+                },
+                {
+                  "twE": 0,
+                  "dr": 1,
+                  "dI": 0,
+                  "x": 0.1,
+                  "y": -0.2,
+                  "z": 20,
+                  "cX": 1.15,
+                  "cY": 1.15,
+                  "kX": 0.0,
+                  "kY": 0.0
+                },
+                {
+                  "twE": 0,
+                  "dr": 1,
+                  "dI": 0,
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 20,
+                  "cX": 0.0,
+                  "cY": 0.0,
+                  "kX": 0.0,
+                  "kY": 0.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "qiang12huoguang",
+          "dr": 6,
+          "lp": false,
+          "to": 0,
+          "drTW": 6,
+          "twE": 0,
+          "mov_bone_data": [
+            {
+              "name": "sdhuo 1",
+              "dl": 0.0,
+              "sc": 1.0,
+              "frame_data": [
+                {
+                  "twE": 0,
+                  "dr": 1,
+                  "dI": 0,
+                  "x": -7.35,
+                  "y": 2.3,
+                  "z": 10,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0
+                },
+                {
+                  "twE": 0,
+                  "dr": 1,
+                  "dI": 1,
+                  "x": -7.7,
+                  "y": 3.0,
+                  "z": 10,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0
+                },
+                {
+                  "twE": 0,
+                  "dr": 1,
+                  "dI": 2,
+                  "x": -7.95,
+                  "y": 2.3,
+                  "z": 10,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0
+                },
+                {
+                  "twE": 0,
+                  "dr": 1,
+                  "dI": 3,
+                  "x": -7.5,
+                  "y": 2.3,
+                  "z": 10,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0
+                },
+                {
+                  "twE": 0,
+                  "dr": 1,
+                  "dI": 4,
+                  "x": -7.55,
+                  "y": 2.3,
+                  "z": 10,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0
+                },
+                {
+                  "twE": 0,
+                  "dr": 1,
+                  "dI": -1,
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 10,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "qiang14huoguang",
+          "dr": 5,
+          "lp": false,
+          "to": 0,
+          "drTW": 5,
+          "twE": 0,
+          "mov_bone_data": [
+            {
+              "name": "qhuohua1402",
+              "dl": 0.0,
+              "sc": 1.0,
+              "frame_data": [
+                {
+                  "twE": 0,
+                  "dr": 1,
+                  "dI": 0,
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 9,
+                  "cX": 0.0,
+                  "cY": 0.0,
+                  "kX": 0.0,
+                  "kY": 0.0
+                },
+                {
+                  "twE": 0,
+                  "dr": 1,
+                  "dI": 1,
+                  "x": 0.4,
+                  "y": 0.15,
+                  "z": 9,
+                  "cX": 0.74,
+                  "cY": 0.74,
+                  "kX": 0.0,
+                  "kY": 0.0
+                },
+                {
+                  "twE": 0,
+                  "dr": 1,
+                  "dI": 1,
+                  "x": 0.6,
+                  "y": 0.85,
+                  "z": 9,
+                  "cX": 0.85,
+                  "cY": 0.85,
+                  "kX": 0.0,
+                  "kY": 0.0
+                },
+                {
+                  "twE": 0,
+                  "dr": 1,
+                  "dI": 1,
+                  "x": 0.2,
+                  "y": -0.1,
+                  "z": 9,
+                  "cX": 0.96,
+                  "cY": 0.96,
+                  "kX": 0.0,
+                  "kY": 0.0
+                },
+                {
+                  "twE": 0,
+                  "dr": 1,
+                  "dI": 0,
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 9,
+                  "cX": 0.0,
+                  "cY": 0.0,
+                  "kX": 0.0,
+                  "kY": 0.0
+                }
+              ]
+            },
+            {
+              "name": "qhuohua14",
+              "dl": 0.0,
+              "sc": 1.0,
+              "frame_data": [
+                {
+                  "twE": 0,
+                  "dr": 1,
+                  "dI": 0,
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 16,
+                  "cX": 0.0,
+                  "cY": 0.0,
+                  "kX": 0.0,
+                  "kY": 0.0
+                },
+                {
+                  "twE": 0,
+                  "dr": 1,
+                  "dI": 0,
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 16,
+                  "cX": 0.0,
+                  "cY": 0.0,
+                  "kX": 0.0,
+                  "kY": 0.0
+                },
+                {
+                  "twE": 0,
+                  "dr": 1,
+                  "dI": 0,
+                  "x": 0.4,
+                  "y": 0.15,
+                  "z": 16,
+                  "cX": 0.83,
+                  "cY": 0.83,
+                  "kX": 0.0,
+                  "kY": 0.0
+                },
+                {
+                  "twE": 0,
+                  "dr": 1,
+                  "dI": 0,
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 16,
+                  "cX": 0.0,
+                  "cY": 0.0,
+                  "kX": 0.0,
+                  "kY": 0.0
+                },
+                {
+                  "twE": 0,
+                  "dr": 1,
+                  "dI": 0,
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 16,
+                  "cX": 0.0,
+                  "cY": 0.0,
+                  "kX": 0.0,
+                  "kY": 0.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "qiang9huoguang",
+          "dr": 5,
+          "lp": false,
+          "to": 0,
+          "drTW": 5,
+          "twE": 0,
+          "mov_bone_data": [
+            {
+              "name": "qhuohua9",
+              "dl": 0.0,
+              "sc": 1.0,
+              "frame_data": [
+                {
+                  "twE": 0,
+                  "dr": 1,
+                  "dI": 0,
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 8,
+                  "cX": 0.0,
+                  "cY": 0.0,
+                  "kX": 0.0,
+                  "kY": 0.0
+                },
+                {
+                  "twE": 0,
+                  "dr": 1,
+                  "dI": 0,
+                  "x": 0.05,
+                  "y": 0.1,
+                  "z": 8,
+                  "cX": 0.74,
+                  "cY": 0.73,
+                  "kX": 0.0,
+                  "kY": 0.09756391
+                },
+                {
+                  "twE": 0,
+                  "dr": 1,
+                  "dI": 0,
+                  "x": 0.35,
+                  "y": 0.0,
+                  "z": 8,
+                  "cX": 0.93,
+                  "cY": 0.93,
+                  "kX": 0.0,
+                  "kY": 0.0837758
+                },
+                {
+                  "twE": 0,
+                  "dr": 1,
+                  "dI": 0,
+                  "x": 0.0,
+                  "y": -0.05,
+                  "z": 8,
+                  "cX": 1.12,
+                  "cY": 1.12,
+                  "kX": 0.0,
+                  "kY": 0.07504916
+                },
+                {
+                  "twE": 0,
+                  "dr": 1,
+                  "dI": 0,
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 8,
+                  "cX": 0.0,
+                  "cY": 0.0,
+                  "kX": 0.0,
+                  "kY": 0.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "qiang8huoguang",
+          "dr": 5,
+          "lp": false,
+          "to": 0,
+          "drTW": 5,
+          "twE": 0,
+          "mov_bone_data": [
+            {
+              "name": "qhuohua82",
+              "dl": 0.0,
+              "sc": 1.0,
+              "frame_data": [
+                {
+                  "twE": 0,
+                  "dr": 1,
+                  "dI": 0,
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 7,
+                  "cX": 0.0,
+                  "cY": 0.0,
+                  "kX": 3.14159274,
+                  "kY": 0.0
+                },
+                {
+                  "twE": 0,
+                  "dr": 1,
+                  "dI": 1,
+                  "x": 0.65,
+                  "y": -0.4,
+                  "z": 7,
+                  "cX": 0.53,
+                  "cY": 0.53,
+                  "kX": 0.0,
+                  "kY": 0.0
+                },
+                {
+                  "twE": 0,
+                  "dr": 1,
+                  "dI": 1,
+                  "x": 0.65,
+                  "y": -0.4,
+                  "z": 7,
+                  "cX": 0.65,
+                  "cY": 0.65,
+                  "kX": 0.0,
+                  "kY": 0.0
+                },
+                {
+                  "twE": 0,
+                  "dr": 1,
+                  "dI": 1,
+                  "x": 0.6,
+                  "y": 0.3,
+                  "z": 7,
+                  "cX": 0.77,
+                  "cY": 0.77,
+                  "kX": 0.0,
+                  "kY": 0.0
+                },
+                {
+                  "twE": 0,
+                  "dr": 1,
+                  "dI": 0,
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 7,
+                  "cX": 0.0,
+                  "cY": 0.0,
+                  "kX": 3.14159274,
+                  "kY": 0.0
+                }
+              ]
+            },
+            {
+              "name": "qhuohua8",
+              "dl": 0.0,
+              "sc": 1.0,
+              "frame_data": [
+                {
+                  "twE": 0,
+                  "dr": 1,
+                  "dI": 0,
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 15,
+                  "cX": 0.0,
+                  "cY": 0.0,
+                  "kX": 3.14159274,
+                  "kY": 0.0
+                },
+                {
+                  "twE": 0,
+                  "dr": 1,
+                  "dI": 0,
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 15,
+                  "cX": 0.0,
+                  "cY": 0.0,
+                  "kX": 3.14159274,
+                  "kY": 0.0
+                },
+                {
+                  "twE": 0,
+                  "dr": 1,
+                  "dI": 0,
+                  "x": 0.7,
+                  "y": -0.2,
+                  "z": 15,
+                  "cX": 0.6,
+                  "cY": 0.6,
+                  "kX": 0.0,
+                  "kY": 0.0
+                },
+                {
+                  "twE": 0,
+                  "dr": 1,
+                  "dI": 0,
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 15,
+                  "cX": 0.0,
+                  "cY": 0.0,
+                  "kX": 3.14159274,
+                  "kY": 0.0
+                },
+                {
+                  "twE": 0,
+                  "dr": 1,
+                  "dI": 0,
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 15,
+                  "cX": 0.0,
+                  "cY": 0.0,
+                  "kX": 3.14159274,
+                  "kY": 0.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "qiang7huoguang",
+          "dr": 5,
+          "lp": false,
+          "to": 0,
+          "drTW": 5,
+          "twE": 0,
+          "mov_bone_data": [
+            {
+              "name": "qhuohua1408",
+              "dl": 0.0,
+              "sc": 1.0,
+              "frame_data": [
+                {
+                  "twE": 0,
+                  "dr": 1,
+                  "dI": 0,
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 6,
+                  "cX": 0.0,
+                  "cY": 0.0,
+                  "kX": 0.0,
+                  "kY": 0.0
+                },
+                {
+                  "twE": 0,
+                  "dr": 1,
+                  "dI": 0,
+                  "x": 0.35,
+                  "y": 0.5,
+                  "z": 6,
+                  "cX": 0.55,
+                  "cY": 0.37,
+                  "kX": 0.0,
+                  "kY": 0.0
+                },
+                {
+                  "twE": 0,
+                  "dr": 1,
+                  "dI": 0,
+                  "x": 0.35,
+                  "y": 0.05,
+                  "z": 6,
+                  "cX": 0.66,
+                  "cY": 0.43,
+                  "kX": 0.0,
+                  "kY": 0.0
+                },
+                {
+                  "twE": 0,
+                  "dr": 1,
+                  "dI": 0,
+                  "x": 0.05,
+                  "y": -0.05,
+                  "z": 6,
+                  "cX": 0.77,
+                  "cY": 0.49,
+                  "kX": 0.0,
+                  "kY": 0.0
+                },
+                {
+                  "twE": 0,
+                  "dr": 1,
+                  "dI": 0,
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 6,
+                  "cX": 0.0,
+                  "cY": 0.0,
+                  "kX": 0.0,
+                  "kY": 0.0
+                }
+              ]
+            },
+            {
+              "name": "qhuohua148",
+              "dl": 0.0,
+              "sc": 1.0,
+              "frame_data": [
+                {
+                  "twE": 0,
+                  "dr": 1,
+                  "dI": 0,
+                  "x": 0.05,
+                  "y": -0.05,
+                  "z": 14,
+                  "cX": 0.0,
+                  "cY": 0.0,
+                  "kX": 0.0,
+                  "kY": -3.14159274
+                },
+                {
+                  "twE": 0,
+                  "dr": 1,
+                  "dI": 0,
+                  "x": 0.05,
+                  "y": -0.05,
+                  "z": 14,
+                  "cX": 0.0,
+                  "cY": 0.0,
+                  "kX": 0.0,
+                  "kY": -3.14159274
+                },
+                {
+                  "twE": 0,
+                  "dr": 1,
+                  "dI": 0,
+                  "x": 0.4,
+                  "y": -0.4,
+                  "z": 14,
+                  "cX": 0.37,
+                  "cY": 0.27,
+                  "kX": 0.0,
+                  "kY": 0.0
+                },
+                {
+                  "twE": 0,
+                  "dr": 1,
+                  "dI": 0,
+                  "x": 0.05,
+                  "y": -0.05,
+                  "z": 14,
+                  "cX": 0.0,
+                  "cY": 0.0,
+                  "kX": 0.0,
+                  "kY": -3.14159274
+                },
+                {
+                  "twE": 0,
+                  "dr": 1,
+                  "dI": 0,
+                  "x": 0.05,
+                  "y": -0.05,
+                  "z": 14,
+                  "cX": 0.0,
+                  "cY": 0.0,
+                  "kX": 0.0,
+                  "kY": -3.14159274
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "qiang15huoguang",
+          "dr": 5,
+          "lp": false,
+          "to": 0,
+          "drTW": 5,
+          "twE": 0,
+          "mov_bone_data": [
+            {
+              "name": "qhuoguang150",
+              "dl": 0.0,
+              "sc": 1.0,
+              "frame_data": [
+                {
+                  "twE": 0,
+                  "dr": 1,
+                  "dI": 0,
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 5,
+                  "cX": 0.0,
+                  "cY": 0.0,
+                  "kX": 0.0,
+                  "kY": 0.0
+                },
+                {
+                  "twE": 0,
+                  "dr": 1,
+                  "dI": 0,
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 5,
+                  "cX": 0.0,
+                  "cY": 0.0,
+                  "kX": 0.0,
+                  "kY": 0.0
+                },
+                {
+                  "twE": 0,
+                  "dr": 1,
+                  "dI": 1,
+                  "x": 0.35,
+                  "y": -0.35,
+                  "z": 5,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0
+                },
+                {
+                  "twE": 0,
+                  "dr": 1,
+                  "dI": 0,
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 5,
+                  "cX": 0.0,
+                  "cY": 0.0,
+                  "kX": 0.0,
+                  "kY": 0.0
+                },
+                {
+                  "twE": 0,
+                  "dr": 1,
+                  "dI": 0,
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 5,
+                  "cX": 0.0,
+                  "cY": 0.0,
+                  "kX": 0.0,
+                  "kY": 0.0
+                }
+              ]
+            },
+            {
+              "name": "qhuoguang15",
+              "dl": 0.0,
+              "sc": 1.0,
+              "frame_data": [
+                {
+                  "twE": 0,
+                  "dr": 1,
+                  "dI": 0,
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 13,
+                  "cX": 0.0,
+                  "cY": 0.0,
+                  "kX": 0.0,
+                  "kY": 0.0
+                },
+                {
+                  "twE": 0,
+                  "dr": 1,
+                  "dI": 1,
+                  "x": 0.85,
+                  "y": -1.85,
+                  "z": 13,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0
+                },
+                {
+                  "twE": 0,
+                  "dr": 1,
+                  "dI": 0,
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 13,
+                  "cX": 0.0,
+                  "cY": 0.0,
+                  "kX": 0.0,
+                  "kY": 0.0
+                },
+                {
+                  "twE": 0,
+                  "dr": 1,
+                  "dI": 0,
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 13,
+                  "cX": 0.0,
+                  "cY": 0.0,
+                  "kX": 0.0,
+                  "kY": 0.0
+                },
+                {
+                  "twE": 0,
+                  "dr": 1,
+                  "dI": 0,
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 13,
+                  "cX": 0.0,
+                  "cY": 0.0,
+                  "kX": 0.0,
+                  "kY": 0.0
+                }
+              ]
+            },
+            {
+              "name": "qhuohua",
+              "dl": 0.0,
+              "sc": 1.0,
+              "frame_data": [
+                {
+                  "twE": 0,
+                  "dr": 1,
+                  "dI": 0,
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 19,
+                  "cX": 0.0,
+                  "cY": 0.0,
+                  "kX": 0.0,
+                  "kY": 0.0
+                },
+                {
+                  "twE": 0,
+                  "dr": 1,
+                  "dI": 0,
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 19,
+                  "cX": 0.0,
+                  "cY": 0.0,
+                  "kX": 0.0,
+                  "kY": 0.0
+                },
+                {
+                  "twE": 0,
+                  "dr": 1,
+                  "dI": 0,
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 19,
+                  "cX": 0.0,
+                  "cY": 0.0,
+                  "kX": 0.0,
+                  "kY": 0.0
+                },
+                {
+                  "twE": 0,
+                  "dr": 1,
+                  "dI": 0,
+                  "x": 1.35,
+                  "y": -0.35,
+                  "z": 19,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0
+                },
+                {
+                  "twE": 0,
+                  "dr": 1,
+                  "dI": 0,
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 19,
+                  "cX": 0.0,
+                  "cY": 0.0,
+                  "kX": 0.0,
+                  "kY": 0.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "qiang16huoguang",
+          "dr": 5,
+          "lp": false,
+          "to": 0,
+          "drTW": 5,
+          "twE": 0,
+          "mov_bone_data": [
+            {
+              "name": "nu 1",
+              "dl": 0.0,
+              "sc": 1.0,
+              "frame_data": [
+                {
+                  "twE": 0,
+                  "dr": 1,
+                  "dI": 0,
+                  "x": 0.0,
+                  "y": 0.15,
+                  "z": 4,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0
+                },
+                {
+                  "twE": 0,
+                  "dr": 4,
+                  "dI": -1,
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 4,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0
+                }
+              ]
+            },
+            {
+              "name": "nu 2",
+              "dl": 0.0,
+              "sc": 1.0,
+              "frame_data": [
+                {
+                  "twE": 0,
+                  "dr": 1,
+                  "dI": -1,
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 3,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0
+                },
+                {
+                  "twE": 0,
+                  "dr": 1,
+                  "dI": 0,
+                  "x": 2.5,
+                  "y": -0.6,
+                  "z": 3,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0
+                },
+                {
+                  "twE": 0,
+                  "dr": 3,
+                  "dI": -1,
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 3,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0
+                }
+              ]
+            },
+            {
+              "name": "nu 3",
+              "dl": 0.0,
+              "sc": 1.0,
+              "frame_data": [
+                {
+                  "twE": 0,
+                  "dr": 2,
+                  "dI": -1,
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 2,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0
+                },
+                {
+                  "twE": 0,
+                  "dr": 1,
+                  "dI": 0,
+                  "x": 7.6,
+                  "y": -0.85,
+                  "z": 2,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0
+                },
+                {
+                  "twE": 0,
+                  "dr": 2,
+                  "dI": -1,
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 2,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0
+                }
+              ]
+            },
+            {
+              "name": "nu 4",
+              "dl": 0.0,
+              "sc": 1.0,
+              "frame_data": [
+                {
+                  "twE": 0,
+                  "dr": 3,
+                  "dI": -1,
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 1,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0
+                },
+                {
+                  "twE": 0,
+                  "dr": 1,
+                  "dI": 0,
+                  "x": 7.6,
+                  "y": -0.35,
+                  "z": 1,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0
+                },
+                {
+                  "twE": 0,
+                  "dr": 1,
+                  "dI": -1,
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 1,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "texture_data": [
+    {
+      "name": "nu4",
+      "width": 0.0,
+      "height": 0.0,
+      "pX": 0.0,
+      "pY": 0.5
+    },
+    {
+      "name": "nu3",
+      "width": 0.0,
+      "height": 0.0,
+      "pX": 0.0,
+      "pY": 0.5
+    },
+    {
+      "name": "nu2",
+      "width": 0.0,
+      "height": 0.0,
+      "pX": 0.0,
+      "pY": 0.5
+    },
+    {
+      "name": "nu1",
+      "width": 0.0,
+      "height": 0.0,
+      "pX": 0.0,
+      "pY": 0.5
+    },
+    {
+      "name": "qhuohua9",
+      "width": 0.0,
+      "height": 0.0,
+      "pX": 0.0591397844,
+      "pY": 0.6375
+    },
+    {
+      "name": "qhuohua1408",
+      "width": 0.0,
+      "height": 0.0,
+      "pX": 0.178571433,
+      "pY": 0.513698637
+    },
+    {
+      "name": "qhuohua148",
+      "width": 0.0,
+      "height": 0.0,
+      "pX": 0.141379312,
+      "pY": 0.5405405
+    },
+    {
+      "name": "sdhuo5",
+      "width": 0.0,
+      "height": 0.0,
+      "pX": 0.09465021,
+      "pY": 0.5780347
+    },
+    {
+      "name": "sdhuo4",
+      "width": 0.0,
+      "height": 0.0,
+      "pX": 0.09876543,
+      "pY": 0.549132943
+    },
+    {
+      "name": "sdhuo3",
+      "width": 0.0,
+      "height": 0.0,
+      "pX": 0.106995888,
+      "pY": 0.549132943
+    },
+    {
+      "name": "sdhuo2",
+      "width": 0.0,
+      "height": 0.0,
+      "pX": 0.102880657,
+      "pY": 0.537572265
+    },
+    {
+      "name": "sdhuo1",
+      "width": 0.0,
+      "height": 0.0,
+      "pX": 0.0781893,
+      "pY": 0.49710983
+    },
+    {
+      "name": "qhuohua131",
+      "width": 0.0,
+      "height": 0.0,
+      "pX": 0.072115384,
+      "pY": 0.494186044
+    },
+    {
+      "name": "qhuohua13",
+      "width": 0.0,
+      "height": 0.0,
+      "pX": 0.0865384638,
+      "pY": 0.5
+    },
+    {
+      "name": "qhuohua130",
+      "width": 0.0,
+      "height": 0.0,
+      "pX": 0.09615385,
+      "pY": 0.5232558
+    },
+    {
+      "name": "qhuohua110",
+      "width": 0.0,
+      "height": 0.0,
+      "pX": 0.102150537,
+      "pY": 0.5
+    },
+    {
+      "name": "qhuohua11",
+      "width": 0.0,
+      "height": 0.0,
+      "pX": 0.110389613,
+      "pY": 0.5
+    }
+  ]
+}

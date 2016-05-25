@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>0</key><string>更好的武器过关更容易</string>
+	<key>1</key><string>达成成就可以获得勋章</string>
+	<key>2</key><string>血量不足注意补充血包</string>
+	<key>3</key><string>子弹不足注意补充弹药</string>
+	<key>4</key><string>近战武器伤害高速度慢</string>
+	<key>5</key><string>有些武器会有穿透效果</string>
+	<key>6</key><string>时刻注意身旁窜出僵尸</string>
+	<key>7</key><string>先消灭僵尸再选择跳跃</string>
+	<key>8</key><string>升级武器杀僵尸更爽快</string>
+	<key>9</key><string>杀僵尸可获得技能碎片</string>
+	<key>10</key><string>有些僵尸会有两次生命</string>
+	<key>11</key><string>注意收集隐藏成就图章</string>
+	<key>12</key><string>挑战关卡需要集够星星</string>
+	<key>13</key><string>障碍只能近战手雷击碎</string>
+	<key>14</key><string>关卡结束记得做好补给</string>
+	<key>15</key><string>武器升星大幅增加威力</string>
+	<key>16</key><string>暂停页面可以购买补给</string>
+	<key>17</key><string>有些地图需要连续跳跃</string>
+</dict>
+</plist>

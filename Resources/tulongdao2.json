@@ -1,0 +1,272 @@
+{
+  "armature_data": [
+    {
+      "name": "tulongdao1",
+      "bone_data": [
+        {
+          "name": "ft",
+          "parent": "",
+          "x": 0.0,
+          "y": 0.0,
+          "z": 4,
+          "cX": 1.0,
+          "cY": 1.0,
+          "kX": 0.0,
+          "kY": 0.0,
+          "arrow_x": 0.0,
+          "arrow_y": 0.0,
+          "effectbyskeleton": false,
+          "display_data": [
+            {
+              "displayType": 0,
+              "name": "ft"
+            }
+          ]
+        },
+        {
+          "name": "kaishanfu1",
+          "parent": "",
+          "x": 0.0,
+          "y": 0.0,
+          "z": 3,
+          "cX": 1.0,
+          "cY": 1.0,
+          "kX": 0.0,
+          "kY": 0.0,
+          "arrow_x": 0.0,
+          "arrow_y": 0.0,
+          "effectbyskeleton": false,
+          "display_data": [
+            {
+              "displayType": 0,
+              "name": "kaishanfu111"
+            }
+          ]
+        },
+        {
+          "name": "tulongdao1",
+          "parent": "",
+          "x": 0.0,
+          "y": 0.0,
+          "z": 2,
+          "cX": 1.0,
+          "cY": 1.0,
+          "kX": 0.0,
+          "kY": 0.0,
+          "arrow_x": 0.0,
+          "arrow_y": 0.0,
+          "effectbyskeleton": false,
+          "display_data": [
+            {
+              "displayType": 0,
+              "name": "tulongdao111"
+            }
+          ]
+        },
+        {
+          "name": "tulongdao2",
+          "parent": "",
+          "x": 0.0,
+          "y": 0.0,
+          "z": 1,
+          "cX": 1.0,
+          "cY": 1.0,
+          "kX": 0.0,
+          "kY": 0.0,
+          "arrow_x": 0.0,
+          "arrow_y": 0.0,
+          "effectbyskeleton": false,
+          "display_data": [
+            {
+              "displayType": 0,
+              "name": "tulongdao2"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "animation_data": [
+    {
+      "name": "tulongdao1",
+      "mov_data": [
+        {
+          "name": "tulongdaotupian",
+          "dr": 4,
+          "lp": false,
+          "to": 0,
+          "drTW": 4,
+          "twE": 0,
+          "mov_bone_data": [
+            {
+              "name": "ft",
+              "dl": 0.0,
+              "sc": 1.0,
+              "frame_data": [
+                {
+                  "twE": 0,
+                  "dr": 3,
+                  "dI": -1,
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 4,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0
+                },
+                {
+                  "twE": 0,
+                  "dr": 1,
+                  "dI": 0,
+                  "x": 147.8,
+                  "y": -88.65,
+                  "z": 4,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0
+                }
+              ]
+            },
+            {
+              "name": "kaishanfu1",
+              "dl": 0.0,
+              "sc": 1.0,
+              "frame_data": [
+                {
+                  "twE": 0,
+                  "dr": 2,
+                  "dI": -1,
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 3,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0
+                },
+                {
+                  "twE": 0,
+                  "dr": 1,
+                  "dI": 0,
+                  "x": -67.3,
+                  "y": 52.7,
+                  "z": 3,
+                  "cX": 0.71,
+                  "cY": 0.71,
+                  "kX": -0.276111066,
+                  "kY": 0.276111066
+                }
+              ]
+            },
+            {
+              "name": "tulongdao1",
+              "dl": 0.0,
+              "sc": 1.0,
+              "frame_data": [
+                {
+                  "twE": 0,
+                  "dr": 1,
+                  "dI": -1,
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 2,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0
+                },
+                {
+                  "twE": 0,
+                  "dr": 1,
+                  "dI": 0,
+                  "x": 31.7,
+                  "y": 105.25,
+                  "z": 2,
+                  "cX": 0.93,
+                  "cY": 0.93,
+                  "kX": 0.945095837,
+                  "kY": -0.945095837
+                },
+                {
+                  "twE": 0,
+                  "dr": 2,
+                  "dI": -1,
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 2,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0
+                }
+              ]
+            },
+            {
+              "name": "tulongdao2",
+              "dl": 0.0,
+              "sc": 1.0,
+              "frame_data": [
+                {
+                  "twE": 0,
+                  "dr": 1,
+                  "dI": 0,
+                  "x": -43.75,
+                  "y": 81.7,
+                  "z": 1,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0
+                },
+                {
+                  "twE": 0,
+                  "dr": 3,
+                  "dI": -1,
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 1,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "texture_data": [
+    {
+      "name": "tulongdao2",
+      "width": 0.0,
+      "height": 0.0,
+      "pX": -0.109090909,
+      "pY": 1.09278345
+    },
+    {
+      "name": "tulongdao111",
+      "width": 0.0,
+      "height": 0.0,
+      "pX": 0.156315789,
+      "pY": 0.8809859
+    },
+    {
+      "name": "kaishanfu111",
+      "width": 0.0,
+      "height": 0.0,
+      "pX": 0.118539326,
+      "pY": 0.8322835
+    },
+    {
+      "name": "ft",
+      "width": 0.0,
+      "height": 0.0,
+      "pX": 0.3405,
+      "pY": 0.8758929
+    }
+  ]
+}

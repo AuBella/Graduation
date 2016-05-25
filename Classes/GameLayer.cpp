@@ -37,21 +37,19 @@ void GameLayer::ObserverFunction(CCObject * object){
 	int num = (int)object;
 	bool flag = false;
 	for (unsigned int i = 0; i <ogreArray->count(); ++i) {
-    Ogre* pObj=(Ogre*)ogreArray->objectAtIndex(i);
+		Ogre* pObj=(Ogre*)ogreArray->objectAtIndex(i);
 
-	if(abs(shana->getPositionY()-pObj->getPositionY())<30){
-		if(shana->getHitBox().intersectsRect(CCRectMake(pObj->getPositionX() - pObj->GetSprite()->getContentSize().width / 2, 
-														pObj->getPositionY() - pObj->GetSprite()->getContentSize().height /2,
-														pObj->GetSprite()->getContentSize().width, 
-														pObj->GetSprite()->getContentSize().height)
-														)
-											){
-			pObj->isHurt = true;
-			pObj->isAttack = true;
-			pObj->HurtAnimation(num);
-			flag = true;
-	    }
-	}
+		if(abs(shana->getPositionY()-pObj->getPositionY())<30){
+			if(shana->getHitBox().intersectsRect(CCRectMake(pObj->getPositionX() - pObj->GetSprite()->getContentSize().width / 2, 
+															pObj->getPositionY() - pObj->GetSprite()->getContentSize().height /2,
+															pObj->GetSprite()->getContentSize().width, 
+															pObj->GetSprite()->getContentSize().height))){
+				pObj->isHurt = true;
+				pObj->isAttack = true;
+				pObj->HurtAnimation(num);
+				flag = true;
+			}
+		}
 	}
 }
 

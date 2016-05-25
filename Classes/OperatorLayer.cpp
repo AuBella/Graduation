@@ -22,21 +22,11 @@ bool OperatorLayer::init(){
 	monsterBloodBar->setRedBloodBarType(false);
 	monsterBloodBar->setVisible(false);
 	this->addChild(monsterBloodBar);
-	
-	/*CCMenuItemImage* skillItem = CCMenuItemImage::create( "Encourage.png",
-											"skillDown.png",this,
-											menu_selector( SkillButton::skillMenuCallback ) );*/
-
 	//MenuChoose
 	CCMenuItemImage* menuItem = CCMenuItemImage::create("Common/btn_normal_stop.png", "Common/btn_press_stop.png", "Common/btn_stop.png", this, menu_selector(OperatorLayer::MenuChooseCallback));
 	menuItem->setScale(0.5);
-	
-	//menuItem->setPosition(ccp(winSize.width  - menuItem->getContentSize().width / 2, winSize.height - 15));
 	menu = CCMenu::create( menuItem, NULL );
-	
-	//menu->setPosition(ccp(winSize.width  - menuItem->getContentSize().width / 2, winSize.height - 15));
 	menu -> setPosition(ccp(winSize.width - /*menuItem->getContentSize().width / 2*/15, winSize.height - 25));
-	//menu->setScale(0.5);
 	this->addChild(menu);
 	//Controller
 	joyStick = JoyStick::create( "joystickBg.png", "joystick.png" );

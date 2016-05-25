@@ -10,11 +10,12 @@ GlobalCtrl::GlobalCtrl() {
 	operatorLayer = NULL;
 	menu = NULL;
 	tilemap = NULL;
+	canEnter = true;
+	canSetting = true;
 	//pArray = NULL;
 	pArray = CCArray::createWithCapacity(100);
 	pArray->retain();
 }
-
 
 GlobalCtrl::~GlobalCtrl() {}
 
@@ -25,7 +26,6 @@ GlobalCtrl* GlobalCtrl::getInstance() {
 	}
 	return _instance;
 }
-
 
 void GlobalCtrl::destroyInstance() {
 	CC_SAFE_DELETE( _instance );

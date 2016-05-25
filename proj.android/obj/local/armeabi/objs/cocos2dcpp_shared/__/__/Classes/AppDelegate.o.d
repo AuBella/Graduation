@@ -1,5 +1,5 @@
 obj/local/armeabi/objs/cocos2dcpp_shared/__/__/Classes/AppDelegate.o: \
- jni/../../Classes/AppDelegate.cpp jni/../../Classes/AppDelegate.h \
+ jni/../../Classes/AppDelegate.cpp \
  C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/cocos2dx/include/cocos2d.h \
  C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/cocos2dx/include/ccConfig.h \
  C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/cocos2dx/platform/CCPlatformConfig.h \
@@ -203,18 +203,12 @@ obj/local/armeabi/objs/cocos2dcpp_shared/__/__/Classes/AppDelegate.o: \
  C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/cocos2dx/support/data_support/uthash.h \
  C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/cocos2dx/support/component/CCComponent.h \
  C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/cocos2dx/support/component/CCComponentContainer.h \
- jni/../../Classes/HelloWorldScene.h jni/../../Classes/MainScene.h \
- jni/../../Classes/GameScene.h jni/../../Classes/GameLayer.h \
- jni/../../Classes/Ogre.h jni/../../Classes/Role.h \
- jni/../../Classes/GlobalCtrl.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/cocos2dx/platform/android/CCEGLView.h \
+ jni/../../Classes/AppDelegate.h \
  C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/CocosDenshion/android/../include/SimpleAudioEngine.h \
  C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/CocosDenshion/android/../include/Export.h \
- jni/../../Classes/AnimationUtil.h jni/../../Classes/Shana.h \
- jni/../../Classes/OperatorLayer.h jni/../../Classes/JoyStick.h \
- jni/../../Classes/SkillButton.h jni/../../Classes/CommonBloodBar.h \
- jni/../../Classes/Gamepause.h
-
-jni/../../Classes/AppDelegate.h:
+ jni/../../Classes/baseRes.h jni/../../Classes/FileCommon.h \
+ jni/../../Classes/MainScene.h
 
 C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/cocos2dx/include/cocos2d.h:
 
@@ -622,34 +616,16 @@ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/cocos2dx/support/component/CCComponent
 
 C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/cocos2dx/support/component/CCComponentContainer.h:
 
-jni/../../Classes/HelloWorldScene.h:
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/cocos2dx/platform/android/CCEGLView.h:
 
-jni/../../Classes/MainScene.h:
-
-jni/../../Classes/GameScene.h:
-
-jni/../../Classes/GameLayer.h:
-
-jni/../../Classes/Ogre.h:
-
-jni/../../Classes/Role.h:
-
-jni/../../Classes/GlobalCtrl.h:
+jni/../../Classes/AppDelegate.h:
 
 C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/CocosDenshion/android/../include/SimpleAudioEngine.h:
 
 C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/CocosDenshion/android/../include/Export.h:
 
-jni/../../Classes/AnimationUtil.h:
+jni/../../Classes/baseRes.h:
 
-jni/../../Classes/Shana.h:
+jni/../../Classes/FileCommon.h:
 
-jni/../../Classes/OperatorLayer.h:
-
-jni/../../Classes/JoyStick.h:
-
-jni/../../Classes/SkillButton.h:
-
-jni/../../Classes/CommonBloodBar.h:
-
-jni/../../Classes/Gamepause.h:
+jni/../../Classes/MainScene.h:

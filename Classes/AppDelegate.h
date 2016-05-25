@@ -1,46 +1,63 @@
-#ifndef  _APP_DELEGATE_H_
-#define  _APP_DELEGATE_H_
+#ifndef __APP_DELEGATE_H__
+#define __APP_DELEGATE_H__
 
 #include "cocos2d.h"
-#include "HelloWorldScene.h"
-//#include "GameScene.h"
-#include "MainScene.h"
 #include "SimpleAudioEngine.h"
+#include "baseRes.h"
 
-/**
-@brief    The cocos2d Application.
+#ifdef GameTypeC
+	#define d_iLevelNum		2
+#else
+	#define d_iLevelNum		5
+#endif
 
-The reason for implement as private inheritance is to hide some interface call by CCDirector.
-*/
-class  AppDelegate : private cocos2d::CCApplication
-{
+enum eTransition{
+	etHorizontal,
+	etVertical,
+	etInOut,
+	etOutIn,
+	etFade,
+};
+
+class  AppDelegate : private cocos2d::CCApplication{
 public:
     AppDelegate();
     virtual ~AppDelegate();
 
-    /**
-    @brief    Implement CCDirector and CCScene init code here.
-    @return true    Initialize success, app continue.
-    @return false   Initialize failed, app terminate.
-    */
     virtual bool applicationDidFinishLaunching();
 
-    /**
-    @brief  The function be called when the application enter background
-    @param  the pointer of the application
-    */
     virtual void applicationDidEnterBackground();
+	virtual void applicationWillEnterForeground();
+	static void AudioBackResume();
+	static void AudioBackPause();
 
-    /**
-    @brief  The function be called when the application enter foreground
-    @param  the pointer of the application
-    */
-    virtual void applicationWillEnterForeground();
-private:
-	//GameScene *pScene;
+	static void ChangeScene(cocos2d::CCScene* _pScene, eTransition _transition, float _time);
+	static void ChangeScene(cocos2d::CCScene* _pScene);
 
-	MainScene *pScene;
+	static void AudioInit1();
+	static void AudioInit2();
+	static void AudioInit3();
+	static void AudioPlayBgm(const char* _path, bool _Repeat = true);
+	static void AudioStopBgm();
+	static void AudioPause();
+	static void AudioResume();
+	static int AudioPlayEffect(const char* _path);
+	static void AudioStopEffect(int _id);
+	static void AudioSetVoice();
+
+	static int WeaponIndex(int _num);
+	static int WeaponSpeed(int _num);
+	static int WeaponDamage(int _num);
+
+	static void DataInit();
+	static void DataInit2();
+
+	static void AudioSwitch();
+	static void AudioStopB();
+	static int s_VoiceOpen;
+	static int m_voice;
+	static int m_canVoiceResume;
 };
 
-#endif // _APP_DELEGATE_H_
+#endif  // __APP_DELEGATE_H__
 

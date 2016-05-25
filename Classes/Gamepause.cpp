@@ -1,5 +1,7 @@
 #include "Gamepause.h"
 #include "GameScene.h"
+#include "AppDelegate.h"
+#include"MainScene.h"
 //传入一个CCrenderTexture 
 //相当于一个正在运行的游戏的截图作为这个暂停对话框的背景 
 //这样就看起来像是对话框在游戏界面之上，一般游戏当中都是这样子写的。
@@ -83,14 +85,12 @@ void Gamepause::menuContinueCallback(CCObject* pSender)
 
 }
 //重新开始游戏
-void  Gamepause::menuRestart(CCObject* pSender)
-{
+void  Gamepause::menuRestart(CCObject* pSender){
 	CCDirector::sharedDirector()->replaceScene(GameScene::create());
 }
 //回主界面
-void  Gamepause::menuLogin(CCObject* pSender)
-{
-
+void  Gamepause::menuLogin(CCObject* pSender){
+	AppDelegate::ChangeScene(MainScene::create());
 }
 
 

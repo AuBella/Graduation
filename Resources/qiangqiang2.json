@@ -1,0 +1,762 @@
+{
+  "armature_data": [
+    {
+      "name": "huidaobujian/qiangqiangdz",
+      "bone_data": [
+        {
+          "name": "nu2",
+          "parent": "",
+          "x": 0.0,
+          "y": 0.0,
+          "z": 11,
+          "cX": 1.0,
+          "cY": 1.0,
+          "kX": 0.0,
+          "kY": 0.0,
+          "arrow_x": 0.0,
+          "arrow_y": 0.0,
+          "effectbyskeleton": false,
+          "display_data": [
+            {
+              "displayType": 0,
+              "name": "qiangqiang18"
+            }
+          ]
+        },
+        {
+          "name": "16",
+          "parent": "",
+          "x": 0.0,
+          "y": 0.0,
+          "z": 10,
+          "cX": 1.0,
+          "cY": 1.0,
+          "kX": 0.0,
+          "kY": 0.0,
+          "arrow_x": 0.0,
+          "arrow_y": 0.0,
+          "effectbyskeleton": false,
+          "display_data": [
+            {
+              "displayType": 0,
+              "name": "qiangqiang17"
+            }
+          ]
+        },
+        {
+          "name": "qiangqiang11",
+          "parent": "",
+          "x": 0.0,
+          "y": 0.0,
+          "z": 9,
+          "cX": 1.0,
+          "cY": 1.0,
+          "kX": 0.0,
+          "kY": 0.0,
+          "arrow_x": 0.0,
+          "arrow_y": 0.0,
+          "effectbyskeleton": false,
+          "display_data": [
+            {
+              "displayType": 0,
+              "name": "qiangqiang11"
+            }
+          ]
+        },
+        {
+          "name": "12",
+          "parent": "",
+          "x": 0.0,
+          "y": 0.0,
+          "z": 8,
+          "cX": 1.0,
+          "cY": 1.0,
+          "kX": 0.0,
+          "kY": 0.0,
+          "arrow_x": 0.0,
+          "arrow_y": 0.0,
+          "effectbyskeleton": false,
+          "display_data": [
+            {
+              "displayType": 0,
+              "name": "qiangqiang12"
+            }
+          ]
+        },
+        {
+          "name": "9",
+          "parent": "",
+          "x": 0.0,
+          "y": 0.0,
+          "z": 7,
+          "cX": 1.0,
+          "cY": 1.0,
+          "kX": 0.0,
+          "kY": 0.0,
+          "arrow_x": 0.0,
+          "arrow_y": 0.0,
+          "effectbyskeleton": false,
+          "display_data": [
+            {
+              "displayType": 0,
+              "name": "qiangqiang9"
+            }
+          ]
+        },
+        {
+          "name": "fire",
+          "parent": "",
+          "x": 0.0,
+          "y": 0.0,
+          "z": 6,
+          "cX": 1.0,
+          "cY": 1.0,
+          "kX": 0.0,
+          "kY": 0.0,
+          "arrow_x": 0.0,
+          "arrow_y": 0.0,
+          "effectbyskeleton": false,
+          "display_data": [
+            {
+              "displayType": 0,
+              "name": "qiangqiangfire"
+            }
+          ]
+        },
+        {
+          "name": "qq13",
+          "parent": "",
+          "x": 0.0,
+          "y": 0.0,
+          "z": 5,
+          "cX": 1.0,
+          "cY": 1.0,
+          "kX": 0.0,
+          "kY": 0.0,
+          "arrow_x": 0.0,
+          "arrow_y": 0.0,
+          "effectbyskeleton": false,
+          "display_data": [
+            {
+              "displayType": 0,
+              "name": "qiangqiang13"
+            }
+          ]
+        },
+        {
+          "name": "14",
+          "parent": "",
+          "x": 0.0,
+          "y": 0.0,
+          "z": 4,
+          "cX": 1.0,
+          "cY": 1.0,
+          "kX": 0.0,
+          "kY": 0.0,
+          "arrow_x": 0.0,
+          "arrow_y": 0.0,
+          "effectbyskeleton": false,
+          "display_data": [
+            {
+              "displayType": 0,
+              "name": "qiangqiang14"
+            }
+          ]
+        },
+        {
+          "name": "15",
+          "parent": "",
+          "x": 0.0,
+          "y": 0.0,
+          "z": 3,
+          "cX": 1.0,
+          "cY": 1.0,
+          "kX": 0.0,
+          "kY": 0.0,
+          "arrow_x": 0.0,
+          "arrow_y": 0.0,
+          "effectbyskeleton": false,
+          "display_data": [
+            {
+              "displayType": 0,
+              "name": "qiangqiang15"
+            }
+          ]
+        },
+        {
+          "name": "7",
+          "parent": "",
+          "x": 0.0,
+          "y": 0.0,
+          "z": 2,
+          "cX": 1.0,
+          "cY": 1.0,
+          "kX": 0.0,
+          "kY": 0.0,
+          "arrow_x": 0.0,
+          "arrow_y": 0.0,
+          "effectbyskeleton": false,
+          "display_data": [
+            {
+              "displayType": 0,
+              "name": "qiangqiang7"
+            }
+          ]
+        },
+        {
+          "name": "8",
+          "parent": "",
+          "x": 0.0,
+          "y": 0.0,
+          "z": 1,
+          "cX": 1.0,
+          "cY": 1.0,
+          "kX": 0.0,
+          "kY": 0.0,
+          "arrow_x": 0.0,
+          "arrow_y": 0.0,
+          "effectbyskeleton": false,
+          "display_data": [
+            {
+              "displayType": 0,
+              "name": "qiangqiang8"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "animation_data": [
+    {
+      "name": "huidaobujian/qiangqiangdz",
+      "mov_data": [
+        {
+          "name": "qiangqiang",
+          "dr": 11,
+          "lp": false,
+          "to": 0,
+          "drTW": 11,
+          "twE": 10000,
+          "mov_bone_data": [
+            {
+              "name": "nu2",
+              "dl": 0.0,
+              "sc": 1.0,
+              "frame_data": [
+                {
+                  "twE": 0,
+                  "dr": 10,
+                  "dI": -1,
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 11,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0
+                },
+                {
+                  "twE": 0,
+                  "dr": 1,
+                  "dI": 0,
+                  "x": -14.65,
+                  "y": 90.7,
+                  "z": 11,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0
+                }
+              ]
+            },
+            {
+              "name": "16",
+              "dl": 0.0,
+              "sc": 1.0,
+              "frame_data": [
+                {
+                  "twE": 0,
+                  "dr": 9,
+                  "dI": -1,
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 10,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0
+                },
+                {
+                  "twE": 0,
+                  "dr": 1,
+                  "dI": 0,
+                  "x": -28.85,
+                  "y": 117.15,
+                  "z": 10,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0
+                }
+              ]
+            },
+            {
+              "name": "qiangqiang11",
+              "dl": 0.0,
+              "sc": 1.0,
+              "frame_data": [
+                {
+                  "twE": 0,
+                  "dr": 8,
+                  "dI": -1,
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 9,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0
+                },
+                {
+                  "twE": 0,
+                  "dr": 1,
+                  "dI": 0,
+                  "x": -15.7,
+                  "y": 113.85,
+                  "z": 9,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0
+                },
+                {
+                  "twE": 0,
+                  "dr": 2,
+                  "dI": -1,
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 9,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0
+                }
+              ]
+            },
+            {
+              "name": "12",
+              "dl": 0.0,
+              "sc": 1.0,
+              "frame_data": [
+                {
+                  "twE": 0,
+                  "dr": 7,
+                  "dI": -1,
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 8,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0
+                },
+                {
+                  "twE": 0,
+                  "dr": 1,
+                  "dI": 0,
+                  "x": -15.85,
+                  "y": 114.0,
+                  "z": 8,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0
+                },
+                {
+                  "twE": 0,
+                  "dr": 3,
+                  "dI": -1,
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 8,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0
+                }
+              ]
+            },
+            {
+              "name": "9",
+              "dl": 0.0,
+              "sc": 1.0,
+              "frame_data": [
+                {
+                  "twE": 0,
+                  "dr": 6,
+                  "dI": -1,
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 7,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0
+                },
+                {
+                  "twE": 0,
+                  "dr": 1,
+                  "dI": 0,
+                  "x": -29.45,
+                  "y": 152.2,
+                  "z": 7,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0
+                },
+                {
+                  "twE": 0,
+                  "dr": 4,
+                  "dI": -1,
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 7,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0
+                }
+              ]
+            },
+            {
+              "name": "fire",
+              "dl": 0.0,
+              "sc": 1.0,
+              "frame_data": [
+                {
+                  "twE": 0,
+                  "dr": 5,
+                  "dI": -1,
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 6,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0
+                },
+                {
+                  "twE": 0,
+                  "dr": 1,
+                  "dI": 0,
+                  "x": -15.95,
+                  "y": 113.7,
+                  "z": 6,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0
+                },
+                {
+                  "twE": 0,
+                  "dr": 5,
+                  "dI": -1,
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 6,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0
+                }
+              ]
+            },
+            {
+              "name": "qq13",
+              "dl": 0.0,
+              "sc": 1.0,
+              "frame_data": [
+                {
+                  "twE": 0,
+                  "dr": 4,
+                  "dI": -1,
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 5,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0
+                },
+                {
+                  "twE": 0,
+                  "dr": 1,
+                  "dI": 0,
+                  "x": -24.15,
+                  "y": 143.2,
+                  "z": 5,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0
+                },
+                {
+                  "twE": 0,
+                  "dr": 6,
+                  "dI": -1,
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 5,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0
+                }
+              ]
+            },
+            {
+              "name": "14",
+              "dl": 0.0,
+              "sc": 1.0,
+              "frame_data": [
+                {
+                  "twE": 0,
+                  "dr": 3,
+                  "dI": -1,
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 4,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0
+                },
+                {
+                  "twE": 0,
+                  "dr": 1,
+                  "dI": 0,
+                  "x": -15.6,
+                  "y": 113.65,
+                  "z": 4,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0
+                },
+                {
+                  "twE": 0,
+                  "dr": 7,
+                  "dI": -1,
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 4,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0
+                }
+              ]
+            },
+            {
+              "name": "15",
+              "dl": 0.0,
+              "sc": 1.0,
+              "frame_data": [
+                {
+                  "twE": 0,
+                  "dr": 2,
+                  "dI": -1,
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 3,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0
+                },
+                {
+                  "twE": 0,
+                  "dr": 1,
+                  "dI": 0,
+                  "x": -15.95,
+                  "y": 113.6,
+                  "z": 3,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0
+                },
+                {
+                  "twE": 0,
+                  "dr": 8,
+                  "dI": -1,
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 3,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0
+                }
+              ]
+            },
+            {
+              "name": "7",
+              "dl": 0.0,
+              "sc": 1.0,
+              "frame_data": [
+                {
+                  "twE": 0,
+                  "dr": 1,
+                  "dI": -1,
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 2,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0
+                },
+                {
+                  "twE": 0,
+                  "dr": 1,
+                  "dI": 0,
+                  "x": -23.6,
+                  "y": 148.45,
+                  "z": 2,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0
+                },
+                {
+                  "twE": 0,
+                  "dr": 9,
+                  "dI": -1,
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 2,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0
+                }
+              ]
+            },
+            {
+              "name": "8",
+              "dl": 0.0,
+              "sc": 1.0,
+              "frame_data": [
+                {
+                  "twE": 0,
+                  "dr": 1,
+                  "dI": 0,
+                  "x": -26.65,
+                  "y": 128.2,
+                  "z": 1,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0
+                },
+                {
+                  "twE": 0,
+                  "dr": 10,
+                  "dI": -1,
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 1,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "texture_data": [
+    {
+      "name": "qiangqiang8",
+      "width": 0.0,
+      "height": 0.0,
+      "pX": 0.192666665,
+      "pY": 0.8478723
+    },
+    {
+      "name": "qiangqiang7",
+      "width": 0.0,
+      "height": 0.0,
+      "pX": 0.12602739,
+      "pY": 0.746551752
+    },
+    {
+      "name": "qiangqiang15",
+      "width": 0.0,
+      "height": 0.0,
+      "pX": 0.155851066,
+      "pY": 0.8818182
+    },
+    {
+      "name": "qiangqiang14",
+      "width": 0.0,
+      "height": 0.0,
+      "pX": 0.177222222,
+      "pY": 0.7287234
+    },
+    {
+      "name": "qiangqiang13",
+      "width": 0.0,
+      "height": 0.0,
+      "pX": 0.271428585,
+      "pY": 0.81
+    },
+    {
+      "name": "qiangqiangfire",
+      "width": 0.0,
+      "height": 0.0,
+      "pX": 0.181395352,
+      "pY": 0.892857134
+    },
+    {
+      "name": "qiangqiang9",
+      "width": 0.0,
+      "height": 0.0,
+      "pX": 0.1683908,
+      "pY": 0.8614583
+    },
+    {
+      "name": "qiangqiang12",
+      "width": 0.0,
+      "height": 0.0,
+      "pX": 0.240449429,
+      "pY": 0.8269231
+    },
+    {
+      "name": "qiangqiang11",
+      "width": 0.0,
+      "height": 0.0,
+      "pX": 0.175568178,
+      "pY": 0.775
+    },
+    {
+      "name": "qiangqiang17",
+      "width": 0.0,
+      "height": 0.0,
+      "pX": 0.1395238,
+      "pY": 0.8382353
+    },
+    {
+      "name": "qiangqiang18",
+      "width": 0.0,
+      "height": 0.0,
+      "pX": 0.135648146,
+      "pY": 0.737
+    }
+  ]
+}

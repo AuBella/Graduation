@@ -12,7 +12,7 @@ bool CommonBloodBar::init(){
 	CCSprite* commonbackBlood_1 = CCSprite::create("Common/boss_bg_head.png");
 	CCSprite* commonbackBlood_2 = CCSprite::create("Common/Boss_bg_back.png");
 	heroIcon = CCSprite::create("Common/commonIconBg.png");
-	monsterIconBg = CCSprite::create("Common/commonIconBg.png");
+	monsterIconBg = CCSprite::create("Common/commonIconBg_1.png");
 	setupHeroIcon("sss");
 	//CCSprite* monsterIcon = CCSprite::create("
 	heroIcon->setScale(0.7);

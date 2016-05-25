@@ -90,16 +90,9 @@ void GameScene::showRewardResult(){
 	CCSize visibleSize = CCDirector::sharedDirector()->getVisibleSize();
 	CCRenderTexture *renderTexture = CCRenderTexture::create(visibleSize.width,visibleSize.height);
 	renderTexture->begin(); 
-	//this->getParent()->visit();
 	renderTexture->end();
 	CCDirector::sharedDirector()->replaceScene(RewardLayer::scene(renderTexture, TimeNum, 89));	
 }
 void GameScene::setupHeroIcon(char* name){
-	//CCSize winSize = CCDirector::sharedDirector() -> getWinSize();
 	heroIcon = CCSprite::create("Common/310_hoodle.png");
-	//heroIcon->setScale(0.5);/*
-	//heroIcon->setPosition(ccp(heroIcon->getContentSize().width / 4 + 5, winSize.height - heroIcon->getContentSize().height / 4 - 3));*/
-	//
-	//heroIcon->setPosition(ccp(heroIcon->getContentSize().width / 4 + 5, 320 - heroIcon->getContentSize().height / 4 - 3));
-	//this->addChild(heroIcon,2);
 }

@@ -203,15 +203,11 @@ obj/local/armeabi/objs/cocos2dcpp_shared/__/__/Classes/MainScene.o: \
  C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/cocos2dx/support/data_support/uthash.h \
  C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/cocos2dx/support/component/CCComponent.h \
  C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/cocos2dx/support/component/CCComponentContainer.h \
- jni/../../Classes/GameScene.h jni/../../Classes/GameLayer.h \
- jni/../../Classes/Ogre.h jni/../../Classes/Role.h \
- jni/../../Classes/GlobalCtrl.h \
  C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/CocosDenshion/android/../include/SimpleAudioEngine.h \
  C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/CocosDenshion/android/../include/Export.h \
- jni/../../Classes/AnimationUtil.h jni/../../Classes/Shana.h \
- jni/../../Classes/OperatorLayer.h jni/../../Classes/JoyStick.h \
- jni/../../Classes/SkillButton.h jni/../../Classes/CommonBloodBar.h \
- jni/../../Classes/Gamepause.h
+ jni/../../Classes/AppDelegate.h jni/../../Classes/baseRes.h \
+ jni/../../Classes/MainMenu.h jni/../../Classes/GlobalCtrl.h \
+ jni/../../Classes/settingScene.h jni/../../Classes/paihangbangScene.h
 
 jni/../../Classes/MainScene.h:
 
@@ -621,30 +617,18 @@ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/cocos2dx/support/component/CCComponent
 
 C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/cocos2dx/support/component/CCComponentContainer.h:
 
-jni/../../Classes/GameScene.h:
-
-jni/../../Classes/GameLayer.h:
-
-jni/../../Classes/Ogre.h:
-
-jni/../../Classes/Role.h:
-
-jni/../../Classes/GlobalCtrl.h:
-
 C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/CocosDenshion/android/../include/SimpleAudioEngine.h:
 
 C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/CocosDenshion/android/../include/Export.h:
 
-jni/../../Classes/AnimationUtil.h:
+jni/../../Classes/AppDelegate.h:
 
-jni/../../Classes/Shana.h:
+jni/../../Classes/baseRes.h:
 
-jni/../../Classes/OperatorLayer.h:
+jni/../../Classes/MainMenu.h:
 
-jni/../../Classes/JoyStick.h:
+jni/../../Classes/GlobalCtrl.h:
 
-jni/../../Classes/SkillButton.h:
+jni/../../Classes/settingScene.h:
 
-jni/../../Classes/CommonBloodBar.h:
-
-jni/../../Classes/Gamepause.h:
+jni/../../Classes/paihangbangScene.h:

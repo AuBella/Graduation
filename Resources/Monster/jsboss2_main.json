@@ -1,0 +1,74 @@
+{
+  "armature_data": [
+    {
+      "name": "jsboss2_shenti",
+      "bone_data": [
+        {
+          "name": "shenti",
+          "parent": "",
+          "x": 0.0,
+          "y": 0.0,
+          "z": 1,
+          "cX": 1.0,
+          "cY": 1.0,
+          "kX": 0.0,
+          "kY": 0.0,
+          "arrow_x": 0.0,
+          "arrow_y": 0.0,
+          "effectbyskeleton": false,
+          "display_data": [
+            {
+              "displayType": 0,
+              "name": "2shentiyuanjian-shenti"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "animation_data": [
+    {
+      "name": "jsboss2_shenti",
+      "mov_data": [
+        {
+          "name": "jsboss2_shenti",
+          "dr": 1,
+          "lp": true,
+          "to": 0,
+          "drTW": 10,
+          "twE": 0,
+          "mov_bone_data": [
+            {
+              "name": "shenti",
+              "dl": 0.0,
+              "sc": 1.0,
+              "frame_data": [
+                {
+                  "twE": 0,
+                  "dr": 1,
+                  "dI": 0,
+                  "x": -239.0,
+                  "y": 70.85,
+                  "z": 1,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "texture_data": [
+    {
+      "name": "2shentiyuanjian-shenti",
+      "width": 0.0,
+      "height": 0.0,
+      "pX": 0.0,
+      "pY": 1.0
+    }
+  ]
+}

@@ -21,6 +21,8 @@ public:
 	CCMenu* menu;
 	CCTMXTiledMap* tilemap;
 	CCArray* pArray;
+	bool canEnter;
+	bool canSetting;
 private:
 	static GlobalCtrl* _instance;
 };
