@@ -7,6 +7,7 @@
 #include <stdlib.h>  
 #include <time.h>  
 #include<math.h>
+#include"CommonMonsterBloodBar.h"
 #include<iostream>
 
 USING_NS_CC;
@@ -33,7 +34,10 @@ public:
 	CREATE_FUNC(Ogre);
 	int flag;	
 private:
+	CommonMonsterBloodBar* monsterbloodbar;
 	float  dis;
+	int attackx;
+	int safex;
 	Shana* shana;
 	void DeadEnd(CCNode* pSender);
 	CCSprite* m_MonsterSprite;

@@ -1,34 +1,29 @@
 #include "GameControler.h"
 #include "baseRes.h"
-//#include "MonsterInfo.h"
 #include "AppDelegate.h"
 #include "MainMenu.h"
-//#include "ControlerMenu.h"
-//#include "PauseMenu.h"
+#include "ControlerMenu.h"
 #include "GameoverMenu.h"
 #include "GameoverBtnMenu.h"
-//#include "GameBossLoading.h"
 #include "GameLoading.h"
 #include "Common.h"
-//#include "GameStartMenu.h"
-//#include "GameSkillLayer.h"
-//#include "SimpleAudioEngine.h"
-//#include "GameStart.h"
-//#include "AchieveAdd.h"
-//#include "BossBox.h"
-//#include "GetItemLayer.h"
-//#include "ChoseHero.h"
-//#include "ShopMenu.h"
-//#include "PayService.h"
 #include "cocos-ext.h"
+#include"Shana.h"
+#include"GlobalCtrl.h"
+#include"OperatorLayer.h"
 
-//extern CFlashControl* g_pHero;
 using namespace cocos2d;
 using namespace cocos2d::extension;
 
+#define d_LocateHealBoard		665, 447
+#define d_LocateHeartbeat		93, 35
+#define d_sizeHeartbeat			156, 43
+#define d_LocateHealBox(i)		593+i*52, 447
+#define d_TagHealBoxHave		220
+#define d_TagHealBoxUnhave		225
+CGameControler* CGameControler::s_pGameControler = NULL;
 
-CGameControler::CGameControler()
-{
+CGameControler::CGameControler(){
 	m_pScene		= NULL;
 	m_iLevelType	= 0;
 	m_iComboMax=0;
@@ -36,8 +31,11 @@ CGameControler::CGameControler()
 	m_iStateNumMedal = 0;
 	m_iStateNumGold = 0;
 	m_iAllStar = 3;
-	
 	m_iStar = 1;
+	m_iHealBox=3;	
+	m_bAttack		= false;
+	m_pMoveActionArray = new int[d_iActionNum];
+	memset(m_pMoveActionArray, 0, sizeof(int)*d_iActionNum );
 }
 CGameControler::~CGameControler()
 {
@@ -46,9 +44,9 @@ CGameControler::~CGameControler()
 }
 
 
-CGameControler* CGameControler::NewGameControler(cocos2d::CCScene* _pScene, int _unLevel, int _difficult)
-{
+CGameControler* CGameControler::NewGameControler(cocos2d::CCScene* _pScene, int _unLevel, int _difficult){
 	CGameControler* pLayer = new CGameControler();
+	s_pGameControler = pLayer;
 	pLayer->init();
 	pLayer->autorelease();
 	pLayer->m_pScene	= _pScene;
@@ -80,137 +78,241 @@ CGameControler* CGameControler::NewGameControler(cocos2d::CCScene* _pScene, int 
 		SetScale(pBGLayer);
 		_pScene->addChild(pBGLayer,0);
 	}
-
+	
 	pLayer->m_pCBackgroud = CBackground::Create(_unLevel);
-	pLayer->m_pCBackgroud->setPosition(0, 0);
 	SetScale(pLayer->m_pCBackgroud);
 	_pScene->addChild(pLayer->m_pCBackgroud);
 
-	pLayer->m_pCFrontgroud->setPosition(0, 0);
 	SetScale(pLayer->m_pCFrontgroud);
 	_pScene->addChild(pLayer->m_pCFrontgroud,0);
-	
-	//ShowOverBtn(0.1f);
-	//CCNodeLoaderLibrary* ccNodeLoaderLibrary3 = CCNodeLoaderLibrary::newDefaultCCNodeLoaderLibrary();
-	//ccNodeLoaderLibrary3->registerCCNodeLoader("ccbGameoverBtnMenu", ccbGameoverBtnMenuLoader::loader());
-	//cocos2d::extension::CCBReader* ccbReader3 = new cocos2d::extension::CCBReader(ccNodeLoaderLibrary3);
-	//m_pGameoverBtnNode = ccbReader3->readNodeGraphFromFile("9.ccbi"/*, this*/);
-	//m_pGameoverBtnNode->setPosition(ccp(0,0));
-	////SetScale(m_pGameoverBtnNode);
-	//((ccbGameoverBtnMenu*)m_pGameoverBtnNode)->setAnimationManager(ccbReader3->getAnimationManager(), this);
-	//ccbReader3->release();
-	//addChild(m_pGameoverBtnNode, 23, 53);
 	return pLayer;
+}
+
+void CGameControler::GameLoadingSecond()
+{
+	CCNodeLoaderLibrary* ccNodeLoaderLibrary = CCNodeLoaderLibrary::newDefaultCCNodeLoaderLibrary();
+	ccNodeLoaderLibrary->registerCCNodeLoader("ccbControlMenu", ccbControlMenuLoader::loader());
+	cocos2d::extension::CCBReader* ccbReader = new cocos2d::extension::CCBReader(ccNodeLoaderLibrary);
+	m_pMenuNode = ccbReader->readNodeGraphFromFile("6.ccbi"/*, this*/);
+	m_pMenuNode->setPosition(ccp(0,0));
+	//SetScale(m_pMenuNode);
+	((ccbControlMenu*)m_pMenuNode)->setAnimationManager(ccbReader->getAnimationManager(), m_unLevel);
+	ccbReader->release();
+	addChild(m_pMenuNode, 4, 50);
+}
+
+//button
+void CGameControler::GameStart(){
+	CCSprite* pHealBoard = CCSprite::create("tu4/di.png");
+	pHealBoard->setPosition( CCPoint(d_LocateHealBoard) );
+	addChild(pHealBoard, 5);
+	CCSprite* pHeartbeat = common::CreateAnimation("Animation/heartbeat/1.png", CCPoint(d_LocateHeartbeat), ccp(0.5f, 0.5f),
+		"Animation/heartbeat/", 6, CCRect(0,0,d_sizeHeartbeat), true);
+	pHealBoard->addChild(pHeartbeat, 5);
+
+	for ( int i = 0; i < d_iHealBoxMax; i++ )
+	{
+		CCSprite* pSprite1 = CCSprite::create("tu4/xuebao.png");
+		pSprite1->setPosition( CCPoint(d_LocateHealBox(i)) );
+		addChild(pSprite1, 5, d_TagHealBoxHave+i);
+		CCSprite* pSprite2 = CCSprite::create("tu4/xuebao2.png");
+		pSprite2->setPosition( CCPoint(d_LocateHealBox(i)) );
+		addChild(pSprite2, 5, d_TagHealBoxUnhave+i);
+	}
+	ShowHealBox();
+	schedule(schedule_selector(CGameControler::Timer));
+	((ccbControlMenu*)m_pMenuNode)->Appear();
+	for ( int i = 0; i < d_iActionNum; i++ ){
+		CCSprite* pBtn =  CCSprite::create(g_sButtonPath[i].c_str());
+		pBtn->setAnchorPoint(ccp(0.5f,0.5f));
+		pBtn->setPosition(ccp(g_fButtonX[i],g_fButtonY[i]));
+		addChild(pBtn,10, 20+i);
+
+		CCSprite* pBtnPress = CCSprite::create(g_sButtonPressPath[i].c_str());
+		pBtnPress->setPosition(ccp(g_fButtonX[i],g_fButtonY[i]));
+		pBtnPress->setVisible(false);
+		addChild(pBtnPress,10, 40+i);
+	}
+	setTouchEnabled(true);
+}
+
+
+void CGameControler::ccTouchesBegan(CCSet *pTouches, CCEvent *pEvent)
+{
+	CCSetIterator iter = pTouches->begin();
+	int digit = 1;
+	for (; iter != pTouches->end(); iter++)
+	{
+		CCPoint location = ((CCTouch*)(*iter))->getLocation();
+		digit = (*iter)->m_uID;
+
+		e_ActionType iActionType = eAT_NULL;
+		for ( int i = 0; i < d_iActionNum; i++ ){
+			//if ( 6 == m_iLevelType )
+			//{
+			//	if ( i == 4 )//Ìø
+			//		continue;
+			//	bool vis = true;
+			//	if ( getChildByTag(40+i) )
+			//		vis = getChildByTag(40+i)->isVisible();
+			//	if ( !getChildByTag(20+i)->isVisible() && !vis )
+			//		continue;
+			//}
+			if ( fabs(location.x - g_fButtonX[i]*Scale_X) < g_fButtonW[i]*Scale_X
+				&& fabs(location.y - g_fButtonY[i]*Scale_Y) < g_fButtonH[i]*Scale_Y ){
+				iActionType = (e_ActionType)i;
+				break;
+			}
+		}
+		switch ( iActionType )
+		{
+		case eAT_MoveLeft:
+			MoveCheck(0, digit);
+			break;
+		case eAT_MoveRight:
+			MoveCheck(1, digit);
+			break;
+		case eAT_Jump:
+			/*if ( !m_iHeroJumps )
+			{
+				AppDelegate::AudioPlayEffect("MS/Sound/EfJump.mp3");
+				m_fHeroSpeedY = d_fHeroJump;
+				m_iHeroJumps = 1;
+				m_iJumpActionType = 2;
+			}
+			else if ( m_iHeroJumps == 1 )
+			{
+				AppDelegate::AudioPlayEffect("MS/Sound/EfJump.mp3");
+				m_iHeroJumps ++;
+				m_fHeroSpeedY		= d_fHeroJump;
+				m_iJumpActionType	= 2;
+			}
+			else if ( m_iHeroJumps == 2 && m_iJumpCanTimes > 2 )
+			{
+				AppDelegate::AudioPlayEffect("MS/Sound/EfJump.mp3");
+				m_iHeroJumps ++;
+				m_fHeroSpeedY		= m_fJumpSpeedInit;
+				m_iJumpActionType	= 2;
+			}*/
+			m_pMoveActionArray[3] = 20;
+			break;
+		case eAT_Attack:
+			/*if ( m_bAttack || m_iGrenadeTime > 0 )
+				break;*/
+			m_bAttack		= true;
+			m_pMoveActionArray[2] = digit;
+			break;
+		case eAT_PAUSE:{
+			CCLOG("---------ENTER CLICLIK");
+			PauseGame();
+			}
+			break;
+		default:
+			break;
+		}
+	}
+}
+//ÔÝÍ£
+void CGameControler::PauseGame(int _type){
+	CCSize visibleSize = CCDirector::sharedDirector()->getVisibleSize();
+	CCRenderTexture *renderTexture = CCRenderTexture::create(visibleSize.width,visibleSize.height);
+	renderTexture->begin(); 
+	this->getParent()->visit();
+	renderTexture->end();
+	CCDirector::sharedDirector()->pushScene(Gamepause::scene(renderTexture));
+}
+
+void CGameControler::ccTouchesMoved(CCSet *pTouches, CCEvent *pEvent){}
+
+void CGameControler::ccTouchesEnded(CCSet *pTouches, CCEvent *pEvent)
+{
+	CCSetIterator iter = pTouches->begin();
+	for (; iter != pTouches->end(); iter++/*, digit++*/)
+	{
+		CCPoint location = ((CCTouch*)(*iter))->getLocation();
+		{
+			e_ActionType iActionType = eAT_NULL;
+			for ( int i = 0; i < d_iActionNum; i++ )
+			{
+				if ( fabs(location.x - g_fButtonX[i]*Scale_X) < g_fButtonW[i]*Scale_X
+					&& fabs(location.y - g_fButtonY[i]*Scale_Y) < g_fButtonH[i]*Scale_Y){
+					iActionType = (e_ActionType)i;
+					m_pMoveActionArray[i] = 0;
+					break;
+				}
+			}
+		}
+	}
+}
+
+void CGameControler::Timer(float _dt){
+		ButtonPressCheck();
+}
+
+//°´Å¥¿ØÖÆ
+void CGameControler::ButtonPressCheck(){
+	for ( int i = 0; i < d_iActionNum; i++ ){
+		bool bShow = true;
+		if ( i < 2 ){
+			if ( m_pMoveActionArray[i] )
+				bShow = false;
+		}
+		else if ( i == 2 ){
+			if ( m_bAttack && m_pMoveActionArray[i] > 0)
+				bShow = false;
+		}
+		else if ( m_pMoveActionArray[i] > 0 ){
+			m_pMoveActionArray[i]--;
+			bShow = false;
+		}
+		getChildByTag(20+i)->setVisible(bShow);
+		getChildByTag(40+i)->setVisible(!bShow);
+	}
+}
+
+//ÒÆ¶¯¼ì²â
+void CGameControler::MoveCheck(int _un, int _digit){
+	if ( !(m_pMoveActionArray[0] | m_pMoveActionArray[1]) ){
+		m_pMoveActionArray[_un]	= _digit;
+	}
+}
+
+//Ñª°ü
+void CGameControler::ShowHealBox(){
+	for ( int i = 0; i < d_iHealBoxMax; i++ ){
+		bool bShow = false;
+		if ( i < m_iHealBox )
+			bShow = true;
+		CCNode* pSprite1 = getChildByTag(d_TagHealBoxHave+i);
+		pSprite1->setVisible(bShow);
+		CCNode* pSprite2 = getChildByTag(d_TagHealBoxUnhave+i);
+		pSprite2->setVisible(!bShow);
+	}
+}
+
+CGameControler* CGameControler::GetGameControler(){
+	return s_pGameControler;
 }
 
 bool CGameControler::init()
 {
-	//m_cSize = cocos2d::CCDirector::sharedDirector()->getWinSize();
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
 	this->setKeypadEnabled(true);
 #endif
-	
-	scheduleOnce(schedule_selector(CGameControler::Lose), 0);
+	//scheduleOnce(schedule_selector(CGameControler::Lose), 0);
 	return true;
 }
 
 
 void CGameControler::Win(float _dt)
 {
-	//if ( 6 == m_iLevelType )
-	//{
-	//	AppDelegate::s_FirstLogin = 2;
-	//	AppDelegate::SaveGuide();
-	//	AppDelegate::SaveStatus();
-	//	//AppDelegate::ChangeScene( ccbChoseHero::CreateScene() );
-	//	return;
-	//}
-
-	//if ( m_bPerfect )
-	//	//AchieveAdd::Add(17, 0, m_unLevel);
-	//if ( m_bUnFire )
-	//	AchieveAdd::Add(22, 0, m_unLevel);
-	//if ( AppDelegate::s_HeroType == 1 )
-	//	AchieveAdd::Add(26, 0, m_unLevel);
-	//else if ( AppDelegate::s_HeroType == 2 )
-	//	AchieveAdd::Add(28, 0, m_unLevel);
-
-	/*if ( m_unLevel%6 != 5 )
-	{
-		if ( m_structQuestion.type[0] )
-		{
-			if ( m_iGameMinute*60 + m_iGameSecond/MAINFRAME <= m_structQuestion.num[0] )
-			{
-				m_iAllStar++;
-				m_structQuestion.complate[0] = 1;
-			}
-		}
-		if ( m_structQuestion.type[1] )
-		{
-			if ( 0 < m_structQuestion.num[1] )
-			{ 
-				m_iAllStar++;
-				m_structQuestion.complate[1] = 1;
-			}
-		}
-		if ( m_structQuestion.type[3] )
-		{
-			m_iAllStar++;
-			m_structQuestion.complate[3] = 1;
-		}
-		if ( m_structQuestion.type[4] )
-		{
-			if ( m_structQuestion.complate[4] )
-			{
-				m_iAllStar++;
-			}
-		}
-		if ( m_structQuestion.type[5] )
-		{
-			if ( m_iVIPHp >= m_structQuestion.num[5] )
-			{
-				m_iAllStar++;
-				m_structQuestion.complate[5] = 1;
-			}
-		}
-		if ( AppDelegate::s_LevelStar[m_unLevel] < m_iAllStar )
-			AppDelegate::s_LevelStar[m_unLevel] = m_iAllStar;
-	}
-*/
-	//m_bPause = true;
 	CCLayerColor* pCCLayerColor = CCLayerColor::create(ccc4(20,20,20,230), 800, 480);
 	addChild(pCCLayerColor, 16, 10);
-	//ÖØÍæ
-	//CCNodeLoaderLibrary* ccNodeLoaderLibrary6 = CCNodeLoaderLibrary::newDefaultCCNodeLoaderLibrary();
-	//ccNodeLoaderLibrary6->registerCCNodeLoader("ccbGetItemLayer", ccbGetItemLayerLoader::loader());
-	//cocos2d::extension::CCBReader* ccbReader6 = new cocos2d::extension::CCBReader(ccNodeLoaderLibrary6);
-	//m_pGetItemCCB = ccbReader6->readNodeGraphFromFile("25.ccbi"/*, this*/);
-	//m_pGetItemCCB->setVisible(false);
-	//m_pGetItemCCB->setPosition(ccp(0,0));
-	////SetScale(m_pSkillNode);
-	//((ccbGetItemLayer*)m_pGetItemCCB)->setAnimationManager(ccbReader6->getAnimationManager(), this);
-	//ccbReader6->release();
-	//addChild(m_pGetItemCCB, 25, 56);
-
-	((ccbGameoverMenu*)m_pGameoverNode)->Win( 100 );
+	//((ccbGameoverMenu*)m_pGameoverNode)->Win( 100 );
 }
 
-void CGameControler::Lose(float _dt)
-{
-	//CCNodeLoaderLibrary* ccNodeLoaderLibrary6 = CCNodeLoaderLibrary::newDefaultCCNodeLoaderLibrary();
-	//ccNodeLoaderLibrary6->registerCCNodeLoader("ccbGetItemLayer", ccbGetItemLayerLoader::loader());
-	//cocos2d::extension::CCBReader* ccbReader6 = new cocos2d::extension::CCBReader(ccNodeLoaderLibrary6);
-	//m_pGetItemCCB = ccbReader6->readNodeGraphFromFile("25.ccbi"/*, this*/);
-	//m_pGetItemCCB->setVisible(false);
-	//m_pGetItemCCB->setPosition(ccp(0,0));
-	////SetScale(m_pSkillNode);
-	//((ccbGetItemLayer*)m_pGetItemCCB)->setAnimationManager(ccbReader6->getAnimationManager(), this);
-	//ccbReader6->release();
-	//addChild(m_pGetItemCCB, 25, 56);
-
-	//CCLayerColor* pCCLayerColor = CCLayerColor::create(ccc4(20,20,20,230), 800, 480);
-	//addChild(pCCLayerColor, 16, 10);
-	((ccbGameoverMenu*)m_pGameoverNode)->Lose( 42 );
+void CGameControler::Lose(float _dt){
+	//((ccbGameoverMenu*)m_pGameoverNode)->Lose( 42 );
 }
 
 void CGameControler::ShowStar()
@@ -343,22 +445,8 @@ void CGameControler::ShowStarBoss1()
 	pSprite->setPosition(ccp(d_fStarLocateX2, d_fStarLocateY2-30));
 	pSprite->setAnchorPoint(ccp(0.46f, 0.5f));
 	CCAnimate* pAction = CCAnimate::create(common::CreateAnimationFrame("tu5/boss/", 8, CCRect(0,0,361,235)));
-	//pSprite->runAction(CCSequence::create(pAction, CCCallFuncN::create(this, callfuncN_selector(CGameControler::CallBackRemoveSelf)), NULL));
 	addChild(pSprite,24);
 #endif
 }
 
-void CGameControler::ShowOverBtn( float _dt )
-{
-	//if ( ((ccbGameoverMenu*)m_pGameoverNode)->m_bWin )
-	/*{
-		((ccbGameoverBtnMenu*)m_pGameoverBtnNode)->Win();
-		((ccbGameoverMenu*)m_pGameoverNode)->StartBtn();
-		((ccbGetItemLayer*)m_pGetItemCCB)->Appear1(1);
-	}
-	else*/
-	{
-		((ccbGameoverBtnMenu*)m_pGameoverBtnNode)->Lose();
-		//((ccbGetItemLayer*)m_pGetItemCCB)->Appear2(0);
-	}
-}
+void CGameControler::ShowOverBtn( float _dt ){}

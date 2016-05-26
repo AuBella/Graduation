@@ -4,6 +4,8 @@
 #include "baseRes.h"
 #include "FileCommon.h"
 #include "MainScene.h"
+#include"GameScene.h"
+#include"MainMenu.h"
 
 #define ShowFrame false
 #define LevelOpenNum	18
@@ -39,6 +41,8 @@ bool AppDelegate::applicationDidFinishLaunching()
     // create a scene. it's an autorelease object
 	//Ö÷²Ëµ¥
 	CCScene* pScene = MainScene::create();
+	//CCScene* pScene = GameScene::create();
+	//CCScene* pScene = CMainMenu::StartMenu();
 	pDirector->runWithScene(pScene);
     return true;
 }

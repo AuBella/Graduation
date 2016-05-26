@@ -9,6 +9,8 @@ Ogre::Ogre(){
 	redBlood = 100;
 	ogreAttacknum = rand() % 5;
 	flag = 0;
+	attackx = 50 + rand() % 30;
+	safex = 100 + rand() % 101;
 };
 
 void Ogre::initstatus(){
@@ -26,12 +28,17 @@ bool Ogre::init(){
 	
 		if( !Role::init())
 			return false;
+		
 		//设置精灵
 		m_MonsterSprite = CCSprite::create( "monster_2_stand.png", CCRect( 0, 0, 86, 97 ) );
 		m_MonsterSprite->setScale(0.6);
 		this->setSprite( m_MonsterSprite );
 		this->addChild( getSprite() );
 		this->setPosition(240, 200);
+
+		monsterbloodbar = CommonMonsterBloodBar::create();
+		monsterbloodbar->setPosition(m_MonsterSprite->getContentSize().width/2,m_MonsterSprite->getContentSize().height + 5);
+		m_MonsterSprite->addChild(monsterbloodbar);
 		//初始化各种动画
 		CCAnimation* standAnimn = AnimationUtil::getAnimation( "monster_2_stand.png", 3, 3 );
 		setStandAnimation( CCRepeatForever::create( CCAnimate::create( standAnimn ) ) );
@@ -66,6 +73,7 @@ bool Ogre::init(){
  void Ogre::HurtEnd( CCNode* pSender){ 
 	CCLOG("ogre hurtend ");
 	redBlood <= 0?0:redBlood;
+	monsterbloodbar->setRedBloodBar(redBlood);
 	CCNotificationCenter::sharedNotificationCenter()->postNotification("Hurt",(CCObject *)( 100+ redBlood));
 	if(redBlood > 0){
 		CocosDenshion::SimpleAudioEngine::sharedEngine()->stopEffect(effectId);
@@ -83,7 +91,6 @@ bool Ogre::init(){
  void Ogre::DeadEnd(CCNode* pSender){
 	if(isDead){
 		this->removeChild(m_MonsterSprite,true);
-		
 		this->unschedule(schedule_selector(Ogre::update));
 		this->unschedule(schedule_selector(Ogre::updateMonster));
 	}
@@ -99,7 +106,7 @@ void Ogre::StartListen(){
 }
 
 void Ogre::enterSafeArea(){
-	if(dis <= 200 || isDead || isHurt || isAttack)
+	if(dis <= safex/*200*/ || isDead || isHurt || isAttack)
 		return;
 	float width = getSprite()->getContentSize().width;
 	float mapWidth = GlobalCtrl::getInstance()->tilemap->getContentSize().width;
@@ -127,29 +134,30 @@ void Ogre::enterSafeArea(){
 };
 
 void Ogre::updateMonster(float delta){
-	if(dis>=200){
+	if(dis>=safex/*200*/){
 		enterSafeArea();
 	}
 };
 
 void Ogre::update(float dt){
+
 	float x = shana->getPositionX()-(this->getPositionX()+tileMap->getPositionX());
 	float y = shana->getPositionY()-(this->getPositionY()+tileMap->getPositionY());
 	dis = sqrt(pow(x,2) + pow(y,2));
 	if(faceDirecton != this->getSprite()->isFlipX() && abs(x) > 80)
 		this->getSprite()->setFlipX( faceDirecton );
-	if(dis > 200 &&dis <201){
+	if(dis > safex/*200*/ &&dis <safex+1/*201*/){
 		runStandAnimation();
 	}
-	if(dis > 200){
+	if(dis > safex/*200*/){
 		initstatus();
 	}
 	if(isDead || isHurt || isAttack)
 		return;
-	if(dis <= 200){
+	if(dis <= safex/*200*/){
 		faceDirecton = shana->getPositionX()>this->getPositionX()? false:true;
-		
-		if(abs(x) <= 80){
+		//float xattack = 50 + rand() %30;
+		if(abs(x) <= attackx/*80*/ || abs(x) < 50){
 			if(abs(y) <= 20){
 				if(flag > 1000){
 					initstatus();
@@ -166,7 +174,7 @@ void Ogre::update(float dt){
 					runStandAnimation();
 			}
 		}
-		if(!(abs(x)<=80 && abs(y) <= 20)){
+		if(!((abs(x)<=attackx)/*80*/ && abs(y) <= 20)){
 			if(!isHurt && !isAttack){
 				runRunAnimation();
 			}
@@ -178,7 +186,7 @@ void Ogre::update(float dt){
 };
 
 void Ogre::enterAttackArea(float x, float y){
-	float directionx = abs(x) <= 80? directionx = 0:(x > 0? 1: -1);
+	float directionx = abs(x) <= attackx/*80*/? directionx = 0:(x > 0? 0.1: -0.1);
 	float directiony = abs(y) <= 20? directiony = 0:y > 0? 1: -1;
-	this->setPosition(this->getPositionX()+directionx*2,this->getPositionY()+directiony);
+	this->setPosition(this->getPositionX()+directionx*(rand() % 10),this->getPositionY()+directiony);
 };

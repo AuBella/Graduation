@@ -1,5 +1,5 @@
 #include"OperatorLayer.h"
-
+#include"CommonMonsterBloodBar.h"
 OperatorLayer::OperatorLayer(void){};
 OperatorLayer::~OperatorLayer(void){
 	CCNotificationCenter::sharedNotificationCenter()->removeObserver(this,"Hurt");
@@ -15,13 +15,18 @@ bool OperatorLayer::init(){
 	heroBloodBar->setPosition(80+heroBloodBar->getContentSize().width, winSize.height - heroBloodBar->getContentSize().height- 15);
 	heroBloodBar->setScale(0.5);
 	this->addChild(heroBloodBar);
-	//MonsterBloodBar
-	monsterBloodBar = CommonBloodBar::create();
-	monsterBloodBar->setPosition(winSize.width - 200 -monsterBloodBar->getContentSize().width, winSize.height - monsterBloodBar->getContentSize().height- 15);
-	monsterBloodBar->setScale(0.5);
-	monsterBloodBar->setRedBloodBarType(false);
-	monsterBloodBar->setVisible(false);
-	this->addChild(monsterBloodBar);
+	/*CommonMonsterBloodBar* monsterbloodbar = CommonMonsterBloodBar::create();
+	monsterbloodbar->setPosition(winSize.width - 200 -monsterbloodbar->getContentSize().width, winSize.height - monsterbloodbar->getContentSize().height- 15);
+	monsterbloodbar->setPosition(20,20);*/
+	//m_MonsterSprite->addChild(monsterbloodbar);
+	//this->addChild(monsterbloodbar);
+	////MonsterBloodBar
+	//monsterBloodBar = CommonBloodBar::create();
+	//monsterBloodBar->setPosition(winSize.width - 200 -monsterBloodBar->getContentSize().width, winSize.height - monsterBloodBar->getContentSize().height- 15);
+	//monsterBloodBar->setScale(0.5);
+	//monsterBloodBar->setRedBloodBarType(false);
+	//monsterBloodBar->setVisible(false);
+	//this->addChild(monsterBloodBar);
 	//MenuChoose
 	CCMenuItemImage* menuItem = CCMenuItemImage::create("Common/btn_normal_stop.png", "Common/btn_press_stop.png", "Common/btn_stop.png", this, menu_selector(OperatorLayer::MenuChooseCallback));
 	menuItem->setScale(0.5);
@@ -56,6 +61,7 @@ void OperatorLayer::keyBackClicked() {
 	renderTexture->end();
 	CCDirector::sharedDirector()->pushScene(Gamepause::scene(renderTexture));
 }
+
 void OperatorLayer::keyMenuClicked() {}
 
 void OperatorLayer::setUITouchEnabled(bool flag){}
@@ -70,11 +76,11 @@ void OperatorLayer::ObserverFunction(CCObject * object){
 		heroBloodBar->setRedBloodBar(num % 100);
 	}
 	else {
-		monsterBloodBar->setRedBloodBar(num % 100);
+		/*monsterBloodBar->setRedBloodBar(num % 100);
 		if(num % 100!= 0)
 			monsterBloodBar->setVisible(true);
 		else
-			monsterBloodBar->setVisible(false);
+			monsterBloodBar->setVisible(false);*/
 	}
 }
 

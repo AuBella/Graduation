@@ -55,18 +55,18 @@
 #define d_fBloodLocateY		71.0f
 #define d_fBloodX			116.0f
 #define d_fBloodY			71.0f
-#define d_iActionNum		9
+#define d_iActionNum		5
 static const std::string g_sButtonPath[] =
 {//°´Å¥Í¼Æ¬
 	"tu4/zuo.png",		//×ó
 	"tu4/you.png",		//ÓÒ
 	"tu4/gongji.png",	//´ò
 	"tu4/tao.png",		//Ìø
-	"tu4/huanqiang.png",//ÇÐ
-	"tu4/skillbtn1.png",	//¼¼ÄÜ
-	"tu4/shoulei.png",	//À×
+	//"tu4/huanqiang.png",//ÇÐ
+	//"tu4/skillbtn1.png",	//¼¼ÄÜ
+	//"tu4/shoulei.png",	//À×
 	"tu4/zhanting1.png",//ÔÝÍ£
-	"tu4/an.png",//Ò©Æ¿1
+	//"tu4/an.png",//Ò©Æ¿1
 	//"tu4/an.png",//Ò©Æ¿2
 };
 static const std::string g_sButtonPressPath[] =
@@ -75,11 +75,11 @@ static const std::string g_sButtonPressPath[] =
 	"tu4/you2.png",		//ÓÒ
 	"tu4/gongji2.png",	//´ò
 	"tu4/tao2.png",		//Ìø
-	"tu4/huanqiang2.png",//ÇÐ
-	"tu4/skillbtn2.png",	//¼¼ÄÜ
-	"tu4/shoulei2.png",	//À×
+	//"tu4/huanqiang2.png",//ÇÐ
+	//"tu4/skillbtn2.png",	//¼¼ÄÜ
+	//"tu4/shoulei2.png",	//À×
 	"tu4/zhanting1.png",//ÔÝÍ£
-	"tu4/an.png",//Ò©Æ¿1
+	//"tu4/an.png",//Ò©Æ¿1
 	//"tu4/an.png",//Ò©Æ¿2
 };
 static const float g_fButtonX[] =
@@ -88,11 +88,11 @@ static const float g_fButtonX[] =
 	230,
 	710,
 	757,
-	650,
-	470,//520,
-	570,
+	//650,
+	//470,//520,
+	//570,
 	757.5,
-	404,
+	//404,
 	//477,
 };
 static const float g_fButtonY[] =
@@ -101,11 +101,11 @@ static const float g_fButtonY[] =
 	55,
 	50,
 	155,
-	444,
-	38,//33,
-	38,
+	//444,
+	//38,//33,
+	//38,
 	437,
-	446,
+	//446,
 	//446,
 };
 static const float g_fButtonW[] =
@@ -114,11 +114,11 @@ static const float g_fButtonW[] =
 	75.0,
 	49.0,
 	45.0,
-	80.0,
-	45.0,//45.0,
+	//80.0,
+	//45.0,//45.0,
+	//45.0,
 	45.0,
-	45.0,
-	40.0,
+	//40.0,
 	//40.0,
 };
 static const float g_fButtonH[] =
@@ -127,16 +127,17 @@ static const float g_fButtonH[] =
 	70.0,
 	49.0,
 	53.0,
-	25.0,
-	53,//53.0,
-	53.0,
+	//25.0,
+	//53,//53.0,
+	//53.0,
 	52.0,
-	40.0,
+	//40.0,
 	//40.0,
 };
 
+
 //////////////////
-/****************/
+/********°´Å¥¶¯×÷********/
 //////////////////
 enum e_ActionType
 {
@@ -144,12 +145,12 @@ enum e_ActionType
 	eAT_MoveRight,
 	eAT_Attack,
 	eAT_Jump,
-	eAT_ChangeWeapon,
-	eAT_SKILL,
-	eAT_BOMB,
+	//eAT_ChangeWeapon,
+	//eAT_SKILL,
+	//eAT_BOMB,
 	eAT_PAUSE,
-	eAT_SKILL1,
-	eAT_SKILL2,
+	//eAT_SKILL1,
+	//eAT_SKILL2,
 	eAT_NULL,
 };
 
@@ -275,6 +276,7 @@ public:
 	virtual bool init();
 	static CGameControler* NewGameControler(cocos2d::CCScene* _pScene, int _unLevel, int _difficult);
 	static CGameControler* GetGameControler();
+	void GameLoadingSecond();
 	int		m_unLevel;
 	int		m_iLevelType;
 	int		m_iDifficult;
@@ -284,6 +286,11 @@ public:
 	int		m_iStateNumGold;
 	void Win(float _dt);
 	void Lose(float _dt);
+	void GameStart();
+	void Timer(float _dt);
+	void ButtonPressCheck();
+	//ÏÔÊ¾Ñª°ü
+	void ShowHealBox();
 	void ShowStar();
 	void ShowStarMovie1(float _dt);
 	void ShowStarMovie2(float _dt);
@@ -291,17 +298,29 @@ public:
 	void ShowStarBoss(float _dt);
 	void ShowStarBoss1();
 	void ShowOverBtn(float _dt);
+	void MoveCheck(int _un, int _digit);
 	void ShowScore();
+	void PauseGame(int _type = 0);//ÔÝÍ£
 	CBackground*			m_pCBackgroud;
+	virtual void ccTouchesBegan(cocos2d::CCSet *pTouches, cocos2d::CCEvent *pEvent);
+	virtual void ccTouchesMoved(cocos2d::CCSet *pTouches, cocos2d::CCEvent *pEvent);
+	virtual void ccTouchesEnded(cocos2d::CCSet *pTouches, cocos2d::CCEvent *pEvent);
+	cocos2d::CCSprite* m_pHero;
 private:
+	static CGameControler*	s_pGameControler;//controller
+	cocos2d::CCNode*		m_pMenuNode;
 	cocos2d::CCScene*		m_pScene;
 	CFrontground*			m_pCFrontgroud;
-	int m_iMapNum;
+	int m_iMapNum;//µØÍ¼°´Å¥Êý
+	int		m_iHealBox;
 	cocos2d::CCSprite*		m_pBG;
 	int	m_iAllStar;
 	cocos2d::CCNode*		m_pGameoverNode;
 	cocos2d::CCNode*		m_pGameoverBtnNode;
 	int	m_iStar;
+	int*	m_pMoveActionArray;
+	bool			m_bAttack;
+	//CCSprite* m_pHero;
 };
 
 #endif

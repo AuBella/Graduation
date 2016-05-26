@@ -1,5 +1,6 @@
 #include "Frontground.h"
 #include "baseRes.h"
+#include"GlobalCtrl.h"
 //#include "GameControler.h"
 
 using namespace cocos2d;
@@ -46,6 +47,14 @@ bool CFrontground::init(){
 		m_pTileMap = CCTMXTiledMap::create(buffer);
 #endif
 	}
+	////////////////////////
+	//CCObject *pObject = NULL;
+	//CCARRAY_FOREACH(m_pTileMap->getChildren(), pObject){
+	//	CCTMXLayer *child = (CCTMXLayer*)pObject;
+	//	child->getTexture()->setAliasTexParameters();
+	//}
+	//GlobalCtrl::getInstance()->tilemap = m_pTileMap;
+	///////////////////////
 	addChild(m_pTileMap);
 	GetMapInfo();
 	return true;
@@ -330,7 +339,6 @@ void CFrontground::GetMapInfo()
 	}
 }
 
-int CFrontground::GetMapNums()
-{
+int CFrontground::GetMapNums(){
 	return m_pTileMap->getMapSize().width*m_pTileMap->getTileSize().width/800;
 }

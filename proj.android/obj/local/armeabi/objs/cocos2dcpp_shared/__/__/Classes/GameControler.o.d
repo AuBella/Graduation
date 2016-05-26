@@ -260,7 +260,7 @@ obj/local/armeabi/objs/cocos2dcpp_shared/__/__/Classes/GameControler.o: \
  jni/../../Classes/AppDelegate.h \
  C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/CocosDenshion/android/../include/SimpleAudioEngine.h \
  C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/CocosDenshion/android/../include/Export.h \
- jni/../../Classes/MainMenu.h jni/../../Classes/GameoverMenu.h \
+ jni/../../Classes/MainMenu.h jni/../../Classes/ControlerMenu.h \
  C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/cocos-ext.h \
  C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/ExtensionMacros.h \
  C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/ExtensionExport.h \
@@ -521,8 +521,12 @@ obj/local/armeabi/objs/cocos2dcpp_shared/__/__/Classes/GameControler.o: \
  C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/spine/SkeletonJson.h \
  C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/spine/CCSkeleton.h \
  C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/spine/CCSkeletonAnimation.h \
- jni/../../Classes/GameoverBtnMenu.h jni/../../Classes/GameLoading.h \
- jni/../../Classes/Common.h
+ jni/../../Classes/GameoverMenu.h jni/../../Classes/GameoverBtnMenu.h \
+ jni/../../Classes/GameLoading.h jni/../../Classes/Common.h \
+ jni/../../Classes/Shana.h jni/../../Classes/Role.h \
+ jni/../../Classes/GlobalCtrl.h jni/../../Classes/OperatorLayer.h \
+ jni/../../Classes/JoyStick.h jni/../../Classes/SkillButton.h \
+ jni/../../Classes/CommonBloodBar.h jni/../../Classes/Gamepause.h
 
 jni/../../Classes/GameControler.h:
 
@@ -1062,7 +1066,7 @@ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/CocosDenshion/android/../include/Expor
 
 jni/../../Classes/MainMenu.h:
 
-jni/../../Classes/GameoverMenu.h:
+jni/../../Classes/ControlerMenu.h:
 
 C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/cocos-ext.h:
 
@@ -1584,8 +1588,26 @@ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/spine/CCSkeleton.h:
 
 C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/spine/CCSkeletonAnimation.h:
 
+jni/../../Classes/GameoverMenu.h:
+
 jni/../../Classes/GameoverBtnMenu.h:
 
 jni/../../Classes/GameLoading.h:
 
 jni/../../Classes/Common.h:
+
+jni/../../Classes/Shana.h:
+
+jni/../../Classes/Role.h:
+
+jni/../../Classes/GlobalCtrl.h:
+
+jni/../../Classes/OperatorLayer.h:
+
+jni/../../Classes/JoyStick.h:
+
+jni/../../Classes/SkillButton.h:
+
+jni/../../Classes/CommonBloodBar.h:
+
+jni/../../Classes/Gamepause.h:

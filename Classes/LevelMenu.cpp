@@ -1,7 +1,9 @@
+//关卡界面
 #include "LevelMenu.h"
 #include "baseRes.h"
 #include "MainMenu.h"
 #include "AppDelegate.h"
+#include "GameScene.h"
 #include "Common.h"
 
 using namespace cocos2d;
@@ -57,7 +59,7 @@ void ccbLevelMenu::ccTouchesBegan( cocos2d::CCSet *pTouches, cocos2d::CCEvent *p
 	if ( -1 == m_iChose && 2 == CMainMenu::GetStatus()){
 		CCSetIterator iter = pTouches->begin();
 		CCPoint locationT = ((CCTouch*)(*iter))->getLocation();
-		for ( int i = 0; i < 6; i++ ){
+		for ( int i = 0; i < 4; i++ ){
 			CCPoint locationP = m_pNode[i]->getPosition();
 			if ( abs(locationT.x - locationP.x*Scale_X) < d_fLevelPicW
 				&& abs(locationT.y - locationP.y*Scale_Y) < d_fLevelPicH ){
@@ -70,62 +72,19 @@ void ccbLevelMenu::ccTouchesBegan( cocos2d::CCSet *pTouches, cocos2d::CCEvent *p
 
 void ccbLevelMenu::ccTouchesMoved( cocos2d::CCSet *pTouches, cocos2d::CCEvent *pEvent ){}
 
+//关卡开始
 void ccbLevelMenu::ccTouchesEnded( cocos2d::CCSet *pTouches, cocos2d::CCEvent *pEvent ){
-	/*if ( -1 != m_iChose && 2 == CMainMenu::GetStatus() )
-	{
-		CCSetIterator iter = pTouches->begin();
-		CCPoint locationT = ((CCTouch*)(*iter))->getLocation();
-		for ( int i = 0; i < 6; i++ )
-		{
-			CCPoint locationP = m_pNode[i]->getPosition();
-			if ( abs(locationT.x - locationP.x*Scale_X) < d_fLevelPicW
-				&& abs(locationT.y - locationP.y*Scale_Y) < d_fLevelPicH )
-			{
-				if ( m_iChose == i )
-				{
-					if ( !AppDelegate::s_LevelOpen[i+m_iLevel*6] || ((ccbLayer*)CMainMenu::GetMenuMain())->m_bShare )
-					{
-						m_iChose = -1;
-						return;
-					}
-					if ( AppDelegate::s_FirstLogin == 4 )
-					{
-						if ( m_iChose != 0 )
-						{
-							m_iChose = -1;
-							return;
-						}
-						AppDelegate::s_FirstLogin = 5;
-						AppDelegate::SaveGuide();
-					}
-					if ( m_iChose + m_iLevel*6 >= LevelLimit*6 )
-					{
-						if ( getChildByTag(410) )
-						{
-							getChildByTag(410)->stopAllActions();
-							removeChildByTag(410);
-						}
-						CCSprite* pSprite = CCSprite::create("tu14/qidai.png");
-						pSprite->setPosition(ccp(400, 240));
-						CCFadeOut* pAction = CCFadeOut::create(1.0f);
-						pSprite->runAction(CCSequence::create(pAction,
-							CCCallFunc::create(this, callfunc_selector(ccbLevelMenu::tipdisappear)), NULL));
-						addChild(pSprite, 25, 410);
-						return;
-					}
-					int level = m_iChose;
-					CMainMenu::SetStatus(0);
-					s_pccbLevelMenu = NULL;
-					ccbShopMenu::s_pccbShopMenu = NULL;
-					AppDelegate::ChangeScene( CMainMenu::StartGame(level + m_iLevel*6, CMainMenu::GetDifficult()) );
-				}
-				break;
-			}
-		}	}*/
 		int level = m_iChose;
 		CMainMenu::SetStatus(0);
 		s_pccbLevelMenu = NULL;
-		AppDelegate::ChangeScene( CMainMenu::StartGame(level + m_iLevel*6, CMainMenu::GetDifficult()) );
+		if(level!=3)
+			AppDelegate::ChangeScene( CMainMenu::StartGame(level + m_iLevel*6, CMainMenu::GetDifficult()) );
+		else{
+			//AppDelegate::ChangeScene( CMainMenu::StartGame(level + 53, CMainMenu::GetDifficult()) );
+			 GameScene* pscene = GameScene::create();
+			 pscene->StartGame(0,0);
+			AppDelegate::ChangeScene(pscene);
+		}
 }
 
 void ccbLevelMenu::tipdisappear(){}
@@ -135,8 +94,7 @@ void ccbLevelMenu::Appear(){
 	CCSprite* bg = CCSprite::create(g_sBGPath[m_iLevel].c_str());
 	this->addChild(bg, -10);
 	SetScale(bg);
-	for ( int i = 0; i < 4; i ++ )
-	{
+	for ( int i = 0; i < 4; i ++ ){
 		if ( m_pNode[i]->getChildByTag(10) )
 		{
 			for ( int j = 7; j < 14; j++ )

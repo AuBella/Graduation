@@ -75,6 +75,7 @@ void JoyStick::ccTouchMoved( CCTouch* touch, CCEvent* event ) {
 			distance = 33.0f;
 		}
 		CCPoint direction = ccpSub(currentPoint,centerPoint) /ccpDistance(currentPoint,centerPoint);
+		direction.y = 0;
 		this->mask->setPosition( currentPoint);
 		if(shana->isRunning)
 			GlobalCtrl::getInstance()->shana->onMove( direction, distance );

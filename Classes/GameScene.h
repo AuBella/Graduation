@@ -18,6 +18,7 @@ public:
 	CC_SYNTHESIZE(GameLayer*, gameLayer, GameLayer);
 	void showRewardResult();
 	CC_SYNTHESIZE(OperatorLayer*, operatorLayer, OperatorLayer);
+	void StartGame(int _level, int _difficult);
 	CREATE_FUNC(GameScene);
 private:
 	CCLabelTTF* pLabel;

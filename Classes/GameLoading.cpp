@@ -7,8 +7,7 @@
 using namespace cocos2d;
 using namespace cocos2d::extension;
 
-CGameLoading* CGameLoading::GetGameLoadingLayer(cocos2d::CCScene* _pScene, int _level, int _difficult)
-{
+CGameLoading* CGameLoading::GetGameLoadingLayer(cocos2d::CCScene* _pScene, int _level, int _difficult){
 	//AppDelegate::AudioStopBgm();
 	CGameLoading* pLayer = new CGameLoading;
 	pLayer->autorelease();
@@ -36,8 +35,7 @@ CGameLoading* CGameLoading::GetGameLoadingLayer(cocos2d::CCScene* _pScene, int _
 	return pLayer;
 }
 
-CGameLoading::CGameLoading()
-{
+CGameLoading::CGameLoading(){
 	scheduleOnce(schedule_selector(CGameLoading::Movie1), 0.90f);
 }
 
@@ -49,18 +47,21 @@ void CGameLoading::Movie1( float _t ){
 }
 
 void CGameLoading::Loading1( float _t ){
+	//Õ½¶·
 	m_pLayer = CGameControler::NewGameControler(m_pScene, m_iLevel, m_iDifficult);
 	scheduleOnce(schedule_selector(CGameLoading::Loading2), 1.20f);
 }
 
 void CGameLoading::Loading2( float _t ){
 	((ccbGameLoadingMenu*)m_pNode)->Loading();
+	m_pLayer->GameLoadingSecond();
 	scheduleOnce(schedule_selector(CGameLoading::LoadingOver), 2.35f);
 }
 
 void CGameLoading::LoadingOver( float _t ){
 	((ccbGameLoadingMenu*)m_pNode)->Disappear();
 	scheduleOnce(schedule_selector(CGameLoading::Start), 0.80f);
+	m_pLayer->GameStart();
 	m_pScene->removeChildByTag(2);
 }
 

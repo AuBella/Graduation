@@ -60,8 +60,7 @@ void ccbGameLoadingMenu::setAnimationManager(CCBAnimationManager *pAnimationMana
 	CC_SAFE_RETAIN(m_AnimationManager);
 }
 //³õÊ¼¶¯»­
-void ccbGameLoadingMenu::Appear()
-{
+void ccbGameLoadingMenu::Appear(){
 	m_AnimationManager->runAnimationsForSequenceNamedTweenDuration("Default Timeline fanhui", 0.0f);
 	return;
 }
