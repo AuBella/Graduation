@@ -15,18 +15,6 @@ bool OperatorLayer::init(){
 	heroBloodBar->setPosition(80+heroBloodBar->getContentSize().width, winSize.height - heroBloodBar->getContentSize().height- 15);
 	heroBloodBar->setScale(0.5);
 	this->addChild(heroBloodBar);
-	/*CommonMonsterBloodBar* monsterbloodbar = CommonMonsterBloodBar::create();
-	monsterbloodbar->setPosition(winSize.width - 200 -monsterbloodbar->getContentSize().width, winSize.height - monsterbloodbar->getContentSize().height- 15);
-	monsterbloodbar->setPosition(20,20);*/
-	//m_MonsterSprite->addChild(monsterbloodbar);
-	//this->addChild(monsterbloodbar);
-	////MonsterBloodBar
-	//monsterBloodBar = CommonBloodBar::create();
-	//monsterBloodBar->setPosition(winSize.width - 200 -monsterBloodBar->getContentSize().width, winSize.height - monsterBloodBar->getContentSize().height- 15);
-	//monsterBloodBar->setScale(0.5);
-	//monsterBloodBar->setRedBloodBarType(false);
-	//monsterBloodBar->setVisible(false);
-	//this->addChild(monsterBloodBar);
 	//MenuChoose
 	CCMenuItemImage* menuItem = CCMenuItemImage::create("Common/btn_normal_stop.png", "Common/btn_press_stop.png", "Common/btn_stop.png", this, menu_selector(OperatorLayer::MenuChooseCallback));
 	menuItem->setScale(0.5);
@@ -64,7 +52,10 @@ void OperatorLayer::keyBackClicked() {
 
 void OperatorLayer::keyMenuClicked() {}
 
-void OperatorLayer::setUITouchEnabled(bool flag){}
+void OperatorLayer::setUITouchEnabled(bool flag){
+	joyStick->setTouchEnabled(flag);
+	skillButton->setTouchEnabled(flag);
+}
 
 void OperatorLayer::ObserverFunction(CCObject * object){
 	int num = (int)object;
@@ -95,3 +86,4 @@ void OperatorLayer::MenuChoose(){
 	renderTexture->end();
 	CCDirector::sharedDirector()->pushScene(Gamepause::scene(renderTexture));
 }
+

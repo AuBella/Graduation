@@ -17,6 +17,7 @@ private:
 	
 	int killnum;
 	int rolehight;
+	int currentLevel;
 	//CFrontground*			m_pCFrontgroud;
 public:
 	GameLayer(void);
@@ -31,5 +32,6 @@ public:
 	void output();
 	cocos2d::CCArray*		m_pMonsterArray;
 	void StartGameLevel(int _level, int _difficult);
+	int GetMapNums();//µØÍ¼ÊýÄ¿
 	CREATE_FUNC(GameLayer);
 };

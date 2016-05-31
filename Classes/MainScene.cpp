@@ -44,7 +44,7 @@ bool MainScene::init(){
 	menu -> setPosition(ccp(menuItem->getContentSize().width,menuItem->getContentSize().height));
 	this->addChild(menu, 1);
 	SetScaleY(pSprite);
-	//设置
+	//this->addChild(tempSprite);
 	return true;
 };
 //排行榜回调函数

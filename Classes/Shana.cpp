@@ -9,6 +9,7 @@ Shana::Shana() {
 	shanaisAttack = false;
 	redBlood = 100;
 	isDead = false;
+	userbloodnum = 3;
 }
 
 

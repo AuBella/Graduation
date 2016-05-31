@@ -212,7 +212,8 @@ obj/local/armeabi/objs/cocos2dcpp_shared/__/__/Classes/GameScene.o: \
  jni/../../Classes/OperatorLayer.h jni/../../Classes/JoyStick.h \
  jni/../../Classes/SkillButton.h jni/../../Classes/CommonBloodBar.h \
  jni/../../Classes/Gamepause.h jni/../../Classes/baseRes.h \
- jni/../../Classes/RewardLayer.h
+ jni/../../Classes/RewardLayer.h jni/../../Classes/Common.h \
+ jni/../../Classes/ShadeLayer.h
 
 jni/../../Classes/GameScene.h:
 
@@ -653,3 +654,7 @@ jni/../../Classes/Gamepause.h:
 jni/../../Classes/baseRes.h:
 
 jni/../../Classes/RewardLayer.h:
+
+jni/../../Classes/Common.h:
+
+jni/../../Classes/ShadeLayer.h:

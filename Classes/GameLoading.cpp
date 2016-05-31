@@ -70,6 +70,6 @@ void CGameLoading::LoadingOver( float _t ){
 void CGameLoading::Start( float _t ){
 	int LevelNum = CCUserDefault::sharedUserDefault()->getIntegerForKey("currentlevelNum");
 	GameScene* pscene = GameScene::create();
-	pscene->StartGame(3-LevelNum,0);
+	pscene->StartGame(LevelNum,0);
 	AppDelegate::ChangeScene(pscene);
 }

@@ -33,6 +33,7 @@ public:
 	void HurtAnimation(int num);
 	void HurtEnd();
 	void StartListen();
+	int userbloodnum;
 private:
 	void updateBox();
 	virtual void update( float delta );

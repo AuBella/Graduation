@@ -98,7 +98,7 @@ bool RewardLayer::init(){
 			back_small_spr->addChild(pSprite);
 			pSprite->setPosition(ccp(pSprite->getContentSize().height/2,pSprite->getContentSize().height*i+20));
 			char buffer[255];
-			sprintf(buffer, "Tile/QuestionInfo/%d.png", /*m_pGameControler->m_unLevel*3+*/i);
+			sprintf(buffer, "Tile/QuestionInfo/%d.png", LevelNum*3+i);
 			CCSprite* pLaber = CCSprite::create(buffer);
 			if ( pLaber ){
 				pLaber->setAnchorPoint(ccp(0.0f, 0.0f));

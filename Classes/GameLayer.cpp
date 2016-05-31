@@ -8,6 +8,7 @@ GameLayer::GameLayer() :
 	killnum = 0;
 	ogreArray = GlobalCtrl::getInstance() ->pArray;
 	rolehight = 0;
+	currentLevel=0;
 }
 GameLayer::~GameLayer(void){
 	CCNotificationCenter::sharedNotificationCenter()->removeObserver(this,"Attack");
@@ -22,6 +23,7 @@ bool GameLayer::init(){
 
 void GameLayer::StartGameLevel(int level, int difficut){
 	this->initTileMap(level);
+	currentLevel = level;
 	this->addShana();
 	schedule(schedule_selector(GameLayer::updateMonster),5);
     CCNotificationCenter::sharedNotificationCenter()->addObserver(this,callfuncO_selector(GameLayer::ObserverFunction),"Attack",NULL);
@@ -32,13 +34,9 @@ void GameLayer::updateMonster(float delta){
 }
 //地图
 void GameLayer::initTileMap(int _unLevel){
-	m_pBG = CCSprite::create(g_sBGPath[_unLevel].c_str());
-	m_pBG->setAnchorPoint(ccp(0.5f,0));
-	m_pBG->setPosition(ccp(400, 0));
-	this->addChild(m_pBG,0);
-	//SetScale(m_pBG);
 	char buffer[255];
-	sprintf(buffer, "Tile/%d_0.tmx", _unLevel);
+	sprintf(buffer, "Tile/%d_0.tmx", 0);
+	//sprintf(buffer, "Tile/%d_0.tmx", _unLevel);
 	tilemap = CCTMXTiledMap::create(buffer);
 	CCObject *pObject = NULL;
 	CCARRAY_FOREACH(tilemap->getChildren(), pObject){
@@ -46,7 +44,7 @@ void GameLayer::initTileMap(int _unLevel){
 		child->getTexture()->setAliasTexParameters();
 	}
 	GlobalCtrl::getInstance()->tilemap = tilemap;
-	m_pBG->addChild(tilemap);
+	this->addChild(tilemap);
 };
 //观察者模式
 void GameLayer::ObserverFunction(CCObject * object){
@@ -75,14 +73,12 @@ void GameLayer::output(){
 //英雄
 void GameLayer::addShana() {
 	CCTMXTiledMap* map = GlobalCtrl::getInstance()->tilemap;
-	m_pMonsterArray = map->objectGroupNamed("zuobiao2")->getObjects();
+	m_pMonsterArray = map->objectGroupNamed("pengzhuang")->getObjects();
 	m_pMonsterArray->retain();
 	CCDictionary* obj = (CCDictionary*)m_pMonsterArray->objectAtIndex(0);
 	shana = Shana::create();
-	rolehight =((CCString*) obj->objectForKey("y"))->floatValue() +shana->getSprite()->getContentSize().height/2 ;
-	shana->setPosition( CCPoint(
-		100, 
-		((CCString*) obj->objectForKey("y"))->floatValue()+shana->getSprite()->getContentSize().height/2 ));
+	rolehight =((CCString*)obj->objectForKey("height"))->floatValue() + shana->getSprite()->getContentSize().height/2;
+	shana->setPosition( CCPoint(100, rolehight));
 	CCLOG("=================%d", rolehight);
 	this->addChild( shana );
 	GlobalCtrl::getInstance()->shana = shana;
@@ -106,7 +102,10 @@ void GameLayer::addOgre() {
 	m_pMonsterArray = map->objectGroupNamed("zuobiao2")->getObjects();
 	m_pMonsterArray->retain();
 	for(int i = 0; i < 5 && ogreArray->count() <= 10; ++i){
-		CCDictionary* obj = (CCDictionary*)m_pMonsterArray->objectAtIndex(rand()%4);
+		int tempLevelnum = 3;
+		if(currentLevel == 3)
+			tempLevelnum = 4;
+		CCDictionary* obj = (CCDictionary*)m_pMonsterArray->objectAtIndex(rand()%tempLevelnum);
 		if(abs(((CCString*)obj->objectForKey("x"))->floatValue() - shana->getPositionX()+ tilemap->getPositionX()) <= WINSIZE_W / 2){
 			ogre = Ogre::create();
 			ogreArray->addObject(ogre);
@@ -116,4 +115,8 @@ void GameLayer::addOgre() {
 			CCSize visibleSize = CCEGLView::sharedOpenGLView()->getVisibleSize();
 		}
 	}
+}
+
+int GameLayer::GetMapNums(){
+	return tilemap->getMapSize().width*tilemap->getTileSize().width/800;
 }
