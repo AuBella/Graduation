@@ -46,45 +46,45 @@ CGameControler::~CGameControler()
 
 CGameControler* CGameControler::NewGameControler(cocos2d::CCScene* _pScene, int _unLevel, int _difficult){
 	CGameControler* pLayer = new CGameControler();
-	s_pGameControler = pLayer;
-	pLayer->init();
-	pLayer->autorelease();
-	pLayer->m_pScene	= _pScene;
-	pLayer->m_unLevel	= _unLevel;
-	pLayer->m_iDifficult= _difficult;
+	//s_pGameControler = pLayer;
+	//pLayer->init();
+	//pLayer->autorelease();
+	//pLayer->m_pScene	= _pScene;
+	//pLayer->m_unLevel	= _unLevel;
+	//pLayer->m_iDifficult= _difficult;
 
-	SetScale(pLayer);
-	_pScene->addChild(pLayer, 1, 1);
-	pLayer->m_pCFrontgroud = CFrontground::Create(_unLevel);
-	pLayer->m_iMapNum = pLayer->m_pCFrontgroud->GetMapNums();
-	if ( pLayer->m_iLevelType == 6 ){
-		pLayer->m_pBG = CCSprite::create("Tile/beijing2.png");
-		pLayer->m_pBG->setAnchorPoint(ccp(0.5f,0));
-		pLayer->m_pBG->setPosition(ccp(400, 0));
-		CCLayer* pBGLayer = new CCLayer();
-		pBGLayer->autorelease();
-		pBGLayer->addChild(pLayer->m_pBG);
-		SetScale(pBGLayer);
-		_pScene->addChild(pBGLayer,0);
-	}
-	else
-	{
-		pLayer->m_pBG = CCSprite::create(g_sBGPath[_unLevel].c_str());
-		pLayer->m_pBG->setAnchorPoint(ccp(0.5f,0));
-		pLayer->m_pBG->setPosition(ccp(400, 0));
-		CCLayer* pBGLayer = new CCLayer();
-		pBGLayer->autorelease();
-		pBGLayer->addChild(pLayer->m_pBG);
-		SetScale(pBGLayer);
-		_pScene->addChild(pBGLayer,0);
-	}
-	
-	pLayer->m_pCBackgroud = CBackground::Create(_unLevel);
-	SetScale(pLayer->m_pCBackgroud);
-	_pScene->addChild(pLayer->m_pCBackgroud);
+	//SetScale(pLayer);
+	//_pScene->addChild(pLayer, 1, 1);
+	//pLayer->m_pCFrontgroud = CFrontground::Create(_unLevel);
+	//pLayer->m_iMapNum = pLayer->m_pCFrontgroud->GetMapNums();
+	//if ( pLayer->m_iLevelType == 6 ){
+	//	pLayer->m_pBG = CCSprite::create("Tile/beijing2.png");
+	//	pLayer->m_pBG->setAnchorPoint(ccp(0.5f,0));
+	//	pLayer->m_pBG->setPosition(ccp(400, 0));
+	//	CCLayer* pBGLayer = new CCLayer();
+	//	pBGLayer->autorelease();
+	//	pBGLayer->addChild(pLayer->m_pBG);
+	//	SetScale(pBGLayer);
+	//	_pScene->addChild(pBGLayer,0);
+	//}
+	//else
+	//{
+	//	pLayer->m_pBG = CCSprite::create(g_sBGPath[_unLevel].c_str());
+	//	pLayer->m_pBG->setAnchorPoint(ccp(0.5f,0));
+	//	pLayer->m_pBG->setPosition(ccp(400, 0));
+	//	CCLayer* pBGLayer = new CCLayer();
+	//	pBGLayer->autorelease();
+	//	pBGLayer->addChild(pLayer->m_pBG);
+	//	SetScale(pBGLayer);
+	//	_pScene->addChild(pBGLayer,0);
+	//}
+	//
+	//pLayer->m_pCBackgroud = CBackground::Create(_unLevel);
+	//SetScale(pLayer->m_pCBackgroud);
+	//_pScene->addChild(pLayer->m_pCBackgroud);
 
-	SetScale(pLayer->m_pCFrontgroud);
-	_pScene->addChild(pLayer->m_pCFrontgroud,0);
+	//SetScale(pLayer->m_pCFrontgroud);
+	//_pScene->addChild(pLayer->m_pCFrontgroud,0);
 	return pLayer;
 }
 

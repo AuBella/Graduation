@@ -13,6 +13,7 @@ GlobalCtrl::GlobalCtrl() {
 	canEnter = true;
 	canSetting = true;
 	//pArray = NULL;
+	isSuccess = false;
 	pArray = CCArray::createWithCapacity(100);
 	pArray->retain();
 }

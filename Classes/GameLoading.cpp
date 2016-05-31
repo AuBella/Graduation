@@ -2,6 +2,7 @@
 #include "GameLoadingMenu.h"
 #include "GameLoading.h"
 #include "AppDelegate.h"
+#include"GameScene.h"
 //#include "baseRes.h"
 
 using namespace cocos2d;
@@ -49,6 +50,8 @@ void CGameLoading::Movie1( float _t ){
 void CGameLoading::Loading1( float _t ){
 	//Õ½¶·
 	m_pLayer = CGameControler::NewGameControler(m_pScene, m_iLevel, m_iDifficult);
+	//AppDelegate::ChangeScene( CMainMenu::StartGame(level + 53, CMainMenu::GetDifficult()) );
+			 
 	scheduleOnce(schedule_selector(CGameLoading::Loading2), 1.20f);
 }
 
@@ -61,10 +64,12 @@ void CGameLoading::Loading2( float _t ){
 void CGameLoading::LoadingOver( float _t ){
 	((ccbGameLoadingMenu*)m_pNode)->Disappear();
 	scheduleOnce(schedule_selector(CGameLoading::Start), 0.80f);
-	m_pLayer->GameStart();
 	m_pScene->removeChildByTag(2);
 }
 
 void CGameLoading::Start( float _t ){
-
+	int LevelNum = CCUserDefault::sharedUserDefault()->getIntegerForKey("currentlevelNum");
+	GameScene* pscene = GameScene::create();
+	pscene->StartGame(3-LevelNum,0);
+	AppDelegate::ChangeScene(pscene);
 }

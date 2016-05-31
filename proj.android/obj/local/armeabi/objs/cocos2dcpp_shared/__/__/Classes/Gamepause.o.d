@@ -209,6 +209,7 @@ obj/local/armeabi/objs/cocos2dcpp_shared/__/__/Classes/Gamepause.o: \
  C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/CocosDenshion/android/../include/SimpleAudioEngine.h \
  C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/CocosDenshion/android/../include/Export.h \
  jni/../../Classes/AnimationUtil.h jni/../../Classes/Shana.h \
+ jni/../../Classes/CommonMonsterBloodBar.h \
  jni/../../Classes/OperatorLayer.h jni/../../Classes/JoyStick.h \
  jni/../../Classes/SkillButton.h jni/../../Classes/CommonBloodBar.h \
  jni/../../Classes/AppDelegate.h jni/../../Classes/baseRes.h \
@@ -639,6 +640,8 @@ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/CocosDenshion/android/../include/Expor
 jni/../../Classes/AnimationUtil.h:
 
 jni/../../Classes/Shana.h:
+
+jni/../../Classes/CommonMonsterBloodBar.h:
 
 jni/../../Classes/OperatorLayer.h:
 

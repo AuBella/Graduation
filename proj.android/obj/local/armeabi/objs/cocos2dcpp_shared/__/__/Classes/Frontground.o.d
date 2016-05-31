@@ -255,7 +255,8 @@ obj/local/armeabi/objs/cocos2dcpp_shared/__/__/Classes/Frontground.o: \
  C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/external/Box2D/../Box2D/Dynamics/Joints/b2RevoluteJoint.h \
  C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/external/Box2D/../Box2D/Dynamics/Joints/b2RopeJoint.h \
  C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/external/Box2D/../Box2D/Dynamics/Joints/b2WeldJoint.h \
- jni/../../Classes/CSDisplayManager.h jni/../../Classes/baseRes.h
+ jni/../../Classes/CSDisplayManager.h jni/../../Classes/baseRes.h \
+ jni/../../Classes/GlobalCtrl.h
 
 jni/../../Classes/Frontground.h:
 
@@ -782,3 +783,5 @@ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/external/Box2D/../Box2D/Dynamics/Joint
 jni/../../Classes/CSDisplayManager.h:
 
 jni/../../Classes/baseRes.h:
+
+jni/../../Classes/GlobalCtrl.h:

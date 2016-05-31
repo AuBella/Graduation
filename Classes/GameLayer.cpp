@@ -1,15 +1,17 @@
 ﻿#include"GameLayer.h"
 #include"baseRes.h"
+#include"RewardLayer.h"
+
 GameLayer::GameLayer() :
-	tilemap( NULL )
-{
+	tilemap( NULL ){
 	GlobalCtrl::getInstance();
+	killnum = 0;
 	ogreArray = GlobalCtrl::getInstance() ->pArray;
-	//ogreArray = CCArray::createWithCapacity(100);
 	rolehight = 0;
 }
 GameLayer::~GameLayer(void){
 	CCNotificationCenter::sharedNotificationCenter()->removeObserver(this,"Attack");
+	ogreArray->removeAllObjects();
 };
 
 bool GameLayer::init(){
@@ -17,6 +19,7 @@ bool GameLayer::init(){
 		return false;
 	return true;
 };
+
 void GameLayer::StartGameLevel(int level, int difficut){
 	this->initTileMap(level);
 	this->addShana();
@@ -85,13 +88,19 @@ void GameLayer::addShana() {
 	GlobalCtrl::getInstance()->shana = shana;
 	shana->StartListen();
 }
+
+int GameLayer::getkillnum(){
+	return killnum;
+}
 //怪物
 void GameLayer::addOgre() {
 	CCObject *pObject = NULL;
 	CCARRAY_FOREACH(ogreArray, pObject){
 		Ogre *child = (Ogre*)pObject;
-		if(child->isDead)
+		if(child->isDead){
+			killnum++;
 			ogreArray->removeObject(pObject);
+		}
 	}
 	CCTMXTiledMap* map = GlobalCtrl::getInstance()->tilemap;
 	m_pMonsterArray = map->objectGroupNamed("zuobiao2")->getObjects();

@@ -207,7 +207,8 @@ obj/local/armeabi/objs/cocos2dcpp_shared/__/__/Classes/MainScene.o: \
  C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/CocosDenshion/android/../include/Export.h \
  jni/../../Classes/AppDelegate.h jni/../../Classes/baseRes.h \
  jni/../../Classes/MainMenu.h jni/../../Classes/GlobalCtrl.h \
- jni/../../Classes/settingScene.h jni/../../Classes/paihangbangScene.h
+ jni/../../Classes/settingScene.h jni/../../Classes/paihangbangScene.h \
+ jni/../../Classes/RewardLayer.h
 
 jni/../../Classes/MainScene.h:
 
@@ -632,3 +633,5 @@ jni/../../Classes/GlobalCtrl.h:
 jni/../../Classes/settingScene.h:
 
 jni/../../Classes/paihangbangScene.h:
+
+jni/../../Classes/RewardLayer.h:

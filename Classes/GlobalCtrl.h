@@ -23,6 +23,9 @@ public:
 	CCArray* pArray;
 	bool canEnter;
 	bool canSetting;
+
+	//guanka
+	bool isSuccess;
 private:
 	static GlobalCtrl* _instance;
 };

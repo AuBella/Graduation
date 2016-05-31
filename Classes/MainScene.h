@@ -11,5 +11,6 @@ public:
 	void MenuSettingCallback(CCObject* pSender);
 	void MenuSettingCallback1(CCObject* pSender);
 	void MenuSettingCallback2(CCObject* pSender);
+	void MenuSettingCallback3(CCObject* pSender);
 	CREATE_FUNC(MainScene);
 };

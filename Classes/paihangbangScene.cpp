@@ -210,9 +210,9 @@ void paihangbangScene::ShowRank( int _type )
 	//AppDelegate::AudioPlayEffect("MS2/rankPress.mp3");
 	for ( int i = 0; i < 6; i++ )
 	{
-		rank_rank[i] = 0;
-		rank_name[i] = "";
-		rank_score[i] = 0;
+		rank_rank[i] = i + 1;
+		rank_name[i] = "SSSSS";
+		rank_score[i] = 2000 - i *100;
 	}
 	ShowRank();
 }

@@ -24,4 +24,6 @@ private:
 	CCLabelTTF* pLabel;
 	int TimeNum;
 	CCSprite* heroIcon;
+	int currentLevel;
+	void rewardresult(float delta);
 };

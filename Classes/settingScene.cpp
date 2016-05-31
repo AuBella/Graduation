@@ -20,12 +20,12 @@ bool PopScene::init(){
 	CCMenu* closeiconMenu = CCMenu::create(closeicon, NULL);
 	closeicon->setPosition(ccp(- background->getContentSize().width/2 +120,-background->getContentSize().height/2));
 	background->addChild(closeiconMenu);
-    background->setPosition(ccp(winSize.width/2,winSize.height/2+50));
-    this->addChild(background);
+	background->setPosition(ccp(WINSIZE_W/2,WINSIZE_H/2+50));
+	this->addChild(background);
 	CCSprite* pBoard = CCSprite::create("Common/ying.png");
 	pBoard->setPosition(ccp(pBoard->getContentSize().width / 2 + 70,pBoard->getContentSize().height-25));
 	background->addChild(pBoard, 1, 10);
-    m_pItemVoice = CCMenuItemToggle::createWithTarget(this, 
+	m_pItemVoice = CCMenuItemToggle::createWithTarget(this, 
 		menu_selector(PopScene::setTitle), 
 		CCMenuItemImage::create( "Common/guan.png", "Common/guan.png" ),
 		CCMenuItemImage::create( "Common/kai.png", "Common/kai.png" ),
@@ -74,6 +74,7 @@ void PopScene::closeButton(CCObject * psender){
 	CCUserDefault::sharedUserDefault()->setStringForKey("name", m_pNameInput->getString());
 	m_pNameInput->detachWithIME();
 	GlobalCtrl::getInstance()->canEnter = true;
+	CCUserDefault::sharedUserDefault()->flush();
     this->removeFromParentAndCleanup(true);	
 }
  

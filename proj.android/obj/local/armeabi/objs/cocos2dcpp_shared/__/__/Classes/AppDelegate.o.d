@@ -212,6 +212,7 @@ obj/local/armeabi/objs/cocos2dcpp_shared/__/__/Classes/AppDelegate.o: \
  jni/../../Classes/GameLayer.h jni/../../Classes/Ogre.h \
  jni/../../Classes/Role.h jni/../../Classes/GlobalCtrl.h \
  jni/../../Classes/AnimationUtil.h jni/../../Classes/Shana.h \
+ jni/../../Classes/CommonMonsterBloodBar.h \
  jni/../../Classes/OperatorLayer.h jni/../../Classes/JoyStick.h \
  jni/../../Classes/SkillButton.h jni/../../Classes/CommonBloodBar.h \
  jni/../../Classes/Gamepause.h jni/../../Classes/MainMenu.h
@@ -649,6 +650,8 @@ jni/../../Classes/GlobalCtrl.h:
 jni/../../Classes/AnimationUtil.h:
 
 jni/../../Classes/Shana.h:
+
+jni/../../Classes/CommonMonsterBloodBar.h:
 
 jni/../../Classes/OperatorLayer.h:
 

@@ -77,14 +77,9 @@ void ccbLevelMenu::ccTouchesEnded( cocos2d::CCSet *pTouches, cocos2d::CCEvent *p
 		int level = m_iChose;
 		CMainMenu::SetStatus(0);
 		s_pccbLevelMenu = NULL;
-		if(level!=3)
-			AppDelegate::ChangeScene( CMainMenu::StartGame(level + m_iLevel*6, CMainMenu::GetDifficult()) );
-		else{
-			//AppDelegate::ChangeScene( CMainMenu::StartGame(level + 53, CMainMenu::GetDifficult()) );
-			 GameScene* pscene = GameScene::create();
-			 pscene->StartGame(0,0);
-			AppDelegate::ChangeScene(pscene);
-		}
+		CCUserDefault::sharedUserDefault()->setIntegerForKey("currentlevelNum", level);
+		CCUserDefault::sharedUserDefault()->flush();
+		AppDelegate::ChangeScene( CMainMenu::StartGame(level, CMainMenu::GetDifficult()) );
 }
 
 void ccbLevelMenu::tipdisappear(){}

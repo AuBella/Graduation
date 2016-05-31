@@ -1,11 +1,12 @@
 #include"GameScene.h"
-
+#include"baseRes.h"
 #include"RewardLayer.h"
 GameScene::GameScene(void){
 	CocosDenshion::SimpleAudioEngine::sharedEngine()->preloadBackgroundMusic("sound");
 	CocosDenshion::SimpleAudioEngine::sharedEngine()->playBackgroundMusic("sound/fighting.mp3", -1);  
 	gameLayer = NULL;
-	TimeNum = 120;
+	TimeNum = 0;
+	currentLevel = 0;
 	operatorLayer= NULL;
 	heroIcon = NULL;
 };
@@ -59,7 +60,7 @@ void GameScene::update(float delta){
 			flag = false;
 		}
 	}
-	TimeNum -= delta;  
+	TimeNum += delta;  
 	char* mtime = new char[10];  
 	//此处只是显示分钟数和秒数  自己可以定义输出时间格式  
 	sprintf(mtime,"%d : %d",(int)TimeNum/60,(int)TimeNum%60);  
@@ -77,14 +78,40 @@ void GameScene::setupHeroIcon(char* name){
 }
 
 void GameScene::StartGame(int _level, int _difficult){
+	currentLevel = _level;
 	//主角游戏层
 	gameLayer = GameLayer::create();
 	gameLayer->StartGameLevel(55+_level,_difficult);
 	this->addChild(gameLayer, 0);
+	schedule(schedule_selector(GameScene::rewardresult),1);
 	//控制层
 	operatorLayer = OperatorLayer::create();
 		addChild( operatorLayer, 2 );
 	GlobalCtrl::getInstance()->operatorLayer = operatorLayer;
 	setupInitTime(TimeNum);
 	setupHeroIcon("aa");
+}
+
+void GameScene::rewardresult(float delta){
+	if(GlobalCtrl::getInstance()->shana->isDead || (currentLevel == 0 &&(gameLayer->getkillnum() >= 10 || TimeNum > 60))){
+		unschedule(schedule_selector(GameScene::rewardresult));
+		CCUserDefault::sharedUserDefault()->setBoolForKey("level_style", !GlobalCtrl::getInstance()->shana->isDead);
+		CCUserDefault::sharedUserDefault()->setIntegerForKey("level_killnum", gameLayer->getkillnum());
+		CCUserDefault::sharedUserDefault()->setIntegerForKey("level_medal", TimeNum);
+		CCUserDefault::sharedUserDefault()->setIntegerForKey("level_rewardmedal", rand()%100);
+		CCUserDefault::sharedUserDefault()->setBoolForKey("overachieve1", !GlobalCtrl::getInstance()->shana->isDead);
+		CCUserDefault::sharedUserDefault()->setBoolForKey("overachieve2", gameLayer->getkillnum() >= 10?true:false);
+		CCUserDefault::sharedUserDefault()->setBoolForKey("overachieve3", TimeNum < 60?true:false);
+		CCUserDefault::sharedUserDefault()->setIntegerForKey("currentlevelNum", currentLevel);
+
+		CCUserDefault::sharedUserDefault()->flush();
+		CCSize visibleSize = CCDirector::sharedDirector()->getVisibleSize();
+		CCRenderTexture *renderTexture = CCRenderTexture::create(visibleSize.width,visibleSize.height);
+		renderTexture->begin(); 
+		this->visit();
+		//this->getParent()->visit();
+		renderTexture->end();
+		CCScene* pScene = RewardLayer::scene(renderTexture, TimeNum, 89);
+		CCDirector::sharedDirector()->replaceScene(pScene);	
+	}
 }

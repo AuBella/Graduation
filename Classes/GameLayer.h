@@ -2,8 +2,8 @@
 #include"Ogre.h"
 #include "Shana.h"
 #include "GlobalCtrl.h"
-#include "Background.h"
-#include "Frontground.h"
+//#include "Background.h"
+//#include "Frontground.h"
 
 USING_NS_CC;
 class GameLayer:public CCLayer{
@@ -13,8 +13,11 @@ private:
 	void addShana();
 	void addOgre();
 	void updateMonster(float delta);
+	//void update(float delta);
+	
+	int killnum;
 	int rolehight;
-	CFrontground*			m_pCFrontgroud;
+	//CFrontground*			m_pCFrontgroud;
 public:
 	GameLayer(void);
 	~GameLayer(void);
@@ -23,6 +26,7 @@ public:
     void ObserverFunction(CCObject * object);
 	Ogre* ogre;
 	Shana* shana;
+	int getkillnum();
 	CCArray* ogreArray;
 	void output();
 	cocos2d::CCArray*		m_pMonsterArray;
