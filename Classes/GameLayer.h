@@ -2,9 +2,8 @@
 #include"Ogre.h"
 #include "Shana.h"
 #include "GlobalCtrl.h"
-//#include "Background.h"
-//#include "Frontground.h"
-
+#include"cocos-ext.h"
+USING_NS_CC_EXT;
 USING_NS_CC;
 class GameLayer:public CCLayer{
 private:
@@ -18,6 +17,8 @@ private:
 	int killnum;
 	int rolehight;
 	int currentLevel;
+	bool startGamevisible;
+	CCArmature*	m_pVIP;
 	//CFrontground*			m_pCFrontgroud;
 public:
 	GameLayer(void);
@@ -25,6 +26,7 @@ public:
 	void initTileMap(int level);
 	virtual bool init();
     void ObserverFunction(CCObject * object);
+	void startMonsterlist(bool visible);//开启所有怪物监听
 	Ogre* ogre;
 	Shana* shana;
 	int getkillnum();

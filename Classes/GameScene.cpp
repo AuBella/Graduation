@@ -22,7 +22,7 @@ GameScene::GameScene(void){
 	m_iMapNum = 0;
 	m_fHeroLocateX = 0;
 	m_fHeroLocateY = 0;
-	GameStart = true;
+	GameStart = false;
 	userbloodnum = 3;
 	gameTime = 0;
 	m_iGameMinute = 0;
@@ -61,7 +61,9 @@ void GameScene::setupInitTime(int num){
 	GameStart = LimitInit();
 	if(GameStart){
 		this->removeChildByTag(100);
+		gameLayer->startMonsterlist(true);
 		schedule(schedule_selector(GameScene::update),1);
+		schedule(schedule_selector(GameScene::showTime),1);
 	}
 }
 
@@ -144,13 +146,15 @@ void GameScene::StartGame(int _level, int _difficult){
 	//SetScale(m_pBG);
 	//主角游戏层
 	gameLayer = GameLayer::create();
-	gameLayer->StartGameLevel(55+_level,_difficult);
+	gameLayer->StartGameLevel(_level,_difficult);
 	this->addChild(gameLayer, 0);
 	schedule(schedule_selector(GameScene::rewardresult),1);
 	//控制层
 	operatorLayer = OperatorLayer::create();
 		addChild( operatorLayer, 2 );
 	GlobalCtrl::getInstance()->operatorLayer = operatorLayer;
+
+
 	//关卡限定时间
 	m_iLimitTimeNeed = StayTime[currentLevel];
 	m_iMapNum = gameLayer->GetMapNums();
@@ -175,7 +179,7 @@ void GameScene::StartGame(int _level, int _difficult){
 		addChild(m_pgameBoard, 5);
 		common::ShowNumber(m_pgameBoard, m_iGameMinute, 11, 15, 130, 10, "tu4/suzi.png", 802, 10, 1, true);
 		common::ShowNumber(m_pgameBoard, m_iGameSecond/MAINFRAME, 11, 15, 160, 10, "tu4/suzi.png", 803, 10, 1, true);
-		if(currentLevel == 2 || currentLevel == 3 || GameStart)
+		if(currentLevel == 1 || currentLevel == 3)
 			schedule(schedule_selector(GameScene::showTime),1);
 	}
 }
@@ -188,9 +192,10 @@ void GameScene::showTime(float delta){
 	common::ShowNumber(m_pgameBoard, m_iGameMinute, 11, 15, 130, 10, "tu4/suzi.png");
 	common::ShowNumber(m_pgameBoard, m_iGameSecond, 11, 15, 160, 10, "tu4/suzi.png", 803, 10, 1, true);
 }
-
+//结算
 void GameScene::rewardresult(float delta){
-	if(GlobalCtrl::getInstance()->shana->isDead || ((currentLevel == 3 &&(gameLayer->getkillnum() >= 10)) || ((currentLevel==0 || currentLevel == 2) && TimeNum <= 0) /*|| (currentLevel == 1)*/)){
+	if(GlobalCtrl::getInstance()->shana->isDead || ((currentLevel == 3 &&(gameLayer->getkillnum() >= 10)) || ((currentLevel==0 || currentLevel == 2) && TimeNum <= 0) 
+		|| (currentLevel == 1 && (m_iGameSecond >= 30 || (GlobalCtrl::getInstance()->hero) ->redBlood <= 0)))){
 		unschedule(schedule_selector(GameScene::rewardresult));
 		if(currentLevel == 3){
 			CCUserDefault::sharedUserDefault()->setBoolForKey("level_style", !GlobalCtrl::getInstance()->shana->isDead);
@@ -204,29 +209,30 @@ void GameScene::rewardresult(float delta){
 			CCUserDefault::sharedUserDefault()->setBoolForKey("overachieve3", m_iGameSecond < 120?true:false);
 		}
 		else if(currentLevel == 0){
-			CCUserDefault::sharedUserDefault()->setBoolForKey("level_style", !GlobalCtrl::getInstance()->shana->isDead);
+			CCUserDefault::sharedUserDefault()->setBoolForKey("level_style", true);//星星
+			CCUserDefault::sharedUserDefault()->setIntegerForKey("level_killnum", gameLayer->getkillnum());//杀怪数目
+			CCUserDefault::sharedUserDefault()->setIntegerForKey("level_medal", m_iGameSecond);//时间
+			CCUserDefault::sharedUserDefault()->setIntegerForKey("level_rewardmedal", rand()%100);//奖励或得分
+			CCUserDefault::sharedUserDefault()->setIntegerForKey("currentlevelNum", currentLevel);//当前关卡
+
+			CCUserDefault::sharedUserDefault()->setBoolForKey("overachieve1", !GlobalCtrl::getInstance()->shana->isDead && TimeNum <= 0?true:false);//胜利或失败
+			CCUserDefault::sharedUserDefault()->setBoolForKey("overachieve2", gameLayer->getkillnum() >= 10?true:false);//成就2
+			CCUserDefault::sharedUserDefault()->setBoolForKey("overachieve3", m_iGameSecond < 60?true:false);//成就3
+		}
+		else if(currentLevel == 1){
+			CCLOG("------------ENTER 11111111111 %d %d", m_iGameSecond,(GlobalCtrl::getInstance()->hero) ->redBlood);
+			CCUserDefault::sharedUserDefault()->setBoolForKey("level_style", true );
 			CCUserDefault::sharedUserDefault()->setIntegerForKey("level_killnum", gameLayer->getkillnum());//
 			CCUserDefault::sharedUserDefault()->setIntegerForKey("level_medal", m_iGameSecond);//
 			CCUserDefault::sharedUserDefault()->setIntegerForKey("level_rewardmedal", rand()%100);//
 			CCUserDefault::sharedUserDefault()->setIntegerForKey("currentlevelNum", currentLevel);
 
-			CCUserDefault::sharedUserDefault()->setBoolForKey("overachieve1", !GlobalCtrl::getInstance()->shana->isDead);
-			CCUserDefault::sharedUserDefault()->setBoolForKey("overachieve2", gameLayer->getkillnum() >= 10?true:false);
-			CCUserDefault::sharedUserDefault()->setBoolForKey("overachieve3", m_iGameSecond < 60?true:false);
-		}
-		else if(currentLevel == 1){
-			CCUserDefault::sharedUserDefault()->setBoolForKey("level_style", !GlobalCtrl::getInstance()->shana->isDead);
-			CCUserDefault::sharedUserDefault()->setIntegerForKey("level_killnum", gameLayer->getkillnum());//
-			CCUserDefault::sharedUserDefault()->setIntegerForKey("level_medal", 120);//
-			CCUserDefault::sharedUserDefault()->setIntegerForKey("level_rewardmedal", rand()%100);//
-			CCUserDefault::sharedUserDefault()->setIntegerForKey("currentlevelNum", currentLevel);
-
-			CCUserDefault::sharedUserDefault()->setBoolForKey("overachieve1", !GlobalCtrl::getInstance()->shana->isDead);
-			CCUserDefault::sharedUserDefault()->setBoolForKey("overachieve2", gameLayer->getkillnum() >= 30?true:false);
+			CCUserDefault::sharedUserDefault()->setBoolForKey("overachieve1", !GlobalCtrl::getInstance()->shana->isDead  && ( (GlobalCtrl::getInstance()->hero) ->redBlood > 0?true:false));
+			CCUserDefault::sharedUserDefault()->setBoolForKey("overachieve2", (GlobalCtrl::getInstance()->hero) ->redBlood > 50?true:false);
 			CCUserDefault::sharedUserDefault()->setBoolForKey("overachieve3", userbloodnum < 3?false:true);
 		}
 		else if(currentLevel == 2){
-			CCUserDefault::sharedUserDefault()->setBoolForKey("level_style", !GlobalCtrl::getInstance()->shana->isDead);
+			CCUserDefault::sharedUserDefault()->setBoolForKey("level_style", true);
 			CCUserDefault::sharedUserDefault()->setIntegerForKey("level_killnum", gameLayer->getkillnum());//
 			CCUserDefault::sharedUserDefault()->setIntegerForKey("level_medal", 120);//
 			CCUserDefault::sharedUserDefault()->setIntegerForKey("level_rewardmedal", rand()%100);//

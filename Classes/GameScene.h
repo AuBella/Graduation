@@ -3,11 +3,23 @@
 #include "OperatorLayer.h"
 #include "SimpleAudioEngine.h"
 
+
+
+//using namespace cs;
+
 USING_NS_CC;
 //限定时间
 static int StayTime[] ={
 	105, 105, 120,
 };
+
+static int VIPLocationY[] ={
+	100,
+	0,
+	90,
+	100,
+};
+
 class GameScene: public CCScene{
 public:
 	GameScene(void);

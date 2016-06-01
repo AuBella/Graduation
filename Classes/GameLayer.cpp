@@ -1,14 +1,21 @@
 ﻿#include"GameLayer.h"
 #include"baseRes.h"
 #include"RewardLayer.h"
+#include"CHero.h"
+#include"Common.h"
+#include"CommonBloodBar.h"
 
+CHero* hero;
 GameLayer::GameLayer() :
 	tilemap( NULL ){
 	GlobalCtrl::getInstance();
 	killnum = 0;
 	ogreArray = GlobalCtrl::getInstance() ->pArray;
+	ogreArray->retain();
 	rolehight = 0;
+	startGamevisible = true;
 	currentLevel=0;
+	hero = NULL;
 }
 GameLayer::~GameLayer(void){
 	CCNotificationCenter::sharedNotificationCenter()->removeObserver(this,"Attack");
@@ -25,17 +32,31 @@ void GameLayer::StartGameLevel(int level, int difficut){
 	this->initTileMap(level);
 	currentLevel = level;
 	this->addShana();
-	schedule(schedule_selector(GameLayer::updateMonster),5);
+	if(level == 0 || level == 2)
+		startGamevisible = false;
+	if(level!=0 && level != 2){
+		this->addOgre();
+	}
+	int temptime = 1;
+	if(level == 1){
+		temptime = 2;
+	}
+	else if(level = 2){
+		temptime = 2;
+	}
+
+	schedule(schedule_selector(GameLayer::updateMonster),temptime);
     CCNotificationCenter::sharedNotificationCenter()->addObserver(this,callfuncO_selector(GameLayer::ObserverFunction),"Attack",NULL);
 }
 
 void GameLayer::updateMonster(float delta){
-	this->addOgre();
+	if(startGamevisible)
+		this->addOgre();
 }
 //地图
 void GameLayer::initTileMap(int _unLevel){
 	char buffer[255];
-	sprintf(buffer, "Tile/%d_0.tmx", 0);
+	sprintf(buffer, "Tile/%d_0.tmx", _unLevel);
 	//sprintf(buffer, "Tile/%d_0.tmx", _unLevel);
 	tilemap = CCTMXTiledMap::create(buffer);
 	CCObject *pObject = NULL;
@@ -61,6 +82,8 @@ void GameLayer::ObserverFunction(CCObject * object){
 				pObj->isHurt = true;
 				pObj->isAttack = true;
 				pObj->HurtAnimation(num);
+				if(currentLevel == 1)
+					hero->HurtAnimation(num);
 				flag = true;
 			}
 		}
@@ -70,6 +93,7 @@ void GameLayer::ObserverFunction(CCObject * object){
 void GameLayer::output(){
 	CCLOG("--------------->>>>>>>>>>>>>> %d", ogreArray->count());
 }
+
 //英雄
 void GameLayer::addShana() {
 	CCTMXTiledMap* map = GlobalCtrl::getInstance()->tilemap;
@@ -83,11 +107,41 @@ void GameLayer::addShana() {
 	this->addChild( shana );
 	GlobalCtrl::getInstance()->shana = shana;
 	shana->StartListen();
+
+	if (currentLevel == 1 ){//保护关
+		cocos2d::CCArray* viparray = map->objectGroupNamed("zuobiao2")->getObjects();
+		viparray->retain();
+		CCDictionary* objleft = (CCDictionary*)viparray->objectAtIndex(1);
+		CCDictionary* objright = (CCDictionary*)viparray->objectAtIndex(3);
+		int pParticle1 = ((CCString*)objleft->objectForKey("x"))->floatValue();
+		int pParticle2 = ((CCString*)objright->objectForKey("x"))->floatValue();
+		int vipposx = ( pParticle1+pParticle2)/2;
+		CCSprite* pSprite = common::CreateAnimation("Animation/vip/1.png", ccp(vipposx,((CCString*)obj->objectForKey("height"))->floatValue()), 
+			ccp(0.5f, 0.5f), "Animation/vip/", 6, CCRect(0,0,166,59), true);
+		this->addChild(pSprite);
+		hero = CHero::create();
+		m_pVIP = hero->CreateVIP();
+		this->addChild(hero);
+		GlobalCtrl::getInstance()->hero = hero;
+		m_pVIP->setPosition( ccp(vipposx,((CCString*)obj->objectForKey("height"))->floatValue()) );
+		this->addChild(m_pVIP);
+	}
 }
 
 int GameLayer::getkillnum(){
 	return killnum;
 }
+void GameLayer::startMonsterlist(bool Visible){//第一关和第三关要用
+	startGamevisible = true;
+	/*if(currentLevel == 0 || currentLevel == 2){
+		CCObject *pObject = NULL;
+		CCARRAY_FOREACH(ogreArray, pObject){
+			Ogre *child = (Ogre*)pObject;
+			child -> StartListen();
+		}
+	}*/
+}
+
 //怪物
 void GameLayer::addOgre() {
 	CCObject *pObject = NULL;
@@ -95,23 +149,42 @@ void GameLayer::addOgre() {
 		Ogre *child = (Ogre*)pObject;
 		if(child->isDead){
 			killnum++;
-			ogreArray->removeObject(pObject);
+			//限定怪物总数
+			if(currentLevel != 0 || currentLevel != 2)
+				ogreArray->removeObject(pObject);
 		}
 	}
 	CCTMXTiledMap* map = GlobalCtrl::getInstance()->tilemap;
-	m_pMonsterArray = map->objectGroupNamed("zuobiao2")->getObjects();
+	if(currentLevel == 0){
+		m_pMonsterArray = map->objectGroupNamed("zuobiao1")->getObjects();
+	}
+	else{
+		m_pMonsterArray = map->objectGroupNamed("zuobiao2")->getObjects();
+	}
 	m_pMonsterArray->retain();
-	for(int i = 0; i < 5 && ogreArray->count() <= 10; ++i){
+	for(int i = 0; i < rand() % 5 + 1 && ogreArray->count() <= (5 -currentLevel) * 10; ++i){
 		int tempLevelnum = 3;
-		if(currentLevel == 3)
+		if(currentLevel == 0 || currentLevel == 1)
 			tempLevelnum = 4;
 		CCDictionary* obj = (CCDictionary*)m_pMonsterArray->objectAtIndex(rand()%tempLevelnum);
-		if(abs(((CCString*)obj->objectForKey("x"))->floatValue() - shana->getPositionX()+ tilemap->getPositionX()) <= WINSIZE_W / 2){
+		//if(currentLevel != 0){
+			if(abs(((CCString*)obj->objectForKey("x"))->floatValue() - shana->getPositionX()+ tilemap->getPositionX()) <= WINSIZE_W / 2){
+				ogre = Ogre::create();
+				ogreArray->addObject(ogre);
+				this->addChild( ogre );
+				//if(currentLevel != 2)//生存模式有计时
+					ogre -> StartListen();
+				ogre->setPosition(ccp(((CCString*)obj->objectForKey("x"))->floatValue(), rolehight));
+				CCSize visibleSize = CCEGLView::sharedOpenGLView()->getVisibleSize();
+			}
+		/*}
+		else{*/
+		if(currentLevel == 0){
 			ogre = Ogre::create();
 			ogreArray->addObject(ogre);
 			this->addChild( ogre );
-			ogre -> StartListen();
-			ogre->setPosition(ccp(((CCString*)obj->objectForKey("x"))->floatValue(), rolehight));
+			ogre->StartListen();
+			ogre->setPosition(ccp(shana->getPositionX()+ tilemap->getPositionX() + (rand() % 150 + 10), rolehight));
 			CCSize visibleSize = CCEGLView::sharedOpenGLView()->getVisibleSize();
 		}
 	}

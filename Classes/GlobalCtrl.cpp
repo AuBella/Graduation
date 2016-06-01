@@ -12,6 +12,7 @@ GlobalCtrl::GlobalCtrl() {
 	tilemap = NULL;
 	canEnter = true;
 	canSetting = true;
+	hero = NULL;
 	//pArray = NULL;
 	isSuccess = false;
 	pArray = CCArray::createWithCapacity(100);

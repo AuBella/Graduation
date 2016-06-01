@@ -152,9 +152,9 @@ static int g_unMapNum[] =
 static std::string g_sBGPath[] =
 {
 	"Tile/beijing1.png",
-	"Tile/beijing1.png",
-	"Tile/beijing1.png",
-	"Tile/beijing1.png",
+	"Tile/beijing2.png",
+	"Tile/beijing3.png",
+	"Tile/beijing4.png",
 	"Tile/beijing1.png",
 	"Tile/beijing1.png",
 
