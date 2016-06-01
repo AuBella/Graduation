@@ -156,7 +156,7 @@ void GameScene::StartGame(int _level, int _difficult){
 
 
 	//关卡限定时间
-	m_iLimitTimeNeed = StayTime[currentLevel];
+	m_iLimitTimeNeed =/* StayTime[currentLevel]*/10;
 	m_iMapNum = gameLayer->GetMapNums();
 	if(currentLevel!=3 && currentLevel != 1){
 		float updatetime = 1;
@@ -234,7 +234,7 @@ void GameScene::rewardresult(float delta){
 		else if(currentLevel == 2){
 			CCUserDefault::sharedUserDefault()->setBoolForKey("level_style", true);
 			CCUserDefault::sharedUserDefault()->setIntegerForKey("level_killnum", gameLayer->getkillnum());//
-			CCUserDefault::sharedUserDefault()->setIntegerForKey("level_medal", 120);//
+			CCUserDefault::sharedUserDefault()->setIntegerForKey("level_medal", 0);//
 			CCUserDefault::sharedUserDefault()->setIntegerForKey("level_rewardmedal", rand()%100);//
 			CCUserDefault::sharedUserDefault()->setIntegerForKey("currentlevelNum", currentLevel);
 

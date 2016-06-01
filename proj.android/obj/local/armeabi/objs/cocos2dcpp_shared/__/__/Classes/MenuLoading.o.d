@@ -470,8 +470,9 @@ obj/local/armeabi/objs/cocos2dcpp_shared/__/__/Classes/MenuLoading.o: \
  C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/spine/CCSkeletonAnimation.h \
  jni/../../Classes/GameScene.h jni/../../Classes/GameLayer.h \
  jni/../../Classes/Ogre.h jni/../../Classes/Role.h \
- jni/../../Classes/GlobalCtrl.h jni/../../Classes/AnimationUtil.h \
- jni/../../Classes/Shana.h jni/../../Classes/CommonMonsterBloodBar.h \
+ jni/../../Classes/GlobalCtrl.h jni/../../Classes/CHero.h \
+ jni/../../Classes/AnimationUtil.h jni/../../Classes/Shana.h \
+ jni/../../Classes/CommonMonsterBloodBar.h \
  jni/../../Classes/OperatorLayer.h jni/../../Classes/JoyStick.h \
  jni/../../Classes/SkillButton.h jni/../../Classes/CommonBloodBar.h \
  jni/../../Classes/Gamepause.h jni/../../Classes/LevelMenu.h
@@ -1427,6 +1428,8 @@ jni/../../Classes/Ogre.h:
 jni/../../Classes/Role.h:
 
 jni/../../Classes/GlobalCtrl.h:
+
+jni/../../Classes/CHero.h:
 
 jni/../../Classes/AnimationUtil.h:
 

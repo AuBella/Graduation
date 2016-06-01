@@ -204,6 +204,268 @@ obj/local/armeabi/objs/cocos2dcpp_shared/__/__/Classes/OperatorLayer.o: \
  C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/cocos2dx/support/component/CCComponent.h \
  C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/cocos2dx/support/component/CCComponentContainer.h \
  jni/../../Classes/JoyStick.h jni/../../Classes/GlobalCtrl.h \
+ jni/../../Classes/CHero.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/cocos-ext.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/ExtensionMacros.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/ExtensionExport.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CCBReader/CCBFileLoader.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CCBReader/CCNodeLoader.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CCBReader/../GUI/CCControlExtension/CCInvocation.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CCBReader/../GUI/CCControlExtension/../../ExtensionMacros.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CCBReader/CCBReader.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/ExtensionMacros.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CCBReader/CCBSequence.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CCBReader/CCBSequenceProperty.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CCBReader/CCBKeyframe.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/GUI/CCControlExtension/CCControl.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/GUI/CCControlExtension/CCInvocation.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/GUI/CCControlExtension/CCControlUtils.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/GUI/CCControlExtension/../../ExtensionMacros.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CCBReader/CCBValue.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CCBReader/CCBMemberVariableAssigner.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CCBReader/CCBReader.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CCBReader/CCBSelectorResolver.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CCBReader/CCControlButtonLoader.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CCBReader/CCControlLoader.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CCBReader/../GUI/CCControlExtension/CCControl.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CCBReader/../GUI/CCControlExtension/CCControlButton.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CCBReader/../GUI/CCControlExtension/CCControl.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CCBReader/../GUI/CCControlExtension/CCInvocation.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CCBReader/../GUI/CCControlExtension/CCScale9Sprite.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CCBReader/CCControlLoader.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CCBReader/CCLabelBMFontLoader.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CCBReader/CCLabelTTFLoader.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CCBReader/CCLayerColorLoader.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CCBReader/CCLayerLoader.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CCBReader/CCLayerGradientLoader.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CCBReader/CCLayerLoader.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CCBReader/CCMenuItemImageLoader.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CCBReader/CCMenuItemLoader.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CCBReader/CCMenuItemLoader.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CCBReader/CCMenuLoader.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CCBReader/CCNodeLoader.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CCBReader/CCNodeLoaderLibrary.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CCBReader/CCNodeLoaderListener.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CCBReader/CCParticleSystemQuadLoader.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CCBReader/CCScale9SpriteLoader.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CCBReader/CCScale9SpriteLoader.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CCBReader/../GUI/CCControlExtension/CCScale9Sprite.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CCBReader/CCScrollViewLoader.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CCBReader/../GUI/CCScrollView/CCScrollView.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CCBReader/CCSpriteLoader.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CCBReader/CCBAnimationManager.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CCBReader/CCBKeyframe.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CCBReader/CCBSequence.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CCBReader/CCBSequenceProperty.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CCBReader/CCBValue.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CCBReader/CCData.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CCBReader/CCNode+CCBRelativePositioning.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/GUI/CCControlExtension/CCControlExtensions.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/GUI/CCControlExtension/CCScale9Sprite.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/GUI/CCControlExtension/CCControl.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/GUI/CCControlExtension/CCControlButton.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/GUI/CCControlExtension/CCControlColourPicker.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/GUI/CCControlExtension/CCControlHuePicker.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/GUI/CCControlExtension/CCControlSaturationBrightnessPicker.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/GUI/CCControlExtension/CCControlPotentiometer.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/GUI/CCControlExtension/CCControlSlider.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/GUI/CCControlExtension/CCControlStepper.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/GUI/CCControlExtension/CCControlSwitch.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/GUI/CCScrollView/CCScrollView.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/GUI/CCScrollView/CCTableView.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/GUI/CCScrollView/CCScrollView.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/GUI/CCScrollView/CCTableViewCell.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/GUI/CCScrollView/CCSorting.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/GUI/CCEditBox/CCEditBox.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/GUI/CCEditBox/../CCControlExtension/CCControlExtensions.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/network/HttpRequest.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/network/HttpResponse.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/network/HttpRequest.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/network/HttpClient.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/network/HttpResponse.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Armature/CCArmature.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Armature/utils/CCArmatureDefine.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Armature/CCBone.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Armature/datas/CCDatas.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Armature/datas/../utils/CCArmatureDefine.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Armature/datas/../utils/CCTweenFunction.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Armature/datas/../utils/CCArmatureDefine.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Armature/animation/CCTween.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Armature/animation/CCProcessBase.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Armature/animation/../utils/CCArmatureDefine.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Armature/animation/../datas/CCDatas.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Armature/animation/../utils/CCTweenFunction.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Armature/display/CCDecorativeDisplay.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Armature/display/../utils/CCArmatureDefine.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Armature/display/CCDisplayFactory.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Armature/display/../datas/CCDatas.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Armature/display/../physics/CCColliderDetector.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Armature/display/../physics/../utils/CCArmatureDefine.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Armature/display/../physics/../datas/CCDatas.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Armature/display/CCDisplayManager.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Armature/display/../display/CCDecorativeDisplay.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Armature/display/CCBatchNode.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Armature/animation/CCArmatureAnimation.h \
+ E:/Android/android-ndk-r10b/sources/cxx-stl/gnu-libstdc++/4.6/include/queue \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Armature/CCBone.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Armature/animation/CCArmatureAnimation.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Armature/datas/CCDatas.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Armature/display/CCBatchNode.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Armature/display/CCDecorativeDisplay.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Armature/display/CCDisplayManager.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Armature/display/CCSkin.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Armature/display/../CCBone.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Armature/physics/CCColliderDetector.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Armature/utils/CCArmatureDataManager.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Armature/utils/CCArmatureDefine.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Armature/utils/../datas/CCDatas.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Armature/utils/CCDataReaderHelper.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Armature/utils/../CCArmature.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Armature/utils/../../Json/DictionaryHelper.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Armature/utils/../../Json/rapidjson/document.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Armature/utils/../../Json/rapidjson/reader.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Armature/utils/../../Json/rapidjson/rapidjson.h \
+ E:/Android/android-ndk-r10b/sources/cxx-stl/gnu-libstdc++/4.6/include/cassert \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Armature/utils/../../Json/rapidjson/internal/pow10.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Armature/utils/../../Json/rapidjson/internal/stack.h \
+ E:/Android/android-ndk-r10b/platforms/android-19/arch-arm/usr/include/setjmp.h \
+ E:/Android/android-ndk-r10b/platforms/android-19/arch-arm/usr/include/machine/setjmp.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Armature/utils/../../Json/rapidjson/internal/strfunc.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Armature/utils/../../Json/rapidjson/document.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Armature/utils/../../Json/CocoLoader.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Armature/utils/../../Json/../Json/rapidjson/rapidjson.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Armature/utils/../../Json/../Json/rapidjson/document.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Armature/utils/CCTweenFunction.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Armature/external_tool/sigslot.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/ActionTimeline/CCActionTimeline.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/ActionTimeline/CCTimeLine.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/ActionTimeline/CCFrame.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/ActionTimeline/CCTimelineMacro.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/ExtensionExport.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/ActionTimeline/CCActionTimelineCache.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/ActionTimeline/../Json/DictionaryHelper.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/ActionTimeline/CCFrame.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/ActionTimeline/CCNodeReader.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/ActionTimeline/CCTimeLine.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/ActionTimeline/CCTimelineMacro.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Trigger/TriggerBase.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Trigger/ObjectFactory.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Trigger/TriggerObj.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Trigger/../Json/DictionaryHelper.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Trigger/../Json/CocoLoader.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Trigger/TriggerMng.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Trigger/../Armature/CCArmature.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Components/CCComBase.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Components/../Trigger/ObjectFactory.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Components/../Json/DictionaryHelper.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Components/../Json/CocoLoader.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Components/CCComAttribute.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Components/CCComBase.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Components/CCComAudio.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Components/CCComController.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Components/CCInputDelegate.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Components/CCComRender.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/GUI/System/CocosGUI.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/GUI/System/../BaseClasses/UIWidget.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/GUI/System/../BaseClasses/../Layouts/UILayoutDefine.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/GUI/System/../BaseClasses/../Layouts/UILayoutParameter.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/GUI/System/../BaseClasses/../Layouts/UILayoutDefine.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/GUI/System/../BaseClasses/../System/GUIDefine.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/GUI/System/../BaseClasses/../System/../../Trigger/ObjectFactory.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/GUI/System/../Layouts/UILayout.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/GUI/System/../Layouts/../BaseClasses/UIWidget.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/GUI/System/../UIWidgets/UIButton.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/GUI/System/../UIWidgets/../BaseClasses/UIWidget.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/GUI/System/../UIWidgets/UICheckBox.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/GUI/System/../UIWidgets/UIImageView.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/GUI/System/../UIWidgets/UILabel.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/GUI/System/../UIWidgets/UILabelAtlas.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/GUI/System/../UIWidgets/UILoadingBar.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/GUI/System/../UIWidgets/ScrollWidget/UIScrollView.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/GUI/System/../UIWidgets/ScrollWidget/../../Layouts/UILayout.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/GUI/System/../UIWidgets/ScrollWidget/UIScrollInterface.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/GUI/System/../UIWidgets/ScrollWidget/../../BaseClasses/UIWidget.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/GUI/System/../UIWidgets/UISlider.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/GUI/System/../UIWidgets/UITextField.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/GUI/System/../UIWidgets/ScrollWidget/UIListView.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/GUI/System/../UIWidgets/ScrollWidget/UIScrollView.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/GUI/System/../UIWidgets/UILabelBMFont.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/GUI/System/../UIWidgets/ScrollWidget/UIPageView.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/GUI/System/UIHelper.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/GUI/System/../../Reader/GUIReader.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/GUI/System/../../Reader/../GUI/BaseClasses/UIWidget.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/GUI/System/../../Reader/../Json/rapidjson/document.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/GUI/System/../../Reader/WidgetReader/WidgetReaderProtocol.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/GUI/System/../../Reader/WidgetReader/../../Json/DictionaryHelper.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/GUI/System/../../Reader/../Trigger/ObjectFactory.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/GUI/System/../../Reader/../Json/CocoLoader.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/GUI/System/UITouchGroup.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/GUI/System/../UIWidgets/Compatible/CompatibleClasses.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/GUI/System/../UIWidgets/Compatible/../../BaseClasses/UIWidget.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/GUI/System/../UIWidgets/Compatible/../UIButton.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/GUI/System/../UIWidgets/Compatible/../UICheckBox.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/GUI/System/../UIWidgets/Compatible/../UIImageView.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/GUI/System/../UIWidgets/Compatible/../UILabel.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/GUI/System/../UIWidgets/Compatible/../UILabelAtlas.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/GUI/System/../UIWidgets/Compatible/../UILabelBMFont.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/GUI/System/../UIWidgets/Compatible/../UILoadingBar.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/GUI/System/../UIWidgets/Compatible/../UISlider.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/GUI/System/../UIWidgets/Compatible/../UITextField.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/GUI/System/../UIWidgets/Compatible/../../Layouts/UILayout.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/GUI/System/../UIWidgets/Compatible/../ScrollWidget/UIListView.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/GUI/System/../UIWidgets/Compatible/../ScrollWidget/UIPageView.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/GUI/System/../UIWidgets/Compatible/../ScrollWidget/UIScrollView.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/GUI/System/../UIWidgets/UIRichText.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Json/DictionaryHelper.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Json/CocoLoader.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Reader/SceneReader.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Reader/../Json/CocoLoader.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Action/CCActionManager.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Action/CCActionObject.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Action/../Json/rapidjson/document.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/physics_nodes/CCPhysicsDebugNode.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/external/chipmunk/include/chipmunk/chipmunk.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/external/chipmunk/include/chipmunk/chipmunk_types.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/external/chipmunk/include/chipmunk/cpVect.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/external/chipmunk/include/chipmunk/cpBB.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/external/chipmunk/include/chipmunk/cpSpatialIndex.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/external/chipmunk/include/chipmunk/cpBody.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/external/chipmunk/include/chipmunk/cpShape.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/external/chipmunk/include/chipmunk/cpPolyShape.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/external/chipmunk/include/chipmunk/cpArbiter.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/external/chipmunk/include/chipmunk/constraints/cpConstraint.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/external/chipmunk/include/chipmunk/constraints/cpPinJoint.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/external/chipmunk/include/chipmunk/constraints/cpSlideJoint.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/external/chipmunk/include/chipmunk/constraints/cpPivotJoint.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/external/chipmunk/include/chipmunk/constraints/cpGrooveJoint.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/external/chipmunk/include/chipmunk/constraints/cpDampedSpring.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/external/chipmunk/include/chipmunk/constraints/cpDampedRotarySpring.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/external/chipmunk/include/chipmunk/constraints/cpRotaryLimitJoint.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/external/chipmunk/include/chipmunk/constraints/cpRatchetJoint.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/external/chipmunk/include/chipmunk/constraints/cpGearJoint.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/external/chipmunk/include/chipmunk/constraints/cpSimpleMotor.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/external/chipmunk/include/chipmunk/cpSpace.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/physics_nodes/CCPhysicsSprite.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/spine/spine-cocos2dx.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/spine/spine.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/spine/Animation.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/spine/AnimationState.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/spine/AnimationStateData.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/spine/SkeletonData.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/spine/BoneData.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/spine/SlotData.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/spine/Skin.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/spine/Attachment.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/spine/Atlas.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/spine/AtlasAttachmentLoader.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/spine/AttachmentLoader.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/spine/Bone.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/spine/RegionAttachment.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/spine/Slot.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/spine/Skeleton.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/spine/SkeletonJson.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/spine/CCSkeleton.h \
+ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/spine/CCSkeletonAnimation.h \
  jni/../../Classes/Shana.h jni/../../Classes/Role.h \
  C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/CocosDenshion/android/../include/SimpleAudioEngine.h \
  C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/CocosDenshion/android/../include/Export.h \
@@ -621,6 +883,530 @@ C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/cocos2dx/support/component/CCComponent
 jni/../../Classes/JoyStick.h:
 
 jni/../../Classes/GlobalCtrl.h:
+
+jni/../../Classes/CHero.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/cocos-ext.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/ExtensionMacros.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/ExtensionExport.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CCBReader/CCBFileLoader.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CCBReader/CCNodeLoader.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CCBReader/../GUI/CCControlExtension/CCInvocation.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CCBReader/../GUI/CCControlExtension/../../ExtensionMacros.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CCBReader/CCBReader.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/ExtensionMacros.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CCBReader/CCBSequence.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CCBReader/CCBSequenceProperty.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CCBReader/CCBKeyframe.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/GUI/CCControlExtension/CCControl.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/GUI/CCControlExtension/CCInvocation.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/GUI/CCControlExtension/CCControlUtils.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/GUI/CCControlExtension/../../ExtensionMacros.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CCBReader/CCBValue.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CCBReader/CCBMemberVariableAssigner.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CCBReader/CCBReader.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CCBReader/CCBSelectorResolver.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CCBReader/CCControlButtonLoader.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CCBReader/CCControlLoader.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CCBReader/../GUI/CCControlExtension/CCControl.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CCBReader/../GUI/CCControlExtension/CCControlButton.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CCBReader/../GUI/CCControlExtension/CCControl.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CCBReader/../GUI/CCControlExtension/CCInvocation.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CCBReader/../GUI/CCControlExtension/CCScale9Sprite.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CCBReader/CCControlLoader.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CCBReader/CCLabelBMFontLoader.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CCBReader/CCLabelTTFLoader.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CCBReader/CCLayerColorLoader.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CCBReader/CCLayerLoader.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CCBReader/CCLayerGradientLoader.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CCBReader/CCLayerLoader.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CCBReader/CCMenuItemImageLoader.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CCBReader/CCMenuItemLoader.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CCBReader/CCMenuItemLoader.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CCBReader/CCMenuLoader.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CCBReader/CCNodeLoader.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CCBReader/CCNodeLoaderLibrary.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CCBReader/CCNodeLoaderListener.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CCBReader/CCParticleSystemQuadLoader.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CCBReader/CCScale9SpriteLoader.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CCBReader/CCScale9SpriteLoader.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CCBReader/../GUI/CCControlExtension/CCScale9Sprite.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CCBReader/CCScrollViewLoader.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CCBReader/../GUI/CCScrollView/CCScrollView.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CCBReader/CCSpriteLoader.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CCBReader/CCBAnimationManager.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CCBReader/CCBKeyframe.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CCBReader/CCBSequence.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CCBReader/CCBSequenceProperty.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CCBReader/CCBValue.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CCBReader/CCData.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CCBReader/CCNode+CCBRelativePositioning.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/GUI/CCControlExtension/CCControlExtensions.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/GUI/CCControlExtension/CCScale9Sprite.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/GUI/CCControlExtension/CCControl.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/GUI/CCControlExtension/CCControlButton.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/GUI/CCControlExtension/CCControlColourPicker.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/GUI/CCControlExtension/CCControlHuePicker.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/GUI/CCControlExtension/CCControlSaturationBrightnessPicker.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/GUI/CCControlExtension/CCControlPotentiometer.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/GUI/CCControlExtension/CCControlSlider.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/GUI/CCControlExtension/CCControlStepper.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/GUI/CCControlExtension/CCControlSwitch.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/GUI/CCScrollView/CCScrollView.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/GUI/CCScrollView/CCTableView.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/GUI/CCScrollView/CCScrollView.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/GUI/CCScrollView/CCTableViewCell.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/GUI/CCScrollView/CCSorting.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/GUI/CCEditBox/CCEditBox.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/GUI/CCEditBox/../CCControlExtension/CCControlExtensions.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/network/HttpRequest.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/network/HttpResponse.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/network/HttpRequest.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/network/HttpClient.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/network/HttpResponse.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Armature/CCArmature.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Armature/utils/CCArmatureDefine.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Armature/CCBone.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Armature/datas/CCDatas.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Armature/datas/../utils/CCArmatureDefine.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Armature/datas/../utils/CCTweenFunction.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Armature/datas/../utils/CCArmatureDefine.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Armature/animation/CCTween.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Armature/animation/CCProcessBase.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Armature/animation/../utils/CCArmatureDefine.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Armature/animation/../datas/CCDatas.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Armature/animation/../utils/CCTweenFunction.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Armature/display/CCDecorativeDisplay.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Armature/display/../utils/CCArmatureDefine.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Armature/display/CCDisplayFactory.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Armature/display/../datas/CCDatas.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Armature/display/../physics/CCColliderDetector.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Armature/display/../physics/../utils/CCArmatureDefine.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Armature/display/../physics/../datas/CCDatas.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Armature/display/CCDisplayManager.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Armature/display/../display/CCDecorativeDisplay.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Armature/display/CCBatchNode.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Armature/animation/CCArmatureAnimation.h:
+
+E:/Android/android-ndk-r10b/sources/cxx-stl/gnu-libstdc++/4.6/include/queue:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Armature/CCBone.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Armature/animation/CCArmatureAnimation.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Armature/datas/CCDatas.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Armature/display/CCBatchNode.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Armature/display/CCDecorativeDisplay.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Armature/display/CCDisplayManager.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Armature/display/CCSkin.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Armature/display/../CCBone.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Armature/physics/CCColliderDetector.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Armature/utils/CCArmatureDataManager.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Armature/utils/CCArmatureDefine.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Armature/utils/../datas/CCDatas.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Armature/utils/CCDataReaderHelper.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Armature/utils/../CCArmature.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Armature/utils/../../Json/DictionaryHelper.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Armature/utils/../../Json/rapidjson/document.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Armature/utils/../../Json/rapidjson/reader.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Armature/utils/../../Json/rapidjson/rapidjson.h:
+
+E:/Android/android-ndk-r10b/sources/cxx-stl/gnu-libstdc++/4.6/include/cassert:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Armature/utils/../../Json/rapidjson/internal/pow10.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Armature/utils/../../Json/rapidjson/internal/stack.h:
+
+E:/Android/android-ndk-r10b/platforms/android-19/arch-arm/usr/include/setjmp.h:
+
+E:/Android/android-ndk-r10b/platforms/android-19/arch-arm/usr/include/machine/setjmp.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Armature/utils/../../Json/rapidjson/internal/strfunc.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Armature/utils/../../Json/rapidjson/document.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Armature/utils/../../Json/CocoLoader.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Armature/utils/../../Json/../Json/rapidjson/rapidjson.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Armature/utils/../../Json/../Json/rapidjson/document.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Armature/utils/CCTweenFunction.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Armature/external_tool/sigslot.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/ActionTimeline/CCActionTimeline.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/ActionTimeline/CCTimeLine.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/ActionTimeline/CCFrame.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/ActionTimeline/CCTimelineMacro.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/ExtensionExport.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/ActionTimeline/CCActionTimelineCache.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/ActionTimeline/../Json/DictionaryHelper.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/ActionTimeline/CCFrame.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/ActionTimeline/CCNodeReader.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/ActionTimeline/CCTimeLine.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/ActionTimeline/CCTimelineMacro.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Trigger/TriggerBase.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Trigger/ObjectFactory.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Trigger/TriggerObj.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Trigger/../Json/DictionaryHelper.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Trigger/../Json/CocoLoader.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Trigger/TriggerMng.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Trigger/../Armature/CCArmature.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Components/CCComBase.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Components/../Trigger/ObjectFactory.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Components/../Json/DictionaryHelper.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Components/../Json/CocoLoader.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Components/CCComAttribute.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Components/CCComBase.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Components/CCComAudio.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Components/CCComController.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Components/CCInputDelegate.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Components/CCComRender.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/GUI/System/CocosGUI.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/GUI/System/../BaseClasses/UIWidget.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/GUI/System/../BaseClasses/../Layouts/UILayoutDefine.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/GUI/System/../BaseClasses/../Layouts/UILayoutParameter.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/GUI/System/../BaseClasses/../Layouts/UILayoutDefine.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/GUI/System/../BaseClasses/../System/GUIDefine.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/GUI/System/../BaseClasses/../System/../../Trigger/ObjectFactory.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/GUI/System/../Layouts/UILayout.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/GUI/System/../Layouts/../BaseClasses/UIWidget.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/GUI/System/../UIWidgets/UIButton.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/GUI/System/../UIWidgets/../BaseClasses/UIWidget.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/GUI/System/../UIWidgets/UICheckBox.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/GUI/System/../UIWidgets/UIImageView.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/GUI/System/../UIWidgets/UILabel.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/GUI/System/../UIWidgets/UILabelAtlas.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/GUI/System/../UIWidgets/UILoadingBar.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/GUI/System/../UIWidgets/ScrollWidget/UIScrollView.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/GUI/System/../UIWidgets/ScrollWidget/../../Layouts/UILayout.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/GUI/System/../UIWidgets/ScrollWidget/UIScrollInterface.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/GUI/System/../UIWidgets/ScrollWidget/../../BaseClasses/UIWidget.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/GUI/System/../UIWidgets/UISlider.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/GUI/System/../UIWidgets/UITextField.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/GUI/System/../UIWidgets/ScrollWidget/UIListView.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/GUI/System/../UIWidgets/ScrollWidget/UIScrollView.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/GUI/System/../UIWidgets/UILabelBMFont.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/GUI/System/../UIWidgets/ScrollWidget/UIPageView.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/GUI/System/UIHelper.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/GUI/System/../../Reader/GUIReader.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/GUI/System/../../Reader/../GUI/BaseClasses/UIWidget.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/GUI/System/../../Reader/../Json/rapidjson/document.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/GUI/System/../../Reader/WidgetReader/WidgetReaderProtocol.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/GUI/System/../../Reader/WidgetReader/../../Json/DictionaryHelper.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/GUI/System/../../Reader/../Trigger/ObjectFactory.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/GUI/System/../../Reader/../Json/CocoLoader.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/GUI/System/UITouchGroup.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/GUI/System/../UIWidgets/Compatible/CompatibleClasses.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/GUI/System/../UIWidgets/Compatible/../../BaseClasses/UIWidget.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/GUI/System/../UIWidgets/Compatible/../UIButton.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/GUI/System/../UIWidgets/Compatible/../UICheckBox.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/GUI/System/../UIWidgets/Compatible/../UIImageView.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/GUI/System/../UIWidgets/Compatible/../UILabel.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/GUI/System/../UIWidgets/Compatible/../UILabelAtlas.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/GUI/System/../UIWidgets/Compatible/../UILabelBMFont.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/GUI/System/../UIWidgets/Compatible/../UILoadingBar.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/GUI/System/../UIWidgets/Compatible/../UISlider.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/GUI/System/../UIWidgets/Compatible/../UITextField.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/GUI/System/../UIWidgets/Compatible/../../Layouts/UILayout.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/GUI/System/../UIWidgets/Compatible/../ScrollWidget/UIListView.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/GUI/System/../UIWidgets/Compatible/../ScrollWidget/UIPageView.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/GUI/System/../UIWidgets/Compatible/../ScrollWidget/UIScrollView.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/GUI/System/../UIWidgets/UIRichText.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Json/DictionaryHelper.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Json/CocoLoader.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Reader/SceneReader.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Reader/../Json/CocoLoader.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Action/CCActionManager.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Action/CCActionObject.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/CocoStudio/Action/../Json/rapidjson/document.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/physics_nodes/CCPhysicsDebugNode.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/external/chipmunk/include/chipmunk/chipmunk.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/external/chipmunk/include/chipmunk/chipmunk_types.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/external/chipmunk/include/chipmunk/cpVect.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/external/chipmunk/include/chipmunk/cpBB.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/external/chipmunk/include/chipmunk/cpSpatialIndex.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/external/chipmunk/include/chipmunk/cpBody.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/external/chipmunk/include/chipmunk/cpShape.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/external/chipmunk/include/chipmunk/cpPolyShape.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/external/chipmunk/include/chipmunk/cpArbiter.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/external/chipmunk/include/chipmunk/constraints/cpConstraint.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/external/chipmunk/include/chipmunk/constraints/cpPinJoint.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/external/chipmunk/include/chipmunk/constraints/cpSlideJoint.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/external/chipmunk/include/chipmunk/constraints/cpPivotJoint.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/external/chipmunk/include/chipmunk/constraints/cpGrooveJoint.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/external/chipmunk/include/chipmunk/constraints/cpDampedSpring.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/external/chipmunk/include/chipmunk/constraints/cpDampedRotarySpring.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/external/chipmunk/include/chipmunk/constraints/cpRotaryLimitJoint.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/external/chipmunk/include/chipmunk/constraints/cpRatchetJoint.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/external/chipmunk/include/chipmunk/constraints/cpGearJoint.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/external/chipmunk/include/chipmunk/constraints/cpSimpleMotor.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/external/chipmunk/include/chipmunk/cpSpace.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/physics_nodes/CCPhysicsSprite.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/spine/spine-cocos2dx.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/spine/spine.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/spine/Animation.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/spine/AnimationState.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/spine/AnimationStateData.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/spine/SkeletonData.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/spine/BoneData.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/spine/SlotData.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/spine/Skin.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/spine/Attachment.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/spine/Atlas.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/spine/AtlasAttachmentLoader.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/spine/AttachmentLoader.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/spine/Bone.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/spine/RegionAttachment.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/spine/Slot.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/spine/Skeleton.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/spine/SkeletonJson.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/spine/CCSkeleton.h:
+
+C:/Users\bo-jwolf/Desktop/cocos2d-x-2.2.6/extensions/spine/CCSkeletonAnimation.h:
 
 jni/../../Classes/Shana.h:
 

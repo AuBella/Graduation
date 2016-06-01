@@ -2,6 +2,11 @@
 #include"baseRes.h"
 #include"GlobalCtrl.h"
 #include "Common.h"
+#include<iostream>
+#include<string>
+#include<string.h>
+
+using namespace std;
  
 //paihangbangScene::paihangbangScene(){
 //}
@@ -61,6 +66,7 @@ bool paihangbangScene::init(){
 }
 void paihangbangScene::closeButton(CCObject * psender){
 	GlobalCtrl::getInstance()->canSetting  = true;
+	GlobalCtrl::getInstance()->canEnter  = true;
     this->removeFromParentAndCleanup(true);	
 }
  
@@ -207,12 +213,40 @@ void paihangbangScene::ShowRank( int _type )
 {
 	if ( _type < 0 )
 		return;
+	//当前排名
+	char buffer11[255];
+	sprintf(buffer11, "level_%d_score", _type);
+	int Score = CCUserDefault::sharedUserDefault()->getIntegerForKey(buffer11);
+	//rank_score[i] = Score;
+	/*char buffer22[255];
+	sprintf(buffer22, "name_%d_name" , _type);*/
+	rank_score[5] =  CCUserDefault::sharedUserDefault()->getIntegerForKey(buffer11);
+	//rank_name[5] =  CCUserDefault::sharedUserDefault()->getIntegerForKey(buffer22);
+	rank_rank[5] = 2;
 	//AppDelegate::AudioPlayEffect("MS2/rankPress.mp3");
-	for ( int i = 0; i < 6; i++ )
-	{
+	//for ( int i = 0; i < 5; i++ )
+	//{
+	//	rank_rank[i] = i + 1;
+	//	rank_name[i] = "SSSSS";
+	//	rank_score[i] = 200 - i *100;
+	//}
+
+	int key = 3;
+	//前三名
+	for(int i = 0; i < 3; ++i){
 		rank_rank[i] = i + 1;
-		rank_name[i] = "SSSSS";
-		rank_score[i] = 2000 - i *100;
+		char buffer1[255];
+		sprintf(buffer1, "level_%d_%d", _type, i+1);
+		int Score = CCUserDefault::sharedUserDefault()->getIntegerForKey(buffer1);
+		rank_score[i] = Score;
+		char buffer2[255];
+		sprintf(buffer2, "name_%d_%d" , _type, i+1);
+		string Name =  CCUserDefault::sharedUserDefault()->getStringForKey(buffer2);
+		rank_name[i]  = Name;
+		if(rank_score[i] == rank_score[5]){
+			key = i+1;
+		}
 	}
+	rank_rank[5] = key;
 	ShowRank();
 }

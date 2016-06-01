@@ -4,7 +4,13 @@
 #include"baseRes.h"
 #include"Common.h"
 #include"MainMenu.h"
-
+#include<iostream>
+#include<map>
+#include<string>
+#include<string.h>
+#include<vector>
+#include<algorithm>
+using namespace std;
 #define d_LocateHealX			865
 #define d_LocateHealY			1047
 #define d_fGameOverNumLocate1	1054, 588
@@ -197,9 +203,75 @@ void RewardLayer::Timer( float _t ){
 		CCCallFunc::create(this, callfunc_selector(RewardLayer::AddOver)), NULL) );
 }
 
+//void sortMapByValue(map<string,int>& tMap,vector<pair<string,int> >& tVector);  
+//int cmp(const pair<string,int>& x,const pair<string,int>& y)  
+//{  
+//    return x.second>y.second;  
+//}  
+//void sortMapByValue(map<string,int>& tMap,vector<pair<string,int> >& tVector)  
+//{  
+//      for(map<string,int>::iterator curr=tMap.begin();curr!=tMap.end();curr++)  
+//      {  
+//         tVector.push_back(make_pair(curr->first,curr->second));  
+//      }  
+//      sort(tVector.begin(),tVector.end(),cmp);  
+//}  
+
+void sortMapByValue(map<int,int>& tMap,vector<pair<int,int> >& tVector);  
+int cmp(const pair<int,int>& x,const pair<int,int>& y)  
+{  
+    return x.second>y.second;  
+}  
+void sortMapByValue(map<int,int>& tMap,vector<pair<int,int> >& tVector)  
+{  
+      for(map<int,int>::iterator curr=tMap.begin();curr!=tMap.end();curr++)  
+      {  
+         tVector.push_back(make_pair(curr->first,curr->second));  
+      }  
+      sort(tVector.begin(),tVector.end(),cmp);  
+}  
+
 void RewardLayer::AddOver(){
 	//加上后总金币
 	common::ShowNumber(xingxingBack, m_iNowScore + otherScore, 20, 19,(fStarLocateX1 + fStarLocateX2) / 2 + 10,fStarLocateY2 * 5 / 3, "tu5/suzi.png", 804, 0, 1.2f);
+	map<int,string>NameForNum;
+	//map<int, string> P;
+	map<int, int>NumForScore;
+	for(int i = 0; i < 3; ++i){
+		char buffer1[255];
+		sprintf(buffer1, "level_%d_%d", LevelNum, i+1);
+		int Score = CCUserDefault::sharedUserDefault()->getIntegerForKey(buffer1);
+		NumForScore[i] = Score;
+		char buffer2[255];
+		sprintf(buffer2, "name_%d_%d" , LevelNum, i+1);
+		string Name =  CCUserDefault::sharedUserDefault()->getStringForKey(buffer2);
+		NameForNum[i] = Name;
+	}
+	int lastScore = m_iNowScore + otherScore;
+	string lastName =  CCUserDefault::sharedUserDefault()->getStringForKey("name");
+	NameForNum[4] = lastName;
+	NumForScore[4] = lastScore;
+
+	vector<pair<int,int> > tVector;  
+    sortMapByValue(NumForScore,tVector);  
+	for(int i = 0; i < tVector.size()-1;++i){
+		char buffer11[255];
+		sprintf(buffer11, "level_%d_%d",LevelNum, i+1);
+		
+		char buffer12[255];
+		sprintf(buffer12, "name_%d_%d", LevelNum, i+1);
+		if(!NameForNum[tVector[i].first].empty()){
+			CCUserDefault::sharedUserDefault()->setIntegerForKey(buffer11, tVector[i].second);
+			CCUserDefault::sharedUserDefault()->setStringForKey(buffer12, NameForNum[tVector[i].first]);
+		}
+	}
+	char buffer21[255];
+	sprintf(buffer21, "level_%d_score",LevelNum);
+	char buffer22[255];
+	sprintf(buffer22, "name_%d_name", LevelNum);
+	CCUserDefault::sharedUserDefault()->setIntegerForKey(buffer21, lastScore);
+	CCUserDefault::sharedUserDefault()->setStringForKey(buffer22, lastName);
+	CCUserDefault::sharedUserDefault()->flush();
 	//加号
 	xingxingBack->getChildByTag(19)->removeFromParentAndCleanup(true);
 	m_bOverAddCombo = true;

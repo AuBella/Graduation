@@ -16,7 +16,7 @@ bool PopScene::init(){
 	CCSize winSize = CCDirector::sharedDirector()->getWinSize();
 	CCSprite * background = CCSprite::create("Common/settingbg.png");
 	CCMenuItemImage* closeicon = CCMenuItemImage::create( 
-		"Common/btn_pre_clo.png", "Common//btn_nor_clo.png", this, menu_selector(PopScene::closeButton));
+		"Common/btn_pre_clo.png", "Common/btn_nor_clo.png", this, menu_selector(PopScene::closeButton));
 	CCMenu* closeiconMenu = CCMenu::create(closeicon, NULL);
 	closeicon->setPosition(ccp(- background->getContentSize().width/2 +120,-background->getContentSize().height/2));
 	background->addChild(closeiconMenu);
@@ -34,7 +34,7 @@ bool PopScene::init(){
 	m_pItemVoice->setSelectedIndex(AppDelegate::s_VoiceOpen);
 
 	CCMenuItemImage* m_pNameBtn = CCMenuItemImage::create( 
-		"Common/xiugai.png", "Common//xiugai.png", this, menu_selector(PopScene::InputName));
+		"Common/xiugai.png", "Common/xiugai.png", this, menu_selector(PopScene::InputName));
 	m_pNameBtn->setPosition(ccp(142,120));
 	CCMenu* pMenu = CCMenu::create(m_pItemVoice, m_pNameBtn, NULL);
 	pMenu->setPosition(ccp(50,50));
@@ -74,6 +74,7 @@ void PopScene::closeButton(CCObject * psender){
 	CCUserDefault::sharedUserDefault()->setStringForKey("name", m_pNameInput->getString());
 	m_pNameInput->detachWithIME();
 	GlobalCtrl::getInstance()->canEnter = true;
+	GlobalCtrl::getInstance()->canSetting = true;
 	CCUserDefault::sharedUserDefault()->flush();
     this->removeFromParentAndCleanup(true);	
 }
